@@ -7,3 +7,4 @@ Uma proposta para padronizar seu desenvolvimento com GetX.
 > - Ter uma estrutura padrão para o desenvolvimento de aplicações com GetX.  
 > - Facilitar o uso do GetX de forma organizada e simples.  
 > - Facilitar na busca de informações e disseminação do conhecimento.  
+
