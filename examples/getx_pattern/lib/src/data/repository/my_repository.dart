@@ -13,14 +13,5 @@ getAll(){
 getId(id){
   return apiClient.getId(id);
 }
-delete(id){
-  return apiClient.delete(id);
-}
-edit(obj){
-  return apiClient.edit( obj );
-}
-add(obj){
-    return apiClient.add( obj );
-}
 
 }
