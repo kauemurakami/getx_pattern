@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_pattern/src/controller/details/details_controller.dart';
+import 'package:getx_pattern/src/ui/android/details/widgets/card_details_widget.dart';
+import 'package:getx_pattern/src/ui/android/widgets/button_widget.dart';
 
 class DetailsPage extends StatelessWidget {
 
@@ -16,8 +18,8 @@ class DetailsPage extends StatelessWidget {
         builder: (_){
           _.item = Get.arguments;
           return Column(children: <Widget>[
-            Text(_.item.title),
-            Text(_.item.body),
+            CardDetailsWidget(),
+            CustomButton(function: _.apagar(), text: 'Apagar', color: Colors.red, )
           ],);
         }),
       ),

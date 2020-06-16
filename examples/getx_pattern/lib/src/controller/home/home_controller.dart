@@ -15,7 +15,7 @@ class HomeController extends RxController {
     repository.getAll().then((data) => this.items = data);
   }
   
-  details(post){
-    Get.toNamed('/details', arguments: post);
+  details(item){
+    Get.toNamed('/details', arguments: items);
   }
 }

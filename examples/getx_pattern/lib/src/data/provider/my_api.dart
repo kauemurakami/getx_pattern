@@ -17,7 +17,6 @@ getAll() async {
     if(response.statusCode == 200){
       Iterable jsonResponse = json.decode(response.body);
         List<MyModel> listMyModel = jsonResponse.map((model) => MyModel.fromJson(model)).toList();
-        print(listMyModel);
       return listMyModel;
     }else print ('erro -get');
   } catch(_){ }
