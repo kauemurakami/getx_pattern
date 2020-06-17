@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>getx_patter</title>
+	<title>getx_pattern</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
@@ -14,7 +14,7 @@
         <ul>
             <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="#estrutura"><i class="fas fa-project-diagram"></i>Estrutura</a></li>
-            <li><a href="#estrutura"><i class="fab fa-xing"></i>GetX</a></li>
+            <li><a href="#getx"><i class="fab fa-xing"></i>  GetX</a></li>
             <li><a href="#data"><i class="fas fa-sitemap"></i>Data</a></li>
             <li><a href="#provider"><i class="fas fa-database"></i>Provider</a></li>
             <li><a href="#model"><i class="fas fa-copy"></i>Model</a></li>
@@ -25,41 +25,137 @@
             <li><a href="#info"><i class="fas fa-info-circle"></i></i>Informações</a></li>
         </ul> 
         <div class="social_media">
-          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://github.com/kauemurakami/getx_pattern" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" title="GetX Snippets VSCode Extension" target="_blank"><i class="fas fa-laptop-code"></i></a>
+          <a href="https://twitter.com/kauemurakami" title="Quick questions? Developer Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/kauemurakami/getx_pattern" title="GitHub repository" target="_blank"><i class="fab fa-github"></i></a>
       </div>
     </div>
     <div class="main_content">
-        <section id="home"><div class="header">Welcome!! Have a nice day.</div></section> 
+        <section id="home"><div class="header">Welcome!! getx_pattern. <span class="alpha"><fon>alpha</span></div></section> 
         <div class="info">
-
           <section id="estrutura">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
+          <section id="getx">
+            <div><h2><span class="subtitle">GetX, seu gerenciador de estado reativo.</span></h2></div>
+            <div><div class="obs">Primeiramente, é aconselhável que você tenha um conhecimento prévio com flutter e também uma base 
+              de conhecimento em gerenciamento de estados, caso não tenha, recomendo uma breve leitura na documentação do flutter 
+              sobre este assunto, para acessar click <a href="https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro" target="_blank">aqui</a>.<br></div>
+              O foco do <span class="mark">GetX</span> é ter maior desempenho com o mínimo consumo de recursos, veja os 
+                <a href="https://github.com/jonataslaw/benchmarks" target="_blank"> benchmarks</a>,
+                 produtividade, usando uma sintaxe fácil e agradável, e organização, permitindo a dissociação total da sua camada
+                  de apresentação da sua regra de negócio.<br>
+                  O <span class="mark">Getx</span> tem o poder de reconstruir apenas o widget quando há uma alteração de estado em uma variável 
+                  <span class="mark">.obs</span> em seu controlador. Isso, porque tudo nele é fluxo, isso nos permite ouvir o evento de cada 
+                  'variável'.<br>
+                  Vamos para um primeiro exemplo da aplicação do <span class="mark">GetX</span> com <span class="mark">o getx_pattern</span>
+                  , do bom e velho contador.<br><br>
+                  Vamos utilizar, neste exemplo, apenas a classe main, para você se familiarizar com os conceitos do 
+                  <span class="mark">GetX</span>.<br>
+                  Apague todo conteúdo da sua main.dart e mantenha, ou copie e cole, apenas este trecho de código:
+
+                  <script src="https://gist.github.com/kauemurakami/fdbc297925a693e1840b5a255c8744dc.js"></script>
+                  Após isso, vamos criar nossa classe controller, que nos permite criar nossa regra de negócio e controlar nossos estados.<br>
+                  Abaixo do código acima cole o seguinte código:
+                  <script src="https://gist.github.com/kauemurakami/0b2e62e0cedb0bfdbcbe0836f84cbc11.js"></script>
+                  O <span class="mark">RxController</span>  é o responsável por nos fornecer os métodos necessários para controllar nossos
+                  observáveis (<span class="mark">.obs</span>), permitindo atualizar nossos widgets GetX, respondendo as mudanças de 
+                  estados da nossa aplicação.
+                  No exemplo acima declaramos uma variável e dois métodos, vamos falar sobre eles.<br>
+                  Com <span class="mark">GetX</span>, podemos extender a classe <span class="mark">RxController</span>, e com ele podemos 
+                  criar varáveis observáveis adicionando um simples <span class="mark">.obs</span> e <span class="mark">seu estado inicial</span>.<br>
+                  <span class="mark"> final [var] = [initial-value].obs;</span> <br>
+                  Nosso observável só pode ser <span>final</span>, e seu tipo será atribuido a partir do <span class="mark">initial-value</span> 
+                  inserido no momento da declaração, por ser <span>final</span>, o mesmo só pode ser inserido uma vez.<br>
+                  <span class="mark">Mas e agora?</span> Se final só pode ser modificada uma vez, como vou alterar o valor dessa variável?<br>
+                  A resposta é tão simples quanto curto, <span class="mark">.value</span>. Ao criar sua variável como um observável, ela irá criar, 
+                  por trás do capô, um ObjectX,exemplo, um tipo int <i class="fas fa-chevron-right mark"></i> intX, um tipo List< User>() <i class="fas fa-chevron-right mark"></i> 
+                  ListX< User>(), e seu valor e tipo original é guardado no seu atributo <span>value</span> desse ObjectX.<br>
+                  No caso das nossas <span class="mark">Listas</span>, não é necessário utilizar o <span class="mark">.value</span>, 
+                  então diferente de um <span class="mark">StringX</span> onde você acessaria o valor contido com <span class="mark">text.value</span>, com as listas você pode trabalhar normalmente, tendo 
+                  em vista que tanto sua lista, como os objetos dentro dela, são todos observáveis, portanto podemos acessar seus atributos dessa maneira 
+                  <span class="mark">myList.length</span> ou <span class="mark">myList[index].name</span>.
+
+
+            </div>
+          </section> 
           <section id="data">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="provider">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="model">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="repository">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="controller">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="ui">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="routes">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="info">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
+              natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
+              facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
+               exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
+               praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
+               ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
+                suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
       </div>
     </div>

@@ -6,11 +6,28 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
    background-color: #f3f5f9;
+}
+.obs{
+  padding: 15px;
+  background-color: #D8CEF6;
+}
+.mark{
+  color: #4b4276;
+  font-weight: bold;
+}
+.subtitle{
+  color: #594f8d;
+  font-weight: bold;
+}
+.alpha{
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100 bold;
 }
 
 .wrapper{
