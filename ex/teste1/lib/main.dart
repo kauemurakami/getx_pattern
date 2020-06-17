@@ -6,7 +6,7 @@ void main() {
 }
 
 class MyController extends RxController {
-  
+
   final _num = 0.obs;
   get num => this._num.value;
   set num(value) => this._num.value = value;
@@ -40,10 +40,7 @@ class MyApp extends StatelessWidget {
                 GetX<MyController>(builder: (_) {
                   return FloatingActionButton(
                     onPressed: () => _.increment(),
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Icons.add, color: Colors.white),
                   );
                 }),
                 SizedBox(
@@ -52,10 +49,7 @@ class MyApp extends StatelessWidget {
                 GetX<MyController>(builder: (_) {
                   return FloatingActionButton(
                     onPressed: () => _.decrement(),
-                    child: Icon(
-                      Icons.remove,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Icons.remove, color: Colors.white),
                   );
                 }),
               ],
@@ -65,6 +59,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-  // This widget is the root of your application.
-
 }
