@@ -1,0 +1,5 @@
+Telas podem compartilhar o mesmo controller, única e exclusivamente, se consumirem o mesmo repositório.
+Caso necessite de dois repositórios diferentes, você deve usar dois GetXWidgets para dois contnroladores diferentes.
+um controlador nunca pode possuir dois repositório diferentes
+
+sempre qeu o controller foi necessário para utilizar apenas em um enteidade voce pode usar para controlar varias telas
