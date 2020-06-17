@@ -28,9 +28,8 @@ body{
 
 .wrapper .sidebar h2{
   color: #fff;
-  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .wrapper .sidebar ul li{
