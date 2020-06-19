@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8"/>
   <title>getx_pattern</title>
+  <meta name="description" content="Design pattern pensado em você, que utiliza o package Get">
   
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
+  <!------preview image link -->
   <meta property="og:url" content="https://kauemurakami.github.io/getx_pattern/" />
-  <meta name="description" content="Design pattern pensado em você, que utiliza o package Get">
   <meta property="og:title" content="getx_pattern" />
   <meta property="og:description" content="getx_pattern, faça seus projetos decolarem" >
   <meta property="og:image" content="images/rocket.png">
@@ -123,7 +124,13 @@
                   Mas o que ele tem diferente dos outros ? Bem, a propriedade <span class="mark">init</span>, ela é responsável por criar nossa instancia do 
                   objeto <span>controller</span> e dispinibiliza-lo na função builder desde widget, você já deve ter percebido, mas é isso mesmo, 
                   nosso <span class="mark">controllador</span> corresponde ao nosso <span class="mark">_</span> (underline), com isso você pode acessar seus 
-                  observáveis apenas usando a instância do seu controlador, dessa forma <span class="mark">_.num</span>.<br><br>
+                  observáveis apenas usando a instância do seu controlador, dessa forma <span class="mark">_.num</span>.<br>
+                  Agora que temos nosso primeiro widget <span class="mark">GetX</span> com controlador inicializado, não precisamos inicializa-lo novamente, 
+                  apenas setar o tipo no dele,caso estejam na mesma classe/page, dessa forma <span class="mark"> Getx<[type]></span>, e ele se encarregará do resto para você, fácil não? E 
+                  você pode ficar tranquilo, sem boilerplate, o <span class="mark">GetX</span> é sensacional, e ainda sabe a hora certa de remover esse 
+                  controlador da memória. Você também pode controllar isso se quiser, com <span class="mark">GetX</span> é assim, ele deixa você livre 
+                  para focar na qualidade do seu código, sem se preocupar com questões repetitivas e fáceis de lidar como essa, ele cuida de tudo pra você.
+                  <br>
                   Mas e o <span class="mark">.value</span>?<br>
                   Bem, é ai que entra uma das propostas do <span class="mark">getx_pattern</span>, nós achamos melhor manter tudo que for controlado 
                   na interface dentro do controlador, isso inclui os estados de suas variáveis e os eventos que levarão a isso, assim como nosso exemplo 
