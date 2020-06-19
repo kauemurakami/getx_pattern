@@ -58,22 +58,22 @@
             <div><h2><span class="subtitle">Estrutura</span></h2></div>
           <div>
             <img src="images/strc.png" alt="The Structure for GetX developers xD" width="500" height="600" class="center"><br>
-            Agora que você conhece a proposta e deu uma boa analisada em nossa estrutura, vamos parar um pouco para falar rapidamente sobre ela, 
+            Agora que você conhece a <span class="mark">proposta</span> e deu uma boa analisada na apresentação da estrutura, vamos parar um pouco para falar rapidamente sobre ela, 
             antes de introduzir você na seção do <span class="mark">GetX</span>, para que você possa seguir nossos exemplos sem dificuldade 
-            ou dúvidas, pois bem, vamos abordar um por um agora, não se preocupe se você está se aventurando e não conhece alguns 
-            dos conceitos que serão abordados aqui, isso é apenas uma apresentação formal com a estrutura, iremos falar mais detalhadamente 
-            sobre cada uma delas, com exemplos, em suas respectivas seções.<br><br>
-            <span class="mark">Model</span>: é o diretório que irá agrupar todas as nossas Classes/Models.<br>
+            ou dúvidas sobre nossos padrões de nomenclatura ou fluxo, pois bem, vamos falar <span class="mark">rapidamente de um por um</span> agora, <span class="mark">não se preocupe</span> se você está 
+            se aventurando e não conhece alguns dos <span class="mark">conceitos</span> que serão abordados aqui, isso é apenas uma apresentação formal com a estrutura, 
+            iremos falar mais <span class="mark">detalhadamente sobre cada uma delas</span>, com exemplos, em suas respectivas seções.<br><br>
+            <span class="mark">Model</span>: é o diretório que irá agrupar todas os nossos Models.<br>
             <div class="obs">Sinta-se a vontade para escolher entre <span class="mark">Model</span> ou <span class="mark">Class</span>, mas tenha em mente que daqui em diante, usarei o termo 
               Model, caso não seja novidade, garanto que logo irá se acostumar com <span class="mark">Model.</span>
             </div>
-            <span class="mark">Providers</span>: é o diretório responsável por agrupar nossos <span class="mark">provedores de dados</span>, pode ser tanto um banco de dados  
-            ou uma <span class="mark">api</span>. 
+            <span class="mark">Providers</span>: é o diretório responsável por agrupar nossos <span class="mark">provedores de dados</span>, 
+            pode ser tanto um <span class="mark">banco de dados</span> ou uma <span class="mark">api</span>. 
             <div class="obs">
               Em algumas outras estruturas, o termo <span class="mark">'provider'</span>, pode ser abordado de várias formas, mas aqui, ele existe 
-              única e exclusivamente, para fazer requisições http ou persistência num banco de dados sqlite. Caso você use os dois, crie os 
-              respectivos diretórios dentro deste.<br>
-              Caso haja muitas requisições, em um único arquivo, você pode optar por separar por <span class="mark">entidades</span>, vamos discutir o 
+              única e exclusivamente, para fazer requisições http ou persistência num banco de dados sqlite. <span class="mark">Caso você use os dois</span>, crie os 
+              respectivos diretórios e/ou arquivos dentro deste.<br>
+              Caso haja <span class="mark">muitas requisições, em um único arquivo</span>, você pode optar por separar por <span class="mark">entidades</span>, vamos discutir o 
               conceito de entidades na seção abaixo. 
             </div>
             <span class="mark">Repository</span>: é um ponto <span class="mark">único</span> de acesso aos dados, irá abstrair nossas 
