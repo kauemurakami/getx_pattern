@@ -3,7 +3,8 @@ import 'package:getx_pattern/src/ui/android/login/login_page.dart';
 
 class MyRoutes {
 
-  static final routes = {
-    '/' : GetRoute(page: LoginPage()),
-  };
+  static final routes = [
+    GetPage(name: '/', page:()=> LoginPage(),),
+    
+  ];
 }

@@ -11,7 +11,9 @@ class LoginController extends RxController {
   final _user = UserModel().obs;
   get user => this._user.value;
   set user(value) => this._user.value = value;
-  
+
+
+
   login(){
     
   }

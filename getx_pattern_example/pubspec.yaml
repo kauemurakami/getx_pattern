@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^2.12.1
+  get: ^2.14.1
   meta: ^1.1.8
   http: ^0.12.1
   slimy_card: ^1.0.4

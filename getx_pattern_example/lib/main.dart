@@ -9,7 +9,7 @@ void main() {
     initialRoute: '/',
     debugShowCheckedModeBanner: false,
     defaultTransition: Transition.fade,
-    namedRoutes: MyRoutes.routes,
+    getPages: MyRoutes.routes,
     home: LoginPage(),
     theme: appThemeData,
   ));
