@@ -44,7 +44,7 @@
         <div class="info">
 
           <section id="home">
-            <div><h2><span class="subtitle">getx_pattern, uma proposta pra você que utiliza o GetX.</span></h2></div>
+            <div><h2><span class="subtitle">getx_pattern, uma proposta pra você que utiliza o GetX</span></h2></div>
           <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
             natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
             facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
@@ -55,14 +55,53 @@
           </section>
 
           <section id="estrutura">
-            <div><h2><span class="subtitle">Estrutura.</span></h2></div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div><h2><span class="subtitle">Estrutura</span></h2></div>
+          <div>
+            <img src="images/strc.png" alt="The Structure for GetX developers xD" width="500" height="600" class="center"><br>
+            Agora que você conhece a proposta e deu uma boa analisada em nossa estrutura, vamos parar um pouco para falar rapidamente sobre ela, 
+            antes de introduzir você na seção do <span class="mark">GetX</span>, para que você possa seguir nossos exemplos sem dificuldade 
+            ou dúvidas, pois bem, vamos abordar um por um agora, não se preocupe se você está se aventurando e não conhece alguns 
+            dos conceitos que serão abordados aqui, isso é apenas uma apresentação formal com a estrutura, iremos falar mais detalhadamente 
+            sobre cada uma delas, com exemplos, em suas respectivas seções.<br><br>
+            <span class="mark">Model</span>: é o diretório que irá agrupar todas as nossas Classes/Models.<br>
+            <div class="obs">Sinta-se a vontade para escolher entre <span class="mark">Model</span> ou <span class="mark">Class</span>, mas tenha em mente que daqui em diante, usarei o termo 
+              Model, caso não seja novidade, garanto que logo irá se acostumar com <span class="mark">Model.</span>
+            </div>
+            <span class="mark">Providers</span>: é o diretório responsável por agrupar nossos <span class="mark">provedores de dados</span>, pode ser tanto um banco de dados  
+            ou uma <span class="mark">api</span>. 
+            <div class="obs">
+              Em algumas outras estruturas, o termo <span class="mark">'provider'</span>, pode ser abordado de várias formas, mas aqui, ele existe 
+              única e exclusivamente, para fazer requisições http ou persistência num banco de dados sqlite. Caso você use os dois, crie os 
+              respectivos diretórios dentro deste.<br>
+              Caso haja muitas requisições, em um único arquivo, você pode optar por separar por <span class="mark">entidades</span>, vamos discutir o 
+              conceito de entidades na seção abaixo. 
+            </div>
+            <span class="mark">Repository</span>: é um ponto <span class="mark">único</span> de acesso aos dados, irá abstrair nossas 
+            <span class="mark">entidades</span>.
+            <div class="obs">
+              <span class="mark">Entidades </span> são, basicamente, todas as "tabelas" da sua base de dados que irão interagir com seu ou seus <span class="mark">providers</span>.<br>
+              O <span class="mark">repository</span> tem o objetivo de abstrair e separar, sua fonte de dados do seus controladores, tendo assim, 
+              um ponto único de falha, ou seja, se um dia você vier a trocar a api ou base de dados do seu projeto, basta alterar seus arquivos no <span class="mark">provider</span>, 
+              não sendo necessário nenhuma alteração no <span class="">repository, pois ele só é responsável por chamar a função do <span class="mark">provider</span>, não havendo lógica nenhuma ali.<br>
+              <span class="mark">ex</span> Imagine que você possua um aplicativo de venda de produtos, que possua apenas os clientes e os produtos de um estabelecimento.<br>
+              Podemos identificar facilmente nossas <span class="mark">entidades</span> nos fazendo uma pergunta.<br>
+              <span class="mark">Irei receber e/ou enviar dados dessa entidade? </span>Se a resposta for sim, então ela precisa de um repository.<br>
+              No nosso exemplo teríamos três <span class="mark">repositories,</span> UserRepository, ProdutoRepository, EstabelecimentoRepository.<br>
+              Muitas vezes, podemos tirar essas entidades nos baseando em nossas classes, mas muitas vezes existem classes auxiliares que não estão 
+              necessariamente na sua base de dados ou api, portanto preferimos nos basear no que realmente interage com sua base de dados.
+            </div>
+            Dessa forma, tiramos muita responsabilidade do nosso <span class="mark">controller</span>, ele não precisa saber de onde vem os dados, 
+            apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <span class="mark"><> </span>Dados.<br>
+            Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, deixando tudo mais intuitivo.
+            <span class="mark">Data</span>: Aqui não teremos muitos o que discutir, é apenas um repositório onde você irá abstrair 
+            <span class="mark">TUDO</span> relacionado aos seus dados, seus <span class="mark">modelos</span> , seus 
+            <span class="mark">repositories</span> e <span class="mark">provedores</span>  de dados.<br>
+            Isso foi pensado para que você possa manter sua estrutura de diretórios o menor possivel ao trabalhar com flutter 
+            e ao mesmo tempo, ser algo intuitivo e didático.<br>
+            <span class="mark">Controller</span>:
+            <span class="mark">UI</span>:
+            <span class="mark">Routes</span>:
+          </div>
           </section>
 
           <section id="getx">

@@ -38,8 +38,5 @@ getId(id) async {
   } catch(_){ }
 }
 
-deleteId(id){
-  return 'apagado';
-}
 
 }

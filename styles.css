@@ -12,6 +12,13 @@
 body{
    background-color: #f3f5f9;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .obs{
   padding: 15px;
   background-color: #D8CEF6;
@@ -24,6 +31,7 @@ body{
   color: #594f8d;
   font-weight: bold;
 }
+
 .alpha{
   color: red;
   font-family: Arial, Helvetica, sans-serif;

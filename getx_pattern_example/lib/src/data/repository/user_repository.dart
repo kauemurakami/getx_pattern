@@ -14,9 +14,6 @@ class UserRepository {
     return apiClient.getId(id);
   }
 
-  deleteId(id) {
-    return apiClient.deleteId(id);
-  }
 
   signIn(user) {
     return apiClient.signIn(user);

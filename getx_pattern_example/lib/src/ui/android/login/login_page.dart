@@ -21,8 +21,6 @@ class LoginPage extends StatelessWidget {
           child: GetX<LoginController>(
             init: LoginController(userRepository: userRepository),
             builder: (_) {
-              
-
             return CustomForm();
           }),
         ),
