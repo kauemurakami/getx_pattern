@@ -31,7 +31,9 @@ body{
   color: #594f8d;
   font-weight: bold;
 }
-
+.topics{
+  font-size: 20px;
+}
 .alpha{
   color: red;
   font-family: Arial, Helvetica, sans-serif;
