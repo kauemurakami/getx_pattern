@@ -64,12 +64,12 @@
             se aventurando e não conhece alguns dos <span class="mark">conceitos</span> que serão abordados aqui, isso é apenas uma apresentação formal com a estrutura, 
             iremos falar mais <span class="mark">detalhadamente sobre cada uma delas</span>, com exemplos, em suas respectivas seções.<br><br>
             
-            <i class="fas fa-rocket alpha"> </i><span class="mark topics">Model</span>: é o diretório que irá agrupar todas os nossos Models.<br>
+            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Model</span>: é o diretório que irá agrupar todas os nossos Models.<br>
             <div class="obs">Sinta-se a vontade para escolher entre <span class="mark">Model</span> ou <span class="mark">Class</span>, mas tenha em mente que daqui em diante, usarei o termo 
               Model, caso não seja novidade, garanto que logo irá se acostumar com <span class="mark">Model.</span>
             </div>
             
-            <i class="fas fa-rocket alpha"> <span class="mark topics">Providers</span>: é o diretório responsável por agrupar nossos <span class="mark">provedores de dados</span>, 
+            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Providers</span>: é o diretório responsável por agrupar nossos <span class="mark">provedores de dados</span>, 
             pode ser tanto um <span class="mark">banco de dados</span> ou uma <span class="mark">api</span>. 
             <div class="obs">
               Em algumas outras estruturas, o termo <span class="mark">'provider'</span>, pode ser abordado de várias formas, mas aqui, ele existe 
@@ -79,7 +79,7 @@
               conceito de entidades na seção abaixo. 
             </div>
 
-            <i class="fas fa-rocket alpha"> <span class="mark topics">Repository</span>: é um ponto <span class="mark">único</span> de acesso aos dados, irá abstrair nossas 
+            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Repository</span>: é um ponto <span class="mark">único</span> de acesso aos dados, irá abstrair nossas 
             <span class="mark">entidades</span>.
             <div class="obs">
               <span class="mark">Entidades </span> são, basicamente, todas as "tabelas" da sua base de dados que irão interagir com seu ou seus <span class="mark">providers</span>.<br>
@@ -95,15 +95,15 @@
             </div>
             Dessa forma, tiramos muita responsabilidade do nosso <span class="mark">controller</span>, ele não precisa saber de onde vem os dados, 
             apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <span class="mark"><-> </span>Dados.<br>
-            Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, deixando tudo mais intuitivo.
+            Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, deixando tudo mais intuitivo.<br><br>
 
-            <i class="fas fa-rocket alpha"> <span class="mark topics">Data</span>: Aqui não teremos muitos o que discutir, é apenas um repositório onde você irá abstrair 
+            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Data</span>: Aqui não teremos muitos o que discutir, é apenas um repositório onde você irá abstrair 
             <span class="mark">TUDO</span> relacionado aos seus dados, seus <span class="mark">modelos</span> , seus 
             <span class="mark">repositories</span> e <span class="mark">provedores</span>  de dados.<br>
             Isso foi pensado para que você possa manter sua estrutura de diretórios o menor possivel ao trabalhar com flutter 
-            e ao mesmo tempo, ser algo intuitivo e didático.<br>
+            e ao mesmo tempo, ser algo intuitivo e didático.<br><br>
 
-            <i class="fas fa-rocket alpha"> <span class="mark topics">Controller</span>: Nossos controllers, nada mais são, que os responsáveis pelas nossas 
+            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Controller</span>: Nossos controllers, nada mais são, que os responsáveis pelas nossas 
             <span class="mark">regras de negócio</span>, <span class="mark">alterações de estado</span>, também é onde criaremos 
             <span class="mark">nossos observáveis</span> com seus respectivos <span class="mark">estados iniciais</span> e 
             os <span class="mark">eventos</span> que serão responsáveis por <span class="mark">alterar esses estados</span>.
@@ -123,7 +123,7 @@
               <span class="mark">consumirem um único repositório</span>.
             
             </div>
-            <i class="fas fa-rocket alpha"> <span class="mark topics">UI</span>: É tudo que o usuário vê, seus widgets, animações, textos.
+            <i class="fas fa-rocket alpha"></i> <span class="mark topics">UI</span>: É tudo que o usuário vê, seus widgets, animações, textos.
             <div class="obs">
               Também temos uma proposta de como você deve agrupar esses elementos internamente.<br>
               Vamos adiantar um pouco o assunto, pra essa ideia não ficar vazia em sua cabeça.<br>
@@ -138,7 +138,7 @@
               dessa maneira você não irá perder tempo resolvendo erros de importação.
             </div>
 
-            <i class="fas fa-rocket alpha"> <span class="mark topics">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
+            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
             <div class="obs">
               A ideia é que você possa gerenciar suas rotas de forma fácil e limpa.<br>
               Chega de ficar procurando um widget que linka uma determinada rota a outra page, agrupe todas suas rotas e saiba exatamente onde procurar.<br>
