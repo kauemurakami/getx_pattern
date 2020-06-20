@@ -91,16 +91,38 @@
               necessariamente na sua base de dados ou api, portanto preferimos nos basear no que realmente interage com sua base de dados.
             </div>
             Dessa forma, tiramos muita responsabilidade do nosso <span class="mark">controller</span>, ele não precisa saber de onde vem os dados, 
-            apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <span class="mark"><> </span>Dados.<br>
+            apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <span class="mark"><-> </span>Dados.<br>
             Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, deixando tudo mais intuitivo.
             <span class="mark">Data</span>: Aqui não teremos muitos o que discutir, é apenas um repositório onde você irá abstrair 
             <span class="mark">TUDO</span> relacionado aos seus dados, seus <span class="mark">modelos</span> , seus 
             <span class="mark">repositories</span> e <span class="mark">provedores</span>  de dados.<br>
             Isso foi pensado para que você possa manter sua estrutura de diretórios o menor possivel ao trabalhar com flutter 
             e ao mesmo tempo, ser algo intuitivo e didático.<br>
+
             <span class="mark">Controller</span>:
-            <span class="mark">UI</span>:
-            <span class="mark">Routes</span>:
+
+            <span class="mark">UI</span>: É tudo que o usuário vê, seus widgets, animações, textos.
+            <div class="obs">
+              Também temos uma proposta de como você deve agrupar esses elementos internamente.<br>
+              Vamos adiantar um pouco o assunto, pra essa ideia não ficar vazia em sua cabeça.<br>
+              Uma das maiores <span class="marl">vantagens</span> do flutter é o modo como fica fácil "<span class="mark">componentizar</span>" sua<span class="mark"> UI</span>, portanto neste diretório 
+              você deve criar <span class="mark">um diretório para cada page</span>, neste diretório, além da sua page, 
+              podemos adicionar um outro diretório, de <span class="mark">widgets para cada page</span>, dessa forma sua 
+              page principal pode ser <span class="mark">lida facilmente</span>, pois é montada com <span class="mark">vários widgets</span>.<br>
+              E se você já adivinhou, podemos fazer isso também no nivel da <span class="mark">UI</span>, criando um diretório de <span class="mark">widgets globais</span>, 
+              que virão a ser utilizados em <span class="mark">mais de uma page</span> na sua aplicação.<br>
+              Caso você não precise usar widgets em determinada page, basta ignorar essa orientação, mas <span class="mark">sempre que for criar uma page</span>, preferimos 
+              que você <span class="mark">crie um diretório para ela</span>, pois <span class="mark">futuramente</span>  pode vir a ter widgets externos à ela, 
+              dessa maneira você não irá perder tempo resolvendo erros de importação.
+            </div>
+            <span class="mark">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
+            <div class="obs">
+              A ideia é que você possa gerenciar suas rotas de forma fácil e limpa.<br>
+              Chega de ficar procurando um widget que linka uma determinada rota a outra page, agrupe todas suas rotas e saiba exatamente onde procurar.<br>
+              Além do seu código da <span class="mark">UI</span> ficar menor usando as rotas do <span class="mark">GetX</span>, ficam muito bem apresentados quando nomeados, e 
+              agrupados de forma separada.<br>
+              Você verá exemplos disso na respectiva seção, estamos quase lá :D.
+            </div>
           </div>
           </section>
 
