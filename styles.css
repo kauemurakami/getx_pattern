@@ -34,8 +34,17 @@ body{
 .topics{
   font-size: 20px;
 }
+.footer{
+  position: absolute;
+  left: 200px;
+  bottom: initial;
+  width: 100%;
+  background-color: #4b4276;
+  color: #ECCEF5;
+  text-align: center;
+}
 .alpha{
-  color: red;
+  color: #ECCEF5;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100 bold;
 }
