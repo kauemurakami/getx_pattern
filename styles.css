@@ -40,8 +40,8 @@ body{
   bottom: initial;
   width: 100%;
   background-color: #4b4276;
-  color: #ECCEF5;
-  text-align: center;
+  color: white;
+  padding-left: 15%;
 }
 .alpha{
   color: #ECCEF5;
