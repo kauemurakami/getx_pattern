@@ -44,14 +44,32 @@
         <div class="info">
 
           <section id="home">
-            <div><h2><span class="subtitle">getx_pattern, uma proposta pra você que utiliza o GetX</span></h2></div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div><h2><span class="subtitle">getx_pattern, uma proposta pra você que utiliza o 
+              <a href="https://pub.dev/packages/get" target="_blank">GetX</a></span></h2></div>
+          <div>
+            Projeto desenvolvido para padronizar os seus projetos com <a href="https://pub.dev/packages/get" target="_blank">GetX</a>.<br><br>
+            <span class="subtitle"><h2>Objetivos</h2></span>
+            O objetivo principal, é tornar sua programação com <font color="blue">Flutter</font> + <a href="https://pub.dev/packages/get" target="_blank">GetX</a> 
+            mais agradável e intuitiva do que já é <span class="mark">!</span><br>
+            Quando há um padrão de desenvolvimento a ser seguido, tudo fica mais fácil para quem usa. <span class="mark">Mas por quê?</span><br><br>
+            - <span class="mark">Porque</span> assim, podemos nos comunicar de forma "universal" com pessoas que também seguem esses mesmos padrões.<br><br>
+            - <span class="mark">Há</span> infinitas maneiras de resolver o mesmo problema, então os patterns tem um papel muito importante nisso, 
+            os mesmos problemas, ainda poderão ser resolvidos de várias maneiras, mas com um determinado fluxo a ser seguido.<br><br>
+            - <span class="mark">Com</span> isso é muito mais fácil sanar suas dúvidas, quando vocês conversam no mesmo padrão.<br><br>
+            - <span class="mark">Seu</span> projeto não ficará dependente de quem o construiu, pois outros programadores poderão ler e alterar o código sem dificuldades.<br><br>
+            - <span class="mark">Você</span> terá um melhor aproveitamento na reutilização do seu código, podendo assim reutilizar diversos widgets de outros projetos 
+            por exemplo, que ele se encaixará perfeitamente no seu projeto.<br><br>
+            - <span class="mark">Que</span> você possa aplicar o uso do <a href="https://pub.dev/packages/get" target="_blank">GetX</a> em projetos profissionais, 
+            tendo uma documentação em mãos, com isso, mais segurança para quem programa, seja você uma empresa ou um estudante em busca de conhecimento.<br>
+            <div class="obs">
+              <span class="mark">E</span> além do <span class="mark">getx_pattern</span>, também está disponibilizamos uma extensão que irá acelerar muito mais ainda esse processo,
+              o <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">GetX Snippets</a>
+              tem snippets que irão acelerar seu desenvolvimento, podendo criar desde variáveis a classes inteiras e já está disponível para 
+              o <span class="mark">vscode, Experimente !</span><br>
+            </div>
+            Agora que você entendeu nossos objetivos, vamos aprender um pouco sobre a <span class="mark">estrutura</span> do <span class="mark">getx_pattern</span> !
+          
+          </div>
           </section>
 
           <section id="estrutura">
@@ -64,103 +82,53 @@
             se aventurando e não conhece alguns dos <span class="mark">conceitos</span> que serão abordados aqui, isso é apenas uma apresentação formal com a estrutura, 
             iremos falar mais <span class="mark">detalhadamente sobre cada uma delas</span>, com exemplos, em suas respectivas seções.<br><br>
             
-            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Model</span>: é o diretório que irá agrupar todas os nossos Models.<br>
+            <i class="fas fa-copy alpha"></i> <span class="mark topics">Model</span>: É o diretório que irá agrupar todas as nossas classes modelos para nossos objetos.<br>
             <div class="obs">Sinta-se a vontade para escolher entre <span class="mark">Model</span> ou <span class="mark">Class</span>, mas tenha em mente que daqui em diante, usarei o termo 
               Model, caso não seja novidade, garanto que logo irá se acostumar com <span class="mark">Model.</span>
             </div>
             
-            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Providers</span>: é o diretório responsável por agrupar nossos <span class="mark">provedores de dados</span>, 
-            pode ser tanto um <span class="mark">banco de dados</span> ou uma <span class="mark">api</span>. 
-            <div class="obs">
-              Em algumas outras estruturas, o termo <span class="mark">'provider'</span>, pode ser abordado de várias formas, mas aqui, ele existe 
-              única e exclusivamente, para fazer requisições http ou persistência num banco de dados sqlite. <span class="mark">Caso você use os dois</span>, crie os 
-              respectivos diretórios e/ou arquivos dentro deste.<br>
-              Caso haja <span class="mark">muitas requisições, em um único arquivo</span>, você pode optar por separar por <span class="mark">entidades</span>, vamos discutir o 
-              conceito de entidades na seção abaixo. 
-            </div>
+            <i class="fas fa-database alpha"></i> <span class="mark topics">Providers</span>: É o diretório responsável por agrupar nossos <span class="mark">provedores de dados</span>, 
+            pode ser tanto um <span class="mark">banco de dados</span> ou uma <span class="mark">api</span>.<br><br>
+            
 
-            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Repository</span>: é um ponto <span class="mark">único</span> de acesso aos dados, irá abstrair nossas 
-            <span class="mark">entidades</span>.
-            <div class="obs">
-              <span class="mark">Entidades </span> são, basicamente, todas as "tabelas" da sua base de dados que irão interagir com seu ou seus <span class="mark">providers</span>.<br>
-              O <span class="mark">repository</span> tem o objetivo de abstrair e separar, sua fonte de dados do seus controladores, tendo assim, 
-              um ponto único de falha, ou seja, se um dia você vier a trocar a api ou base de dados do seu projeto, basta alterar seus arquivos no <span class="mark">provider</span>, 
-              não sendo necessário nenhuma alteração no <span class="">repository, pois ele só é responsável por chamar a função do <span class="mark">provider</span>, não havendo lógica nenhuma ali.<br>
-              <span class="mark">ex</span> Imagine que você possua um aplicativo de venda de produtos, que possua apenas os clientes e os produtos de um estabelecimento.<br>
-              Podemos identificar facilmente nossas <span class="mark">entidades</span> nos fazendo uma pergunta.<br>
-              <span class="mark">Irei receber e/ou enviar dados dessa entidade? </span>Se a resposta for sim, então ela precisa de um repository.<br>
-              No nosso exemplo teríamos três <span class="mark">repositories,</span> UserRepository, ProdutoRepository, EstabelecimentoRepository.<br>
-              Muitas vezes, podemos tirar essas entidades nos baseando em nossas classes, mas muitas vezes existem classes auxiliares que não estão 
-              necessariamente na sua base de dados ou api, portanto preferimos nos basear no que realmente interage com sua base de dados.
-            </div>
-            Dessa forma, tiramos muita responsabilidade do nosso <span class="mark">controller</span>, ele não precisa saber de onde vem os dados, 
-            apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <span class="mark"><-> </span>Dados.<br>
-            Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, deixando tudo mais intuitivo.<br><br>
+            <i class="fas fa-archive alpha"></i> <span class="mark topics">Repository</span>: É um ponto <span class="mark">único</span> de acesso aos dados, irá abstrair nossas 
+            <span class="mark">entidades</span>.<br><br>
 
-            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Data</span>: Aqui não teremos muitos o que discutir, é apenas um repositório onde você irá abstrair 
-            <span class="mark">TUDO</span> relacionado aos seus dados, seus <span class="mark">modelos</span> , seus 
-            <span class="mark">repositories</span> e <span class="mark">provedores</span>  de dados.<br>
-            Isso foi pensado para que você possa manter sua estrutura de diretórios o menor possivel ao trabalhar com flutter 
-            e ao mesmo tempo, ser algo intuitivo e didático.<br><br>
-
-            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Controller</span>: Nossos controllers, nada mais são, que os responsáveis pelas nossas 
+            <i class="fas fa-sitemap alpha"></i> <span class="mark topics">Data</span>: É apenas um diretório responsável por guardar <span class="mark">TUDO</span> 
+            relacionado aos seus dados, ou seja, seu <span class="mark">repository</span>, suas <span class="mark">classes</span> e <span class="mark">providers</span>.
+            <br><br>
+            <i class="fas fa-gamepad alpha"></i> <span class="mark topics">Controller</span>: Nossos controllers, nada mais são, que os responsáveis pelas nossas 
             <span class="mark">regras de negócio</span>, <span class="mark">alterações de estado</span>, também é onde criaremos 
             <span class="mark">nossos observáveis</span> com seus respectivos <span class="mark">estados iniciais</span> e 
             os <span class="mark">eventos</span> que serão responsáveis por <span class="mark">alterar esses estados</span>.
-            <div class="obs">
-              Os controladores são a parte vital da sua aplicação, neles você irá criar suas variáveis <span class="mark">.obs</span> 
-              que guardará valores que podem ser alterados durante a aplicação.<br>
-              Seu controlador é responsável também por <span class="mark">consumir seus dados</span>>, através dos seus 
-              <span class="mark">repositórios</span>, que por sua vez, só realizam as chamadas dos dados dos seus <span class="mark">providers</span><br>
-              <span class="mark">Regra</span>: Todo controller deve possuir <span class="mark">um, e apenas um, repository</span>, sendo esse, 
-              um atributo <span class="mark">requerido</span> para inicializar seu controller no seu <span class="mark">GetX</span> widget.<br>
-              Caso você venha a precisar de dados de dois repositories diferentes em uma mesma page, você deve usar dois <span class="mark">GetX</span> widgets.
-              Recomendamos que haja, no mínimo, <span class="mark">um controller para cada page</span>.<br>
-              Só existe uma exceção para que você possa usar o mesmo controllador para varias pages, e é bem simples:<br>
-              <span class="mark">IMPORTANTE</span> <br>
-              Você poderá usar <span class="mark">um controlador</span> em <span class="mark">várias páginas</span>, 
-              <span class="mark">única e exclusivamente</span>, se os dados de <span class="mark">todas as pages</span>, 
-              <span class="mark">consumirem um único repositório</span>.
-            
-            </div>
-            <i class="fas fa-rocket alpha"></i> <span class="mark topics">UI</span>: É tudo que o usuário vê, seus widgets, animações, textos.
-            <div class="obs">
-              Também temos uma proposta de como você deve agrupar esses elementos internamente.<br>
-              Vamos adiantar um pouco o assunto, pra essa ideia não ficar vazia em sua cabeça.<br>
-              Uma das maiores <span class="marl">vantagens</span> do flutter é o modo como fica fácil "<span class="mark">componentizar</span>" sua<span class="mark"> UI</span>, portanto neste diretório 
-              você deve criar <span class="mark">um diretório para cada page</span>, neste diretório, além da sua page, 
-              podemos adicionar um outro diretório, de <span class="mark">widgets para cada page</span>, dessa forma sua 
-              page principal pode ser <span class="mark">lida facilmente</span>, pois é montada com <span class="mark">vários widgets</span>.<br>
-              E se você já adivinhou, podemos fazer isso também no nivel da <span class="mark">UI</span>, criando um diretório de <span class="mark">widgets globais</span>, 
-              que virão a ser utilizados em <span class="mark">mais de uma page</span> na sua aplicação.<br>
-              Caso você não precise usar widgets em determinada page, basta ignorar essa orientação, mas <span class="mark">sempre que for criar uma page</span>, preferimos 
-              que você <span class="mark">crie um diretório para ela</span>, pois <span class="mark">futuramente</span>  pode vir a ter widgets externos à ela, 
-              dessa maneira você não irá perder tempo resolvendo erros de importação.
-            </div>
+           <br><br>
 
-            <i class="fas fa-rocket alpha"></i> <span class="mark topics">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
-            <div class="obs">
-              A ideia é que você possa gerenciar suas rotas de forma fácil e limpa.<br>
-              Chega de ficar procurando um widget que linka uma determinada rota a outra page, agrupe todas suas rotas e saiba exatamente onde procurar.<br>
-              Além do seu código da <span class="mark">UI</span> ficar menor usando as rotas do <span class="mark">GetX</span>, ficam muito bem apresentados quando nomeados, e 
-              agrupados de forma separada.<br>
-              Você verá exemplos disso na respectiva seção, estamos quase lá :D.
-            </div>
+            <i class="fas fa-mobile alpha"></i> <span class="mark topics">UI</span>: É tudo que o usuário vê, seus widgets, animações, textos, temas.
+            <br><br>
+
+            <i class="fas fa-road alpha"></i> <span class="mark topics">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
+            
+
+
+
+
           </div>
           </section>
 
           <section id="getx">
             <div><h2><span class="subtitle">GetX, seu gerenciador de estado reativo.</span></h2></div>
-            <div><div class="obs">Primeiramente, é aconselhável que você tenha um conhecimento prévio com flutter e também uma base 
-              de conhecimento em gerenciamento de estados, caso não tenha, recomendo uma breve leitura na documentação do flutter 
+            <div><div class="obs">Primeiramente, é aconselhável que você tenha um conhecimento prévio de <span class="mark">flutter</span> e também uma base 
+              de conhecimento em <span class="mark">gerenciamento de estados</span>, caso não tenha, recomendo uma breve leitura na 
+              <span class="mark">documentação oficial</span> do <span class="mark">flutter</span> 
               sobre este assunto, para acessar click <a href="https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro" target="_blank">aqui</a>.<br></div>
-              O foco do <span class="mark">GetX</span> é ter maior desempenho com o mínimo consumo de recursos, veja os 
-                <a href="https://github.com/jonataslaw/benchmarks" target="_blank"> benchmarks</a>,
-                 produtividade, usando uma sintaxe fácil e agradável, e organização, permitindo a dissociação total da sua camada
-                  de apresentação da sua regra de negócio.<br>
+              O foco do <span class="mark">GetX</span> é ter <span class="mark">maior desempenho</span> com o <span class="mark">mínimo consumo de recursos</span>, veja os 
+                <a href="https://github.com/jonataslaw/benchmarks" target="_blank"> benchmarks</a>.<br>
+                 <span class="mark">Produtividade</span>, usando uma sintaxe <span class="mark">fácil</span> e <span class="mark">agradável</span>.<br>
+                 <span class="mark">Organização</span>, permitindo a <span class="mark">dissociação total</span> da sua camada de 
+                 <span class="mark">apresentação</span> da sua <span class="mark">regra de negócio</span>.<br>
                   O <span class="mark">Getx</span> tem o poder de reconstruir apenas o widget quando há uma alteração de estado em uma variável 
-                  <span class="mark">.obs</span> em seu controlador. Isso, porque tudo nele é fluxo, isso nos permite ouvir o evento de cada 
-                  'variável'.<br>
+                  <span class="mark">.obs</span> em seu controlador. Isso, porque <span class="mark">tudo nele é fluxo</span>, isso nos permite 
+                  ouvir o evento de cada 'variável'.<br>
                   Vamos para um primeiro exemplo da aplicação do <span class="mark">GetX</span> com <span class="mark">o getx_pattern</span>
                   , do bom e velho contador.<br><br>
 
@@ -221,31 +189,33 @@
                   temos a variável num, que é declarado no controller e a mesma, é usada no Getx widget, e nossas funções/eventos, responsáveis por 
                   alterar o estado dessa nossa variável. Portanto, carregar <span class="mark">_.num.value</span> vai contra as boas práticas, preferimos 
                   que o controllador seja responsável até por isso, criando um <span class="mark">get</span> e um <span class="mark">set</span> para que 
-                  possamos abstrair o <span class="mark">.value</span> do código da sua vizualização, deixando seu código mais legível e sem boilerplate.<br>                  
+                  possamos abstrair o <span class="mark">.value</span> do código da sua vizualização, deixando seu código mais legível e sem boilerplate.<br><br>             
+                  Isso foi uma breve introdução sobre o uso do<span class="mark">GetX</span>, vamos aplicar isso também em outros instantes, se você não entendeu tudo até
+                  aqui, não se preocupe.<br>
+                  Se quer saber mais sobre o <span class="mark">GetX</span>, visite seu <span class="mark"><a href="https://pub.dev/packages/get" target="_blank">
+                    package no pubdev</span></a>, ou seu repositório no <span class="mark"><a href="https://github.com/jonataslaw/get" target="_blank">GitHub aqui</span>.
             </div>
           </section> 
           <section id="data">
-            <div><h2><span class="subtitle">Data.</span></h2></div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div><h2><span class="subtitle">Data</span></h2></div>
+          <div>Aqui não teremos muitos o que discutir, é apenas um repositório onde você irá abstrair/empacotar <span class="mark">TUDO</span> 
+            relacionado aos seus dados, seus <span class="mark"> modelos</span>, seus <span class="mark">repositories</span> e 
+            <span class="mark">provedores</span> de dados. Isso foi pensado para que você possa manter sua estrutura de diretórios o 
+            <span class="mark">menor possível</span> ao trabalhar com flutter e ao mesmo tempo, ser algo <span class="mark">intuitivo</span> e 
+            <span class="mark">didático</span>.</div>
           </section>
           <section id="provider">
-            <div><h2><span class="subtitle">Provider.</span></h2></div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div><h2><span class="subtitle">Provider</span></h2></div>
+            <div class="obs">
+              Em algumas outras estruturas, o termo <span class="mark">'provider'</span>, pode ser abordado de várias formas, mas aqui, ele existe 
+              única e exclusivamente, para fazer requisições http ou persistência num banco de dados sqlite. <span class="mark">Caso você use os dois</span>, crie os 
+              respectivos diretórios e/ou arquivos dentro deste.<br>
+              Caso haja <span class="mark">muitas requisições, em um único arquivo</span>, você pode optar por separar por <span class="mark">entidades</span>, vamos discutir o 
+              conceito de entidades na seção abaixo. 
+            </div>
           </section>
           <section id="model">
-            <div><h2><span class="subtitle">Model.</span></h2></div>
+            <div><h2><span class="subtitle">Model</span></h2></div>
           <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
             natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
             facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
@@ -255,44 +225,67 @@
               suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
           </section>
           <section id="repository">
-            <div><h2><span class="subtitle">Estrutura.</span></h2></div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div><h2><span class="subtitle">Repository</span></h2></div>
+            <div class="obs">
+              <span class="mark">Entidades </span> são, basicamente, todas as "tabelas" da sua base de dados que irão interagir com seu ou seus <span class="mark">providers</span>.<br>
+              O <span class="mark">repository</span> tem o objetivo de abstrair e separar, sua fonte de dados do seus controladores, tendo assim, 
+              um ponto único de falha, ou seja, se um dia você vier a trocar a api ou base de dados do seu projeto, basta alterar seus arquivos no <span class="mark">provider</span>, 
+              não sendo necessário nenhuma alteração no <span class="">repository, pois ele só é responsável por chamar a função do <span class="mark">provider</span>, não havendo lógica nenhuma ali.<br>
+              <span class="mark">ex</span> Imagine que você possua um aplicativo de venda de produtos, que possua apenas os clientes e os produtos de um estabelecimento.<br>
+              Podemos identificar facilmente nossas <span class="mark">entidades</span> nos fazendo uma pergunta.<br>
+              <span class="mark">Irei receber e/ou enviar dados dessa entidade? </span>Se a resposta for sim, então ela precisa de um repository.<br>
+              No nosso exemplo teríamos três <span class="mark">repositories,</span> UserRepository, ProdutoRepository, EstabelecimentoRepository.<br>
+              Muitas vezes, podemos tirar essas entidades nos baseando em nossas classes, mas muitas vezes existem classes auxiliares que não estão 
+              necessariamente na sua base de dados ou api, portanto preferimos nos basear no que realmente interage com sua base de dados.
+            </div>
+            Dessa forma, tiramos muita responsabilidade do nosso <span class="mark">controller</span>, ele não precisa saber de onde vem os dados, 
+            apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <span class="mark"><-> </span>Dados.<br>
+            Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, deixando tudo mais intuitivo.<br><br>
           </section>
           <section id="controller">
-            <div><h2><span class="subtitle">Controller.</span></h2></div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+            <div><h2><span class="subtitle">Controller</span></h2></div>
+            <div class="obs">
+              Os controladores são a parte vital da sua aplicação, neles você irá criar suas variáveis <span class="mark">.obs</span> 
+              que guardará valores que podem ser alterados durante a aplicação.<br>
+              Seu controlador é responsável também por <span class="mark">consumir seus dados</span>>, através dos seus 
+              <span class="mark">repositórios</span>, que por sua vez, só realizam as chamadas dos dados dos seus <span class="mark">providers</span><br>
+              <span class="mark">Regra</span>: Todo controller deve possuir <span class="mark">um, e apenas um, repository</span>, sendo esse, 
+              um atributo <span class="mark">requerido</span> para inicializar seu controller no seu <span class="mark">GetX</span> widget.<br>
+              Caso você venha a precisar de dados de dois repositories diferentes em uma mesma page, você deve usar dois <span class="mark">GetX</span> widgets.
+              Recomendamos que haja, no mínimo, <span class="mark">um controller para cada page</span>.<br>
+              Só existe uma exceção para que você possa usar o mesmo controllador para varias pages, e é bem simples:<br>
+              <span class="mark">IMPORTANTE</span> <br>
+              Você poderá usar <span class="mark">um controlador</span> em <span class="mark">várias páginas</span>, 
+              <span class="mark">única e exclusivamente</span>, se os dados de <span class="mark">todas as pages</span>, 
+              <span class="mark">consumirem um único repositório</span>.
+            
+            </div>
           
               <section id="ui">
-                <div><h2><span class="subtitle">UI.</span></h2></div>
-              <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-                natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-                facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-                 exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-                 praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-                 ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-                  suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+                <div><h2><span class="subtitle">UI</span></h2></div>
+                <div class="obs">
+                  Também temos uma proposta de como você deve agrupar esses elementos internamente.<br>
+                  Vamos adiantar um pouco o assunto, pra essa ideia não ficar vazia em sua cabeça.<br>
+                  Uma das maiores <span class="marl">vantagens</span> do flutter é o modo como fica fácil "<span class="mark">componentizar</span>" sua<span class="mark"> UI</span>, portanto neste diretório 
+                  você deve criar <span class="mark">um diretório para cada page</span>, neste diretório, além da sua page, 
+                  podemos adicionar um outro diretório, de <span class="mark">widgets para cada page</span>, dessa forma sua 
+                  page principal pode ser <span class="mark">lida facilmente</span>, pois é montada com <span class="mark">vários widgets</span>.<br>
+                  E se você já adivinhou, podemos fazer isso também no nivel da <span class="mark">UI</span>, criando um diretório de <span class="mark">widgets globais</span>, 
+                  que virão a ser utilizados em <span class="mark">mais de uma page</span> na sua aplicação.<br>
+                  Caso você não precise usar widgets em determinada page, basta ignorar essa orientação, mas <span class="mark">sempre que for criar uma page</span>, preferimos 
+                  que você <span class="mark">crie um diretório para ela</span>, pois <span class="mark">futuramente</span>  pode vir a ter widgets externos à ela, 
+                  dessa maneira você não irá perder tempo resolvendo erros de importação.
+                </div>
               
                   <section id="routes">
-                    <div><h2><span class="subtitle">Rotas.</span></h2></div>
-                  <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-                    natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-                    facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-                     exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-                     praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-                     ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-                      suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+                    <div><h2><span class="subtitle">Rotas</span></h2></div>
+                 <div class="obs">
+                  A ideia é que você possa gerenciar suas rotas de forma fácil e limpa.<br>
+                  Chega de ficar procurando um widget que linka uma determinada rota a outra page, agrupe todas suas rotas e saiba exatamente onde procurar.<br>
+                  Além do seu código da <span class="mark">UI</span> ficar menor usando as rotas do <span class="mark">GetX</span>, ficam muito bem apresentados quando nomeados, e 
+                  agrupados de forma separada.<br>
+                  Você verá exemplos disso na respectiva seção, estamos quase lá :D.
+                </div>
                   
           <section id="info">
             <div><h2><span class="subtitle">Informações.</span></h2></div>
