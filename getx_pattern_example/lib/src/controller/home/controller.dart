@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:getx_pattern/src/data/model/model.dart';
-import 'package:getx_pattern/src/data/repository/repository.dart';
+import 'package:getx_pattern/src/data/repository/posts_repository.dart';
 import 'package:meta/meta.dart';
 
 class MyController extends RxController {

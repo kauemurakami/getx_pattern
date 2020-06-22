@@ -204,29 +204,80 @@
             <span class="mark">provedores</span> de dados. Isso foi pensado para que você possa manter sua estrutura de diretórios o 
             <span class="mark">menor possível</span> ao trabalhar com flutter e ao mesmo tempo, ser algo <span class="mark">intuitivo</span> e 
             <span class="mark">didático</span>.</div>
+            <div class="obs">
+              Vamos começar o uso do <span class="mark">pattern</span> aqui, ao avançar das seções você vamos utilizar o <span class="mark">JSONPlaceHolder</span> para exemplificar 
+              o consumo de uma <span class="mark">API</span> com essa estrutura.
+            </div>
+            <span class="mark">Vamos lá!!!</span><br> Crie os seguintes repositórios, dentro de <span class="mark">lib</span>.
+            <pre>
+              |-- lib
+                <font color="green">|-- src</font>
+                  <font color="green">|-- data</font>
+                main.dart
+            </pre>
           </section>
 
           <section id="provider">
             <div><h2><span class="subtitle">Provider</span></h2></div>
+            <div class="obs">
               Em algumas outras estruturas, o termo <span class="mark">'provider'</span>, pode ser abordado de várias formas, mas aqui, ele existe 
-              única e exclusivamente, para fazer requisições http ou persistência num banco de dados sqlite. <span class="mark">Caso você use os dois</span>, crie os 
-              respectivos diretórios e/ou arquivos dentro deste.<br>
+              <span class="subtitle">única</span> e <span class="subtitle">exclusivamente</span>, para fazer requisições http ou 
+              persistência num banco de dados. <span class="mark">Caso você use os dois</span>, crie os respectivos diretórios 
+              e/ou arquivos <span class="subtitle">dentro</span> deste.<br>
               Caso haja <span class="mark">muitas requisições, em um único arquivo</span>, você pode optar por separar por <span class="mark">entidades</span>, 
-              ou manter no mesmo arquivo, isso é uma escolha pessoal.
-              <div class="obs">
-                
+              ou manter no mesmo arquivo, isso é uma escolha pessoal e vai de cada programador.<br>                
               </div>
+              Vamos começar a <span class="mark">construir</span> nosso exemplo por aqui.<br>
+              Comece criando um diretório chamado <span class="mark">provider</span>, dentro de <span class="mark">Data</span> que irá conter todos os arquivos que fornecem 
+              dados para nossa aplicação, juntamente com a classe responsável por capturar/enviar nossos dados neste exemplo. Se você quiser 
+              criar essa 
+              classe de forma mais <span class="mark">rápida</span>, use nossa <span class="mark">extensão</span> para vscode.
+              <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">GetX Snippets</a>.<br>
+              Comece criando um arquivo chamado <span class="mark">api.dart</span>, ou o nome que desejar. 
+              <pre>
+                |-- lib
+                  |-- src
+                    |-- data
+                      <font color="green">|-- provider</font>
+                        <font color="green">api.dart</font>
+                  main.dart
+              </pre>
+              É dentro deste aquivo que iremos escrever nossa classe, copie o exemplo a seguir, ou se estiver usando nossa 
+              <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
+              basta começar escrevendo <span class="mark">getprovider</span> e pronto, ela lhe trará uma classe como a do exemplo!!
+              <script src="https://gist.github.com/kauemurakami/c8514d795de489632f51d162bacd69b9.js"></script>
+              <div class="obs">Não se preocupe com os erros até o momento, ao decorrer das seções posteriores, vamos criar todas as 
+                depêndencias.
+              </div>
+              Como podem ver, temos uma classe <span class="mark">MyApiClient</span> com um <span class="mark">parâmetro requerido</span>, 
+              nosso objeto <span class="mark">http.Client</span>, que será usado neste exemplo para fazer todas as requisições à <span class="mark">api</span>.<br>
+                Por fim, temos nosso método <span class="mark">getAll</span> que tem como papel, recuperar todos os <span class="mark">posts</span> da <span class="mark">api</span>.<br>
+                Iremos adicionar mais métodos futuramente.
           </section>
-
+          <br>
           <section id="model">
             <div><h2><span class="subtitle">Model</span></h2></div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit 
-            natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, 
-            facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea
-             exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, 
-             praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae 
-             ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio
-              suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+          <div>Na nossa classe modelo teremos nossos atributos e dois métodos, <span class="mark">toJson</span> e <span class="mark">fromJson</span> 
+          responsáveis por converter nosso <span class="mark">objeto</span> em <span class="mark">json</span> ou um <span class="mark">json</span> em nosso <span class="mark">objeto</span>.<br>
+          <div class="obs">
+            Geralmente quando trabalhamos com API's, usamos esses métodos para criar objetos a partir da resposta da nossa api, ou criar um json para 
+            enviar para nossa api.
+          </div>
+          Comece criando o diretório <span class="mark">model</span> e um arquivo <span class="mark">model.dart.</span>
+          <pre>
+            |-- lib
+              |-- src
+                |-- data
+                  |-- provider
+                    api.dart
+                  <font color="green">|-- model</font>
+                    <font color="green">model.dart</font>
+              main.dart
+          </pre>
+          Agora vamos ao código, copie e cole o seguinte código, ou se estiver usando nossa 
+          <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
+          comece escrevendo <span class="mark">getmodel</span>
+          <script src="https://gist.github.com/kauemurakami/811f14ee186b7b089b2db7e18e29cb6a.js"></script>
           </section>
 
           <section id="repository">
@@ -240,12 +291,18 @@
               Podemos identificar facilmente nossas <span class="mark">entidades</span> nos fazendo uma pergunta.<br>
               <span class="mark">Irei receber e/ou enviar dados dessa entidade? </span>Se a resposta for sim, então ela precisa de um repository.<br>
               No nosso exemplo teríamos três <span class="mark">repositories,</span> UserRepository, ProdutoRepository, EstabelecimentoRepository.<br>
-              Muitas vezes, podemos tirar essas entidades nos baseando em nossas classes, mas muitas vezes existem classes auxiliares que não estão 
+              Algumas vezes, podemos tirar essas entidades nos baseando em nossas classes, mas muitas vezes existem classes auxiliares que não estão 
               necessariamente na sua base de dados ou api, portanto preferimos nos basear no que realmente interage com sua base de dados.
             </div>
             Dessa forma, tiramos muita responsabilidade do nosso <span class="mark">controller</span>, ele não precisa saber de onde vem os dados, 
             apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <span class="mark"><-> </span>Dados.<br>
-            Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, deixando tudo mais intuitivo.<br><br>
+            Tendo assim, uma melhor <span class="mark">organização</span>, deixando o código <span class="mark">compreensivo</span> e é extremamente fácil a manutenção, de forma intuitiva.<br>
+            No nosso exemplo, nosso <san class="mark">repository</san> será responsável pelo meio de campo entre a <span class="mark">api</span> e o <span class="mark">controller</span>, 
+            sendo o responsável pela chamada da api no controller.<br>
+            Vejamos o exemplo, copie e cole o código a seguir, ou se possuir nossa 
+            <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a>
+            basta apenas começar a escrever <span class="mark">getrepository</span>
+
           </section>
 
           <section id="controller">
