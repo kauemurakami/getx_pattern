@@ -13,11 +13,17 @@ class MyController extends RxController {
   get postList => this._postsList.value;
   set postList(value) => this._postsList.value = value;
 
+  
+  final _post = MyModel().obs;
+  get post => this._post.value;
+  set post(value) => this._post.value = value;
+  
   getAll(){
-    repository.getAll().then( (data) => this.postList = data );
+    repository.getAll().then( (data){ this.postList = data; } );
   }
   
-  details(){
-    
+  details(post){
+    this.post = post;
+    Get.toNamed('/details');
   }
 }

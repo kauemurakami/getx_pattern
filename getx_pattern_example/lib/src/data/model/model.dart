@@ -1,14 +1,14 @@
 class MyModel {
-
+  
   int id;
   String title;
   String body;
 
-  MyModel({ id, name, body});
+  MyModel({ id, title, body});
 
   MyModel.fromJson(Map<String, dynamic> json){
       this.id = json['id'];
-      this.title = json['name'];
+      this.title = json['title'];
       this.body = json['body'];
   }
 

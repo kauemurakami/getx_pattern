@@ -16,15 +16,19 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text('HomePage')),
       body: Container(
         child: GetX<MyController>(
-            init: MyController(repository: this.repository),
-            initState: Get.find<MyController>().getAll(),
+            init: MyController(repository: repository),
+            initState: (state) { Get.find<MyController>().getAll() ;},
             builder: (_) {
-              return ListView.builder(
+              return 
+              _.postList.length < 1
+              ? Center(child: CircularProgressIndicator(),)
+              :
+              ListView.builder(
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: _.postList[index].title,
-                    subtitle: _.postList[index].subtitle,
-                    onTap: ()=> _.details(),
+                    title: Text(_.postList[index].title ?? 'a'),
+                    subtitle: Text(_.postList[index].body ?? 'b'),
+                    onTap: ()=> _.details(_.postList[index]),
                   );
                 },
                 itemCount: _.postList.length,
