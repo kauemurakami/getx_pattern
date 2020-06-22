@@ -333,20 +333,76 @@
               um atributo <span class="mark">requerido</span> para inicializar seu controller no seu <span class="mark">GetX</span> widget.<br>
               Caso você venha a precisar de dados de dois repositories diferentes em uma mesma page, você deve usar dois <span class="mark">GetX</span> widgets.
               Recomendamos que haja, no mínimo, <span class="mark">um controller para cada page</span>.<br>
-              Só existe uma exceção para que você possa usar o mesmo controllador para varias pages, e é bem simples:<br>
+              Só existe uma exceção para que você possa usar o mesmo controllador para varias pages, e é bem simples:<br><br>
               <span class="mark">IMPORTANTE</span> <br>
               Você poderá usar <span class="mark">um controlador</span> em <span class="mark">várias páginas</span>, 
               <span class="mark">única e exclusivamente</span>, se os dados de <span class="mark">todas as pages</span>, 
-              <span class="mark">consumirem um único repositório</span>.  
+              <span class="mark">consumirem um único repositório</span>.<br><br>
+            
+              O objetivo disso é fazer com que você use o <span class="mark">GetX</span> e aproveite todo seu poder, assim sempre que precisar manipular 
+              duas entidades, você precisará de dois controlladores diferentes e uma view.<br>
+              <span class="mark">Por que?</span> Imagine que você possua um <span class="mark">controller</span> 
+              com <span class="mark">dois repositórios</span>, e esse controller está sendo usado com um <span class="mark">GetX</span> widget 
+              em uma <span class="mark">page</span>, utilizando dados recuperados pelo controller dos dois repositórios.<br>
+              Sempre que uma entidade for modificada, o controllador irá atualizar seus widgets responsáveis pelas <span class="mark">duas variáveis</span>, sendo que uma delas 
+              <span class="mark">não necessitava alteração</span>. Portanto separar <span class="mark">um repositório</span> por 
+              <span class="mark">controlador</span>, pode ser uma boa prática ao se trabalhar com o <span class="mark">GetX</span> widget,
+              tendo um <span class="mark">controllador</span> responsável para <span class="mark">cada widget</span>, que de alguma forma, mostra 
+              essas informações apartir deles, renderizando apenas o widget que teve sua variável <span class="mark">.obs</span> alterada.<br><br>
             </div>
-          
+              Então vamos criar nosso diretório <span class="mark">controller</span> e um arquivo <span class="mark">controller.dart</span>
+              <pre>
+                |-- lib
+                  |-- src
+                    |-- data
+                      |-- provider
+                        api.dart
+                      |-- model
+                        model.dart
+                      |-- repository
+                        posts_repository.dart
+                    <font color="green">|-- controller</font>
+                      <font color="green">controller.dart</font>
+                  main.dart
+              </pre>
+              Vamos ao código do nosso exemplo, copie e cole o código abaixo, ou se estiver usando nossa 
+            <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
+            basta começar escrevendo <span class="mark">getcontroller</span> e pronto !
+            <script src="https://gist.github.com/kauemurakami/52aa73bf804b9773b3305d0e01370ccb.js"></script>
+            Vamos falar um pouco sobre o que temos no <span class="mark">controller</span> até o momento.<br>
+            <br>
+            Primeiramente podemos ver nosso repositório como um <span class="mark">@required</span>, isso pois vamos utilizar nosso 
+            <span class="mark">repository</span> para recuperar nossos dados, <span class="mark">reparem que não preciso saber da 
+              onde vem esses dados</span>, eu apenas preciso me preocupar em consumir o meu <span class="mark">repository</span>.<br>
+              <br>
+              Logo em seguida, vemos nossa variável <span class="mark">postsList</span> que é um <span class="mark">.obs</span>, responsável pela 
+              nossa <span class="mark">lista de posts</span>, a mesma que iremos exibir na nossa <span class="mark">page</span> na próxima seção.<br><br>
+              Reparem que ela foi criada como <span class="mark">privado</span>, por isso criamos nossos 
+              <span class="mark">get</span> and <span class="mark">set</span>. Como foi abordado antes, gostamos de deixar toda responsabilidade de 
+              alteração de estados dentro do controller, portanto ao atribuir algum valor a essa variável, isto será feito dentro do controller, sem 
+              necessidade de usar o <span class="mark">.value</span>, o mesmo já está presente no seu <span class="mark">controller</span>.<br><br>
+              Por último temos a funçao <span class="mark">getAll</span> do nosso <span class="mark">controllador</span>, reparem também, 
+              que usamos o mesmo nome para a função independente da classe que ela se encontrava, isso facilita na localização independente do arquivo, 
+              ao ver essa função no <span class="mark">controller</span> você poderia ir direto para seu <span class="mark">provider</span>, 
+              sem precisar procurar no seu <span class="mark">repository</span>, caso você usasse um nome diferente.<br>
+              Você deve ter percebido até aqui que não usamos o <span class="mark">Future</span>, ao invés disso, usamos o <span class="mark">.then</span> 
+              <div class="obs">
+                Essa função aguarda o retorno de uma função e atribui a data, com isso você não precisa mais usar FutureBuilders nunca mais !!<br>
+                Basta chamar a função com <span class="mark">funcao().then</span> atribuir o retorno ao seu <span class="mark">.obs</span> e 
+                consumir com um<span class="mark">GetX widget</span>.<br>
+                Com isso podemos aguardar na nossa <span class="mark">page</span> até que a lista seja preenchida com um <span class="mark">
+                  loading</span> por exemplo, você verá isso melhor na próxima seção.
+              </div>
+          </section>
+
+
               <section id="ui">
                 <div><h2><span class="subtitle">UI</span></h2></div>
+                Aqui vamos agrupar <span class="mark">tudo</span> relacionado a nossa interface do usuário.
                 <div class="obs">
                   Também temos uma proposta de como você deve agrupar esses elementos internamente.<br>
-                  Vamos adiantar um pouco o assunto, pra essa ideia não ficar vazia em sua cabeça.<br>
                   Uma das maiores <span class="marl">vantagens</span> do flutter é o modo como fica fácil "<span class="mark">componentizar</span>" sua<span class="mark"> UI</span>, portanto neste diretório 
-                  você deve criar <span class="mark">um diretório para cada page</span>, neste diretório, além da sua page, 
+                  você deve criar <span class="mark">um diretório para cada page</span>, neste diretório, além da sua <span class="mark">page</span>, 
                   podemos adicionar um outro diretório, de <span class="mark">widgets para cada page</span>, dessa forma sua 
                   page principal pode ser <span class="mark">lida facilmente</span>, pois é montada com <span class="mark">vários widgets</span>.<br>
                   E se você já adivinhou, podemos fazer isso também no nivel da <span class="mark">UI</span>, criando um diretório de <span class="mark">widgets globais</span>, 
@@ -355,7 +411,72 @@
                   que você <span class="mark">crie um diretório para ela</span>, pois <span class="mark">futuramente</span>  pode vir a ter widgets externos à ela, 
                   dessa maneira você não irá perder tempo resolvendo erros de importação.
                 </div>
-              
+                  Vamos entender melhor adicionando seu diretório a estrutura.
+
+                  <pre>
+                    |-- lib
+                      |-- src
+                        |-- data
+                          |-- provider
+                            api.dart
+                          |-- model
+                            model.dart
+                          |-- repository
+                            posts_repository.dart
+                        |-- controller
+                          controller.dart
+                        <font color="green">|-- ui</font>
+                          <font color="green">|-- android</font>
+                            <font color="green">|-- widgets</font>
+                              <font color="green">my_reusable_global_widget.dart</font>
+                            <font color="green">|-- home</font>
+                              <font color="green">|-- widgets</font>
+                                <font color="green">my_reusable_home_widget.dart</font>
+                              <font color="green">home_page.dart</font>
+                          <font color="green">|-- ios</font>
+                          <font color="green">|-- theme</font>
+                            <font color="green">my_theme.dart</font>
+                      main.dart
+                  </pre>
+                  Agora vamos ao nosso exemplo, copie e cole o código abaixo, ou se estiver usando nossa 
+                  <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
+                  basta começar escrevendo <span class="mark">getpage</span> e pronto ! 
+                  <script src="https://gist.github.com/kauemurakami/f84e9f4fb522e886c6f0102a536dddf6.js"></script>
+                  Vamos falar um pouco sobre o que está acontecendo em nossa <span class="mark">page</span>.<br>
+                  Estamos instanciando um <span class="mark">repository</span> para injeta-lo em nosso 
+                  <span class="mark">controller</span>, lembrando que é requerido para um <span class="mark">controller</span> 
+                  sempre que for fazer algum tipo de acesso a dados, caso não faça, você não precisa de um 
+                  <span class="mark">repository</span> em seu <span class="mark">controller</span>.<br><br>
+                  Em nossa função <span class="mark">build</span> temos um <span class="mark">Scaffold</span> simples, 
+                  com um <span class="mark">container</span> e um <span class="mark">GetX</span> widget.<br>
+                  Nele, iniciamos nosso <span class="mark">controlador</span>, e no <span class="mark">initState do GetX</span> buscamos 
+                  o <span class="mark">controlador </span> e chamamos a função <span class="mark">getAll</span>, responsável por atribuir a nossa 
+                  lista de <span class="mark">posts _postsList</span> no nosso <span class="mark">controlador</span><br>
+                  Então verificamos o tamanho da lista e assim que começarmos a reber a lista de <span class="mark">posts</span> 
+                  criamos nossa <span class="mark">ListViewBuilder</span> contendo um <span class="mark">ListTile</span> 
+                  exibindo o <span class="mark">title</span> e o <span class="mark">body</span> do nosso <span class="mark">objeto</span> 
+                  em um determinado <span class="mark">index</span>, lembrando que o <span class="mark">length</span>, 
+                  é o <span class="mark">tamanho da nossa lista</span>, mais um motivo para o 
+                  <span class="mark">GetX</span> widget estar envolvendo nossa <span class="mark">ListViewBuilder</span>.<br>
+                  <div class="obs">
+                    Lembrando que, como nossa função <span class="mark">getAll</span> é <span class="mark">async</span>, isso quer dizer 
+                    que não vai interromper o funcionamento da aplicação, por isso temos um 
+                    <span class="mark">CircularProgressIndicator</span> para exibir enquanto não recebemos nossa 
+                    <span class="mark">postsList</span> no nosso <span class="mark">controller</span>.
+                  </div>
+                  Estamos <span class="mark">quase prontos</span>, só vamos falar sobre algumas coisa que podem 
+                  <span>agradar</span> você, antes de irmos para a seção de <span class="mark">rotas</span> e modificar nossa 
+                  <span class="mark">main.dart</span> para você executar o app :<font color="red">)</font><br>
+                  Vamos falar sobre nosso <span class="mark">theme</span>, nele você pode definir temas para as cores do seu app, 
+                  ou modificar o tema de algun botões de maniera fácil, portanto pensamos em demonstrar o uso para que você possa tirar 
+                  maior proveito do <font color="blue">flutter</font> !<br>
+                  Veja um exemplo, usaremos <span class="mark">appTheme</span> em nossa <span class="mark">main.dart</span> mais adiante.<br>
+                  <script src="https://gist.github.com/kauemurakami/1cdf86f7b8de2bdf4e5c948c2142bb2e.js"></script>
+                  Agora vamos as rotas, e logo depois usaremos nosso 
+                  <font color="red">T</font><font color="blue">E</font><font color="green">M</font><font color="orange">A</font><br>                                   
+              </section>
+              <br>
+
                   <section id="routes">
                     <div><h2><span class="subtitle">Rotas</span></h2></div>
                  <div class="obs">
@@ -364,9 +485,37 @@
                   Além do seu código da <span class="mark">UI</span> ficar menor usando as rotas do <span class="mark">GetX</span>, ficam muito bem apresentados quando nomeados, e 
                   agrupados de forma separada.<br>
                 </div>
-                  
+                Vamos a um exemplo, onde definimos apenas nossa rota principal.<br>
+                Copie e cole o código abaixo, ou se estiver usando nossa 
+                <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
+                comece escrevendo <span class="mark">getpageroutes</span>, Isso lhe trará uma 
+                <span class="mark">classe completa</span> com um <span class="mark">array</span> de <span class="mark">rotas</span>.
+                <script src="https://gist.github.com/kauemurakami/75e857ef363d3a52dc320dc21696e81e.js"></script>
+                Procure saber tudo que você pode fazer com as rotas, como middleware, parâmetros e mais na documentação oficial do 
+                <a href="https://pub.dev/packages/get#navigation-without-named-routes">GetX</a>.
+                <br>
+                <br>
+            <div><h2><span class="subtitle">A classe main</span></h2></div>
+            <script src="https://gist.github.com/kauemurakami/b677c62cc5fd4ac05fafb8baaae041ea.js"></script>
+            <br>
+                <span class="mark">Agora você está pronto</span> para testar !!!!, dê um <span class="mark">flutter run</span> !
+                <br><br>
+                <div class="obs">
+                  <span class="mark">IMPORTANTE</span><br>
+                  Esta publicação tem como intuito ver a aceitação da comunidade com esse modelo proposto.<br>
+                  <span class="mark">Não está finalizado ainda</span>, e disponibilizaremos exemplos mais exemplos em um futuro próximo.<br>
+                  Qualquer dúvida criei um grupo no telegram que estará na seção de informações.<br>
+                  Isso é uma proposta para auxiliar no processo de desenvolvimento com GetX, não é obrigatório o uso desse pattern caso 
+                  você não precise de organização, ou queira fazer por aprendizado.<br>
+                  Isso acelerou meu processo de desenvolvimento padronizando meu fluxo de programação.<br>
+                </div>
+                Deixe uma estrela no repositório e aproveite ao máximo, tudo isso foi feito totalmente para auxiliar você  <i class="far fa-heart" style="color: red;"></i>
+                que desenvolve com <span class="mark">GetX</span>.
+                  </section>
+            <br>
+
           <section id="info">
-            <div><h2><span class="subtitle">Informações.</span></h2></div>
+            <div><h2><span class="subtitle">Informações</span></h2></div>
             <div>
               Package <span class="mark">GetX</span> - <a href="https://pub.dev/packages/get">Clique aqui</a>
               <br>  
