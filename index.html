@@ -12,7 +12,7 @@
 
   <!------preview image link -->
   <meta property="og:image" content="images/rocket2.jpg">
-  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:type" content="image/jpg">
   <meta property="og:image:width" content="300">
   <meta property="og:image:height" content="300">
   <!------wpp fb image -->
@@ -115,11 +115,53 @@
             <br><br>
 
             <i class="fas fa-road alpha"></i> <span class="mark topics">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
+            <br>
+            <br>
+            <span class="mark">Padrões de nomenclatura</span><br>
+            É recomendado sempre usar um padrão para nomear suas <span class="mark">Classes</span> 
+            e <span class="mark">arquivos .dart</span>.<br>
+            Temos uma sugestão para você.
+            <div class="obs">
+              Lembrando que você pode fazer isso como quiser, isso 
+              é apenas uma sugestão.
+            </div>
+            Vamos dar um exemplo de posts, imagine que existam usuarios e seus posts.
+            <pre>
+              |-- lib
+                |-- src
+                  |-- data
+                    |-- provider
+                      api.dart - MyApiClient{} ou MyApi{}
+                    |-- model
+                      user_model.dart - UserModel{}
+                      post_model.dart - PostModel{}
+                    |-- repository
+                      post_repository.dart - PostRepository{}
+                      usuario_repository.dart - UsuarioRepository{}
+                  |-- controller
+                    home_controller.dart - HomeController{}
+                    details_controller.dart - DetailsController{}
+                  |-- ui
+                    |-- android
+                      |-- widgets
+                        custom_button_widget.dart - CutomButtonWidget{}
+                      |-- home
+                        |-- widgets
+                          custom_card_widget.dart - CustomCardWidget{}
+                        home_page.dart - HomePage{}
+                      |-- details
+                        |-- widgets
+                          ...
+                        details_page.dart - DetailsPage{}
+                    |-- ios
+                    |-- theme
+                      my_theme.dart - final appThemeData
+                  |-- routes
+                    my_routes.dart - MyRoutes{} - final routes = []
+                main.dart
+            </pre>
             
-
-
-
-
+            
           </div>
           </section>
 
