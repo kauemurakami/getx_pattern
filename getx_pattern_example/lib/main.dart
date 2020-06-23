@@ -5,12 +5,14 @@ import 'package:getx_pattern/src/ui/android/home/home_page.dart';
 import 'package:getx_pattern/src/ui/theme/my_theme.dart';
 
 void main() {
-  runApp(GetMaterialApp(
-    initialRoute: '/',
-    debugShowCheckedModeBanner: false,
-    defaultTransition: Transition.fade,
-    getPages: MyRoutes.routes,
-    home: HomePage(),
-    theme: appThemeData,
-  ));
+  runApp(
+    GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        theme: appThemeData,
+        defaultTransition: Transition.fade,
+        getPages: MyRoutes.routes,
+        home: HomePage(),
+    )
+  );
 }
