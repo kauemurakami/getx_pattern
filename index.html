@@ -491,6 +491,34 @@
                   Além do seu código da <span class="mark">UI</span> ficar menor usando as rotas do <span class="mark">GetX</span>, ficam muito bem apresentados quando nomeados, e 
                   agrupados de forma separada.<br>
                 </div>
+                Crie o diretório <span class="mark">routes</span> e o arquivo <span class="mark">my_routes.dart</span> que conterá nossas rotas.
+                <pre>
+                  |-- lib
+                    |-- src
+                      |-- data
+                        |-- provider
+                          api.dart
+                        |-- model
+                          model.dart
+                        |-- repository
+                          posts_repository.dart
+                      |-- controller
+                        controller.dart
+                      |-- ui
+                        |-- android
+                          |-- widgets
+                            my_reusable_global_widget.dart
+                          |-- home
+                            |-- widgets
+                              my_reusable_home_widget.dart
+                            home_page.dart
+                        |-- ios
+                        |-- theme
+                          my_theme.dart
+                        <font color="green">|-- routes</font>
+                          <font color="green">my_routes.dart</font>
+                    main.dart
+                </pre>
                 Vamos a um exemplo, onde definimos apenas nossa rota principal.<br>
                 Copie e cole o código abaixo, ou se estiver usando nossa 
                 <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
