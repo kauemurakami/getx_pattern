@@ -3,10 +3,10 @@ import 'package:getx_pattern/src/data/model/model.dart';
 import 'package:getx_pattern/src/data/repository/posts_repository.dart';
 import 'package:meta/meta.dart';
 
-class MyController extends RxController {
+class HomeController extends RxController {
 
   final MyRepository repository;
-  MyController({@required this.repository}) : assert(repository != null);
+  HomeController({@required this.repository}) : assert(repository != null);
 
   
   final _postsList = List<MyModel>().obs;
@@ -22,6 +22,17 @@ class MyController extends RxController {
     repository.getAll().then( (data){ this.postList = data; } );
   }
   
+  adicionar(post){
+
+  }
+  //dismissible
+  excluir(id){
+
+  }
+  //dismissible
+  editar(){
+
+  }
   details(post){
     this.post = post;
     Get.toNamed('/details');

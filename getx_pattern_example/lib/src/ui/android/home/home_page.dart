@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_pattern/src/controller/home/controller.dart';
+import 'package:getx_pattern/src/controller/home/home_controller.dart';
 import 'package:getx_pattern/src/data/provider/api.dart';
 import 'package:getx_pattern/src/data/repository/posts_repository.dart';
+import 'package:getx_pattern/src/ui/android/widgets/loading_widget.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatelessWidget {
@@ -15,13 +16,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('HomePage')),
       body: Container(
-        child: GetX<MyController>(
-            init: MyController(repository: repository),
-            initState: (state) { Get.find<MyController>().getAll() ;},
+        child: GetX<HomeController>(
+            init: HomeController(repository: this.repository),
+            initState: (state) { Get.find<HomeController>().getAll() ;},
             builder: (_) {
               return 
               _.postList.length < 1
-              ? Center(child: CircularProgressIndicator(),)
+              ? LoadingWidget()
               :
               ListView.builder(
                 itemBuilder: (context, index) {
