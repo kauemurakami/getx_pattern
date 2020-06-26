@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:getx_pattern/src/data/model/model.dart';
-import 'package:getx_pattern/src/data/repository/posts_repository.dart';
+import 'package:getx_pattern/app/data/model/model.dart';
+import 'package:getx_pattern/app/data/repository/posts_repository.dart';
 import 'package:meta/meta.dart';
 
-class DetailsController extends RxController {
+class DetailsController extends GetxController {
 
   final MyRepository repository;
   DetailsController({@required this.repository}) : assert(repository != null);

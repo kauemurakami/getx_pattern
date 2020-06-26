@@ -1,4 +1,4 @@
-import 'package:getx_pattern/src/data/provider/api.dart';
+import 'package:getx_pattern/app/data/provider/api.dart';
 import 'package:meta/meta.dart';
 
 class MyRepository {

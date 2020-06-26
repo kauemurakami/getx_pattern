@@ -7,7 +7,7 @@
     <meta property="og:image" content="images/rocket2.jpg">
     <meta property="og:description" content="getx_pattern, faça seus projetos decolarem" >
   
-    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:type" content="image/jpg">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
     <!------wpp fb image -->
@@ -15,16 +15,16 @@
     <meta property="og:type" content="website" />
     
 	<meta charset="UTF-8"/>
-  <title>getx_pattern v0</title>
-  <meta name="description" content="Design pattern pensado em você, que utiliza o package Get">
-  
+  <title>getx_pattern</title>
+  <meta name="description" content="Design pattern pensado em você, que utiliza o package GetX">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
 <div class="wrapper">
     <div class="sidebar">
-        <h2>getx_pattern <span class="alpha"> alpha</span><i class="fas fa-rocket"></i></h2>
+        <h2>getx_pattern<i class="fas fa-rocket"></i></h2>
         <ul>
             <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="#estrutura"><i class="fas fa-project-diagram"></i>Estrutura</a></li>
@@ -51,9 +51,11 @@
             <div><h2><span class="subtitle">getx_pattern, uma proposta pra você que utiliza o 
               <a href="https://pub.dev/packages/get" target="_blank">GetX</a></span></h2></div>
           <div>
+
+
             Projeto desenvolvido para padronizar os seus projetos com <a href="https://pub.dev/packages/get" target="_blank">GetX</a>.<br><br>
             <span class="subtitle"><h2>Objetivos</h2></span>
-            O objetivo principal, é tornar sua programação com <font color="blue">Flutter</font> + <a href="https://pub.dev/packages/get" target="_blank">GetX</a> 
+            O objetivo principal, é tornar sua programação com <font color="#BE81F7">Flutter</font> + <a href="https://pub.dev/packages/get" class="mark" target="_blank">GetX</a> 
             mais agradável e intuitiva do que já é <span class="mark">!</span><br>
             Quando há um padrão de desenvolvimento a ser seguido, tudo fica mais fácil para quem usa. <span class="mark">Mas por quê?</span><br><br>
             - <span class="mark">Porque</span> assim, podemos nos comunicar de forma "universal" com pessoas que também seguem esses mesmos padrões.<br><br>
@@ -115,51 +117,6 @@
             <i class="fas fa-road alpha"></i> <span class="mark topics">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
             <br>
             <br>
-            <span class="mark">Padrões de nomenclatura</span><br>
-            É recomendado sempre usar um padrão para nomear suas <span class="mark">Classes</span> 
-            e <span class="mark">arquivos .dart</span>.<br>
-            Temos uma sugestão para você.
-            <div class="obs">
-              Lembrando que você pode fazer isso como quiser, isso 
-              é apenas uma sugestão.
-            </div>
-            Vamos dar um exemplo de posts, imagine que existam usuarios e seus posts.
-            <pre>
-              |-- lib
-                |-- src
-                  |-- data
-                    |-- provider
-                      api.dart - MyApiClient{} ou MyApi{}
-                    |-- model
-                      user_model.dart - UserModel{}
-                      post_model.dart - PostModel{}
-                    |-- repository
-                      post_repository.dart - PostRepository{}
-                      usuario_repository.dart - UsuarioRepository{}
-                  |-- controller
-                    home_controller.dart - HomeController{}
-                    details_controller.dart - DetailsController{}
-                  |-- ui
-                    |-- android
-                      |-- widgets
-                        custom_button_widget.dart - CutomButtonWidget{}
-                      |-- home
-                        |-- widgets
-                          custom_card_widget.dart - CustomCardWidget{}
-                        home_page.dart - HomePage{}
-                      |-- details
-                        |-- widgets
-                          ...
-                        details_page.dart - DetailsPage{}
-                    |-- ios
-                    |-- theme
-                      my_theme.dart - final appThemeData
-                  |-- routes
-                    my_routes.dart - MyRoutes{} - final routes = []
-                main.dart
-            </pre>
-              Nos primeiros exemplos usaremos nomes genéricos, mas nos exemplos seguintes iremos 
-              seguir esse padrão.
               Agora vamos conhecer um pouco mais o <span class="mark">Get</span>, o gerenciador de estados 
               mais <span class="mark">rápido</span> e <span class="mark">leve</span> !
           </div>
@@ -190,11 +147,11 @@
                   Após isso, vamos criar nossa classe controller, que nos permite criar nossa regra de negócio e controlar nossos estados.<br>
                   Abaixo do código acima cole o seguinte código:
                   <script src="https://gist.github.com/kauemurakami/0b2e62e0cedb0bfdbcbe0836f84cbc11.js"></script>
-                  O <span class="mark">RxController</span>  é o responsável por nos fornecer os métodos necessários para controllar nossos
+                  O <span class="mark">GetxController</span>  é o responsável por nos fornecer os métodos necessários para controllar nossos
                   observáveis (<span class="mark">.obs</span>), permitindo atualizar nossos widgets GetX, respondendo as mudanças de 
                   estados da nossa aplicação.
                   No exemplo acima declaramos uma variável e dois métodos, vamos falar sobre eles.<br><br>
-                  Com <span class="mark">GetX</span>, podemos extender a classe <span class="mark">RxController</span>, e com ele podemos 
+                  Com <span class="mark">GetX</span>, podemos extender a classe <span class="mark">GetxController</span>, e com ele podemos 
                   criar varáveis observáveis adicionando um simples <span class="mark">.obs</span> e <span class="mark">seu estado inicial</span>.<br>
                   <span class="mark"> final [var] = [initial-value].obs;</span> <br>
                   Nosso observável só pode ser <span>final</span>, e seu tipo será atribuido a partir do <span class="mark">initial-value</span> 
@@ -202,10 +159,10 @@
 
                   <span class="mark">Mas e agora?</span> Se final só pode ser modificada uma vez, como vou alterar o valor dessa variável?<br>
                   A resposta é tão simples quanto curta, <span class="mark">.value</span>. Ao criar sua variável como um observável, ela irá criar, 
-                  por trás do capô, um ObjectX,exemplo, um tipo int <i class="fas fa-chevron-right mark"></i> intX, um tipo List< User>() <i class="fas fa-chevron-right mark"></i> 
-                  ListX< User>(), e seu valor e tipo original é guardado no seu atributo <span>value</span> desse ObjectX.<br>
+                  por trás do capô, um RxObject,exemplo, um tipo int <i class="fas fa-chevron-right mark"></i> Rxint, um tipo List< User>() <i class="fas fa-chevron-right mark"></i> 
+                  RxList< User>(), e seu valor e tipo original é guardado no seu atributo <span>value</span> desse RxObject.<br>
                   No caso das nossas <span class="mark">Listas</span>, não é necessário utilizar o <span class="mark">.value</span>, 
-                  então diferente de um <span class="mark">StringX</span> onde você acessaria o valor contido com <span class="mark">text.value</span>, com as listas você pode trabalhar normalmente, tendo 
+                  então diferente de um <span class="mark">RxString</span> onde você acessaria o valor contido com <span class="mark">text.value</span>, com as listas você pode trabalhar normalmente, tendo 
                   em vista que tanto sua lista, como os objetos dentro dela, são todos observáveis, portanto podemos acessar seus atributos dessa maneira 
                   <span class="mark">myList.length</span> ou <span class="mark">myList[index].name</span>.<br><br>
 
@@ -259,12 +216,37 @@
               o consumo de uma <span class="mark">API</span> com essa estrutura.
             </div>
             <span class="mark">Vamos lá!!!</span><br> Crie os seguintes repositórios, dentro de <span class="mark">lib</span>.
-            <pre>
-              |-- lib
-                <font color="green">|-- src</font>
-                  <font color="green">|-- data</font>
-                main.dart
-            </pre>
+            <div class="tab">
+              <div class="w3-bar w3-black">
+                <button class="w3-bar-item w3-button" onclick="openCity('data-package')">Em Packages</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('data-modular')">Em Módulos</button>
+              </div>
+              
+              <div id="data-package" class="w3-container w3-display-container city">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <pre>
+                  |-- lib
+                    <span class="green">|-- app</span>
+                      <span class="green">|-- data</span>
+                    main.dart
+                </pre>
+              </div>
+              
+              <div id="data-modular" class="w3-container w3-display-container city" style="display:none">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <pre>
+                  |-- lib
+                    <span class="green">|-- app</span>
+                      <span class="green">|-- modules</span>
+                        <span class="green">|-- home</span>
+                          <span class="green">|-- data</span>
+                    main.dart
+                </pre>
+              </div>  
+            </div>
+            
           </section>
 
           <section id="provider">
@@ -284,14 +266,41 @@
               classe de forma mais <span class="mark">rápida</span>, use nossa <span class="mark">extensão</span> para vscode.
               <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">GetX Snippets</a>.<br>
               Comece criando um arquivo chamado <span class="mark">api.dart</span>, ou o nome que desejar. 
-              <pre>
-                |-- lib
-                  |-- src
-                    |-- data
-                      <font color="green">|-- provider</font>
-                        <font color="green">api.dart</font>
-                  main.dart
-              </pre>
+              <div class="tab">
+                <div class="w3-bar w3-black">
+                  <button class="w3-bar-item w3-button" onclick="openCity('provider-package')">Em Packages</button>
+                  <button class="w3-bar-item w3-button" onclick="openCity('provider-modular')">Em Módulos</button>
+                </div>
+                
+                <div id="provider-package" class="w3-container w3-display-container city">
+                  <span onclick="this.parentElement.style.display='none'"
+                  class="w3-button w3-large w3-display-topright">&times;</span>
+                  <pre>
+                    |-- lib
+                      |-- app
+                        |-- data
+                          <span class="green">|-- provider</span>
+                            <span class="green">api.dart</span>
+                      main.dart
+                  </pre>
+                </div>
+                
+                <div id="provider-modular" class="w3-container w3-display-container city" style="display:none">
+                  <span onclick="this.parentElement.style.display='none'"
+                  class="w3-button w3-large w3-display-topright">&times;</span>
+                  <pre>
+                    |-- lib
+                      |-- app</span>
+                        |-- modules</span>
+                          |-- home</span>
+                            |-- data</span>
+                              <span class="green">|-- provider</span>
+                                <span class="green">api.dart</span>
+                      main.dart
+                  </pre>
+                </div>  
+              </div>
+
               É dentro deste aquivo que iremos escrever nossa classe, copie o exemplo a seguir, ou se estiver usando nossa 
               <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
               basta começar escrevendo <span class="mark">getprovider</span> e pronto, ela lhe trará uma classe como a do exemplo!!
@@ -314,16 +323,45 @@
             enviar para nossa api.
           </div>
           Comece criando o diretório <span class="mark">model</span> e um arquivo <span class="mark">model.dart.</span>
-          <pre>
-            |-- lib
-              |-- src
-                |-- data
-                  |-- provider
-                    api.dart
-                  <font color="green">|-- model</font>
-                    <font color="green">model.dart</font>
-              main.dart
-          </pre>
+            </div>
+            <div class="tab">
+              <div class="w3-bar w3-black">
+                <button class="w3-bar-item w3-button" onclick="openCity('model-package')">Em Packages</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('model-modular')">Em Módulos</button>
+              </div>
+              
+              <div id="model-package" class="w3-container w3-display-container city">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <pre>
+                  |-- lib
+                    |-- app
+                      |-- data
+                        |-- provider
+                          api.dart
+                        <span class="green">|-- model</span>
+                          <span class="green">model.dart</span>
+                    main.dart
+                </pre>
+              </div>
+              
+              <div id="model-modular" class="w3-container w3-display-container city" style="display:none">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <pre>
+                  |-- lib
+                    |-- app</span>
+                      |-- modules</span>
+                        |-- home</span>
+                          |-- data</span>
+                            |-- provider
+                              api.dart
+                            <span class="green">|-- model</span>
+                              <span class="green">model.dart</span>
+                    main.dart
+                </pre>
+              </div>  
+            </div>
           Agora vamos ao código, copie e cole o seguinte código, ou se estiver usando nossa 
           <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
           comece escrevendo <span class="mark">getmodel</span>
@@ -353,18 +391,48 @@
             No nosso exemplo, nosso <san class="mark">repository</san> será responsável pelo meio de campo entre a <span class="mark">api</span> e o <span class="mark">controller</span>, 
             sendo o responsável pela chamada da api no controller.<br><br>
             Vamos então criar o nosso diretório <span class="mark">repository</span> e um arquivo <span class="mark">posts_repository.dart</span>
-            <pre>
-              |-- lib
-                |-- src
-                  |-- data
-                    |-- provider
-                      api.dart
-                    |-- model
-                      model.dart
-                    <font color="green">|-- repository</font>
-                      <font color="green">posts_repository.dart</font>
-                main.dart
-            </pre>
+            <div class="tab">
+              <div class="w3-bar w3-black">
+                <button class="w3-bar-item w3-button" onclick="openCity('repository-package')">Em Packages</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('repository-modular')">Em Módulos</button>
+              </div>
+              
+              <div id="repository-package" class="w3-container w3-display-container city">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <pre>
+                  |-- lib
+                    |-- app
+                      |-- data
+                        |-- provider
+                          api.dart
+                        |-- model
+                          model.dart
+                        <span class="green">|-- repository</span>
+                          <span class="green">posts_repository.dart</span>
+                    main.dart
+                </pre>
+              </div>
+              
+              <div id="repository-modular" class="w3-container w3-display-container city" style="display:none">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <pre>
+                  |-- lib
+                    |-- app</span>
+                      |-- modules</span>
+                        |-- home</span>
+                          |-- data</span>
+                            |-- provider
+                              api.dart
+                            |-- model</span>
+                              model.dart</span>
+                            <span class="green">|-- repository</span>
+                              <span class="green">posts_repository.dart</span>
+                    main.dart
+                </pre>
+              </div>  
+            </div>
             Vejamos o exemplo, copie e cole o código a seguir, ou se possuir nossa 
             <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a>
             basta apenas começar a escrever <span class="mark">getrepository</span>
@@ -401,20 +469,53 @@
               essas informações apartir deles, renderizando apenas o widget que teve sua variável <span class="mark">.obs</span> alterada.<br><br>
             </div>
               Então vamos criar nosso diretório <span class="mark">controller</span> e um arquivo <span class="mark">controller.dart</span>
-              <pre>
-                |-- lib
-                  |-- src
-                    |-- data
-                      |-- provider
-                        api.dart
-                      |-- model
-                        model.dart
-                      |-- repository
-                        posts_repository.dart
-                    <font color="green">|-- controller</font>
-                      <font color="green">controller.dart</font>
-                  main.dart
-              </pre>
+              <div class="tab">
+                <div class="w3-bar w3-black">
+                  <button class="w3-bar-item w3-button" onclick="openCity('controller-package')">Em Packages</button>
+                  <button class="w3-bar-item w3-button" onclick="openCity('controller-modular')">Em Módulos</button>
+                </div>
+                
+                <div id="controller-package" class="w3-container w3-display-container city">
+                  <span onclick="this.parentElement.style.display='none'"
+                  class="w3-button w3-large w3-display-topright">&times;</span>
+                  <pre>
+                    |-- lib
+                      |-- app
+                        |-- data
+                          |-- provider
+                            api.dart
+                          |-- model
+                            model.dart
+                          |-- repository
+                            posts_repository.dart
+                        <span class="green">|-- controller</span>
+                          <span class="green">|-- home_controller</span>
+                            <span class="green">home_controller.dart</span>
+                      main.dart
+                  </pre>
+                </div>
+                
+                <div id="controller-modular" class="w3-container w3-display-container city" style="display:none">
+                  <span onclick="this.parentElement.style.display='none'"
+                  class="w3-button w3-large w3-display-topright">&times;</span>
+                  <pre>
+                    |-- lib
+                      |-- app</span>
+                        |-- modules</span>
+                          |-- home</span>
+                            |-- data</span>
+                              |-- provider
+                                api.dart
+                              |-- model</span>
+                                model.dart</span>
+                              |-- repository
+                                posts_repository.dart
+                            <span class="green">home_controller.dart</span>
+                        <span class="green">app_controller.dart</span>
+                      main.dart
+                  </pre>
+                </div>  
+              </div>
               Vamos ao código do nosso exemplo, copie e cole o código abaixo, ou se estiver usando nossa 
             <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
             basta começar escrevendo <span class="mark">getcontroller</span> e pronto !
@@ -463,31 +564,67 @@
                 </div>
                   Vamos entender melhor adicionando seu diretório a estrutura.
 
-                  <pre>
-                    |-- lib
-                      |-- src
-                        |-- data
-                          |-- provider
-                            api.dart
-                          |-- model
-                            model.dart
-                          |-- repository
-                            posts_repository.dart
-                        |-- controller
-                          controller.dart
-                        <font color="green">|-- ui</font>
-                          <font color="green">|-- android</font>
-                            <font color="green">|-- widgets</font>
-                              <font color="green">my_reusable_global_widget.dart</font>
-                            <font color="green">|-- home</font>
-                              <font color="green">|-- widgets</font>
-                                <font color="green">my_reusable_home_widget.dart</font>
-                              <font color="green">home_page.dart</font>
-                          <font color="green">|-- ios</font>
-                          <font color="green">|-- theme</font>
-                            <font color="green">my_theme.dart</font>
-                      main.dart
-                  </pre>
+                  <div class="tab">
+                    <div class="w3-bar w3-black">
+                      <button class="w3-bar-item w3-button" onclick="openCity('ui-package')">Em Packages</button>
+                      <button class="w3-bar-item w3-button" onclick="openCity('ui-modular')">Em Módulos</button>
+                    </div>
+                    
+                    <div id="ui-package" class="w3-container w3-display-container city">
+                      <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-large w3-display-topright">&times;</span>
+                      <pre>
+                        |-- lib
+                          |-- app
+                            |-- data
+                              |-- provider
+                                api.dart
+                              |-- model
+                                model.dart
+                              |-- repository
+                                posts_repository.dart
+                            |-- controller
+                              |-- home_controller
+                                home_controller.dart
+                            <span class="green">|-- ui</span>
+                              <span class="green">|-- android</span>
+                                <span class="green">|-- widgets</span>
+                                  <span class="green">my_reusable_global_widget.dart</span>
+                                <span class="green">|-- home</span>
+                                  <span class="green">|-- widgets</span>
+                                    <span class="green">my_reusable_home_widget.dart</span>
+                                  <span class="green">home_page.dart</span>
+                              <span class="green">|-- ios</span>
+                              <span class="green">|-- theme</span>
+                                <span class="green">my_theme.dart</span>
+                          main.dart
+                      </pre>
+                    </div>
+                    
+                    <div id="ui-modular" class="w3-container w3-display-container city" style="display:none">
+                      <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-large w3-display-topright">&times;</span>
+                      <pre>
+                        |-- lib
+                          |-- app</span>
+                            |-- modules</span>
+                              |-- home</span>
+                                |-- data</span>
+                                  |-- provider
+                                    api.dart
+                                  |-- model</span>
+                                    model.dart</span>
+                                  |-- repository
+                                    posts_repository.dart
+                                <span class="green">home_controller.dart</span>
+                            <span class="green">|-- theme</span>
+                              <span class="green">my_theme.dart</span>
+                            <span class="green">app_controller.dart</span>
+                            <span class="green">app_widget.dart</span>
+                          main.dart
+                      </pre>
+                    </div>  
+                  </div>
                   Agora vamos ao nosso exemplo, copie e cole o código abaixo, ou se estiver usando nossa 
                   <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
                   basta começar escrevendo <span class="mark">getpage</span> e pronto ! 
@@ -519,7 +656,7 @@
                   <span class="mark">main.dart</span> para você executar o app :<font color="red">)</font><br>
                   Vamos falar sobre nosso <span class="mark">theme</span>, nele você pode definir temas para as cores do seu app, 
                   ou modificar o tema de algun botões de maniera fácil, portanto pensamos em demonstrar o uso para que você possa tirar 
-                  maior proveito do <font color="blue">flutter</font> !<br>
+                  maior proveito do <font color="#BE81F7">flutter</font> !<br>
                   Veja um exemplo, usaremos <span class="mark">appTheme</span> em nossa <span class="mark">main.dart</span> mais adiante.<br>
                   <script src="https://gist.github.com/kauemurakami/1cdf86f7b8de2bdf4e5c948c2142bb2e.js"></script>
                   Agora vamos as rotas, e logo depois usaremos nosso 
@@ -536,33 +673,71 @@
                   agrupados de forma separada.<br>
                 </div>
                 Crie o diretório <span class="mark">routes</span> e o arquivo <span class="mark">my_routes.dart</span> que conterá nossas rotas.
-                <pre>
-                  |-- lib
-                    |-- src
-                      |-- data
-                        |-- provider
-                          api.dart
-                        |-- model
-                          model.dart
-                        |-- repository
-                          posts_repository.dart
-                      |-- controller
-                        controller.dart
-                      |-- ui
-                        |-- android
-                          |-- widgets
-                            my_reusable_global_widget.dart
-                          |-- home
-                            |-- widgets
-                              my_reusable_home_widget.dart
-                            home_page.dart
-                        |-- ios
-                        |-- theme
-                          my_theme.dart
-                      <font color="green">|-- routes</font>
-                        <font color="green">my_routes.dart</font>
-                    main.dart
-                </pre>
+                <div class="tab">
+                  <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button" onclick="openCity('routes-package')">Em Packages</button>
+                    <button class="w3-bar-item w3-button" onclick="openCity('routes-modular')">Em Módulos</button>
+                  </div>
+                  
+                  <div id="routes-package" class="w3-container w3-display-container city">
+                    <span onclick="this.parentElement.style.display='none'"
+                    class="w3-button w3-large w3-display-topright">&times;</span>
+                    <pre>
+                      |-- lib
+                        |-- app
+                          |-- data
+                            |-- provider
+                              api.dart
+                            |-- model
+                              model.dart
+                            |-- repository
+                              posts_repository.dart
+                          |-- controller
+                            |-- home_controller
+                              home_controller.dart
+                          |-- ui
+                            |-- android
+                              |-- widgets
+                                my_reusable_global_widget.dart
+                              |-- home
+                                |-- widgets
+                                  my_reusable_home_widget.dart
+                                home_page.dart
+                            |-- ios
+                            |-- theme
+                              app_theme.dart
+                          <span class="green">|-- routes</span>
+                            <span class="green">app_routes.dart</span>
+                        main.dart
+                    </pre>
+                  </div>
+                  
+                  <div id="routes-modular" class="w3-container w3-display-container city" style="display:none">
+                    <span onclick="this.parentElement.style.display='none'"
+                    class="w3-button w3-large w3-display-topright">&times;</span>
+                    <pre>
+                      |-- lib
+                        |-- app
+                          |-- modules
+                            |-- home
+                              |-- data
+                                |-- provider
+                                  api.dart
+                                |-- model
+                                  model.dart
+                                |-- repository
+                                  posts_repository.dart
+                              home_controller.dart
+                          |-- theme
+                            app_theme.dart
+                          <span class="green">|-- routes</span>
+                            <span class="green">app_routes.dart</span>
+                          app_controller.dart
+                          app_widget.dart
+                        main.dart
+                    </pre>
+                  </div>  
+                </div>
                 Vamos a um exemplo, onde definimos apenas nossa rota principal.<br>
                 Copie e cole o código abaixo, ou se estiver usando nossa 
                 <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
@@ -626,5 +801,15 @@
   <div class="footer"> getx_pattern 2020 develop by Kauê Murakami</div>
 
 </section>
+<script>
+  function openCity(cityName) {
+    var i;
+    var x = document.getElementsByClassName("city");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    document.getElementById(cityName).style.display = "block";  
+  }
+  </script>
 </body>
 </html>

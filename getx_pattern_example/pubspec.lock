@@ -94,7 +94,7 @@ packages:
       name: get
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.14.1"
+    version: "3.0.1"
   http:
     dependency: "direct main"
     description:

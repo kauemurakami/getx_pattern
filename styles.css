@@ -7,12 +7,18 @@
   list-style: none;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 body{
-   background-color: #f3f5f9;
+   background-color: #2E2E2E;
 }
-
+.green{
+  color: green;
+}
+.tab{
+  width: 400px;
+}
 .center {
   display: block;
   margin-left: auto;
@@ -20,15 +26,16 @@ body{
 }
 
 .obs{
+  color: #2E2E2E;
   padding: 15px;
-  background-color: #D8CEF6;
+  background-color: #E6E6E6;
 }
 .mark{
-  color: #4b4276;
+  color: #BE81F7;
   font-weight: bold;
 }
 .subtitle{
-  color: #594f8d;
+  color: #BE81F7;
   font-weight: bold;
 }
 .topics{
@@ -57,26 +64,27 @@ body{
 .wrapper .sidebar{
   width: 200px;
   height: 100%;
-  background: #4b4276;
-  padding: 30px 0px;
+  background: #2E2E2E;
+  padding: 30px 0px 0px 0px;
   position: fixed;
 }
 
 .wrapper .sidebar h2{
-  color: #fff;
+  color: white;
   text-align: center;
   margin-bottom: 15px;
 }
 
 .wrapper .sidebar ul li{
   padding: 15px;
+  height: 40px;
   border-bottom: 1px solid #bdb8d7;
   border-bottom: 1px solid rgba(0,0,0,0.05);
   border-top: 1px solid rgba(255,255,255,0.05);
 }    
 
 .wrapper .sidebar ul li a{
-  color: #bdb8d7;
+  color: white;
   display: block;
 }
 

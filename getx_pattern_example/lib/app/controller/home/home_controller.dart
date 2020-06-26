@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:getx_pattern/src/data/model/model.dart';
-import 'package:getx_pattern/src/data/repository/posts_repository.dart';
+import 'package:getx_pattern/app/data/model/model.dart';
+import 'package:getx_pattern/app/data/repository/posts_repository.dart';
 import 'package:meta/meta.dart';
 
-class HomeController extends RxController {
+class HomeController extends GetxController {
 
   final MyRepository repository;
   HomeController({@required this.repository}) : assert(repository != null);
