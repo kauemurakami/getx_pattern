@@ -35,7 +35,7 @@ body{
   font-weight: bold;
 }
 .subtitle{
-  color: #BE81F7;
+  color: #A901DB;
   font-weight: bold;
 }
 .topics{
@@ -70,7 +70,8 @@ body{
 }
 
 .wrapper .sidebar h2{
-  color: white;
+  
+  color:#A901DB;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -111,7 +112,7 @@ body{
 .wrapper .sidebar .social_media a{
   display: block;
   width: 40px;
-  background: #594f8d;
+  background: #A901DB;
   height: 40px;
   line-height: 45px;
   text-align: center;
