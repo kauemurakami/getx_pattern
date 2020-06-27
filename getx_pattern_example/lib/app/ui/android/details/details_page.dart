@@ -17,23 +17,28 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('DetailsPage')),
       body: SingleChildScrollView(
         child: Container(
-            padding: EdgeInsets.all(24),
+          width: 400,
+          height: MediaQuery.of(context).size.height,
+            padding: EdgeInsets.all(32),
             child: GetX<DetailsController>(
               init: DetailsController(repository: this.repository),
               builder: (_) {
                 _.post = Get.find<HomeController>().post;
-                return SlimyCard(
-                  color: Colors.red,
-                  width: 200,
-                  topCardHeight: 400,
-                  bottomCardHeight: 200,
-                  borderRadius: 15,
-                  topCardWidget: CardTopCustomWidget(),
-                  bottomCardWidget: CardBottomCustomWidget(),
-                  slimeEnabled: true,
+                return ListView(
+                  children: <Widget>[
+                    SlimyCard(
+                      color: Colors.red,
+                      width: 400,
+                      topCardHeight: 150,
+                      bottomCardHeight: 300,
+                      borderRadius: 15,
+                      topCardWidget: CardTopCustomWidget(),
+                      bottomCardWidget: CardBottomCustomWidget(),
+                      slimeEnabled: true,
+                    ),
+                  ],
                 );
               },
             )),

@@ -14,7 +14,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('HomePage')),
       body: Container(
         child: GetX<HomeController>(
             init: HomeController(repository: this.repository),
