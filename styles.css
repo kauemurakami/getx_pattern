@@ -57,12 +57,14 @@ body{
 }
 
 .wrapper{
+
   display: flex;
   position: relative;
 }
 
 .wrapper .sidebar{
-  width: 200px;
+  overflow-y: scroll;
+  width: 215px;
   height: 100%;
   background: #2E2E2E;
   padding: 30px 0px 0px 0px;
@@ -100,9 +102,28 @@ body{
 .wrapper .sidebar ul li:hover a{
   color: #fff;
 }
- 
+ /*scroll */
+ /* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #A901DB;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+
 .wrapper .sidebar .social_media{
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -134,7 +155,7 @@ body{
 }
 
 .wrapper .main_content .info{
-  margin: 20px;
+  margin: 30px;
   color: #717171;
   line-height: 25px;
 }
