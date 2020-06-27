@@ -14,8 +14,9 @@ class DetailsController extends GetxController {
 
 
 editar(post){
-
+  print('editar');
 }
-deletar(id){}
-
+delete(id){
+  print('deletar');
+}
 }
