@@ -5,6 +5,7 @@ import 'package:getx_pattern/app/controller/home/home_controller.dart';
 import 'package:getx_pattern/app/data/provider/api.dart';
 import 'package:getx_pattern/app/data/repository/posts_repository.dart';
 import 'package:http/http.dart' as http;
+import 'package:slimy_card/slimy_card.dart';
 
 class DetailsPage extends StatelessWidget {
 //repository injection
@@ -15,19 +16,26 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('DetailsPage')),
-      body: Container(
-        height: MediaQuery.of(context).size.height / 3,
-          child: Column(
-        children: <Widget>[
-          GetX<DetailsController>(
-            init: DetailsController(repository: this.repository),
-            builder:(_){
-              _.post = Get.find<HomeController>().post;
-              return Text(_.post.title);
-            }
-          )
-        ],
-      )),
+      body: SingleChildScrollView(
+        child: Container(
+            padding: EdgeInsets.all(24),
+            child: GetX<DetailsController>(
+              init: DetailsController(repository: this.repository),
+              builder: (_) {
+                _.post = Get.find<HomeController>().post;
+                return SlimyCard(
+                  color: Colors.red,
+                  width: 200,
+                  topCardHeight: 400,
+                  bottomCardHeight: 200,
+                  borderRadius: 15,
+                  topCardWidget: myWidget01(),
+                  bottomCardWidget: myWidget02(),
+                  slimeEnabled: true,
+                );
+              },
+            )),
+      ),
     );
   }
 }
