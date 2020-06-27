@@ -105,7 +105,7 @@ body{
  /*scroll */
  /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   height: 40px;
 }
 
@@ -117,7 +117,7 @@ body{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: black;
+  background: gray;
   border-radius: 10px;
 }
 

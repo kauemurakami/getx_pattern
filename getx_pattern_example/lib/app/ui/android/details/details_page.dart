@@ -4,6 +4,8 @@ import 'package:getx_pattern/app/controller/details/details_controller.dart';
 import 'package:getx_pattern/app/controller/home/home_controller.dart';
 import 'package:getx_pattern/app/data/provider/api.dart';
 import 'package:getx_pattern/app/data/repository/posts_repository.dart';
+import 'package:getx_pattern/app/ui/android/details/widgets/bottom_card_widget.dart';
+import 'package:getx_pattern/app/ui/android/details/widgets/top_card_widget.dart';
 import 'package:http/http.dart' as http;
 import 'package:slimy_card/slimy_card.dart';
 
@@ -29,8 +31,8 @@ class DetailsPage extends StatelessWidget {
                   topCardHeight: 400,
                   bottomCardHeight: 200,
                   borderRadius: 15,
-                  topCardWidget: myWidget01(),
-                  bottomCardWidget: myWidget02(),
+                  topCardWidget: CardTopCustomWidget(),
+                  bottomCardWidget: CardBottomCustomWidget(),
                   slimeEnabled: true,
                 );
               },
