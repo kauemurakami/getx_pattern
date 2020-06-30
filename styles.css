@@ -103,6 +103,14 @@ body{
   color: #fff;
 }
 
+.center-text{
+  text-align: center;
+  margin-bottom: -15px;
+}
+
+.icon{
+  size: 100px;
+}
 
 .ttpage{
   background: -webkit-linear-gradient(#eee, #A901DB);
