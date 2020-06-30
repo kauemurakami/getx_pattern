@@ -26,7 +26,9 @@
 <body>
 <div class="wrapper">
     <div class="sidebar">
-        <h2>getx_pattern<i class="fas fa-rocket"></i></h2>
+        <h2 class="ttpage">getx_pattern</h2>
+      <br>
+
         <ul>
             <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="#estrutura"><i class="fas fa-project-diagram"></i>Estrutura</a></li>
@@ -117,8 +119,36 @@
 
           <section id="estrutura">
             <div><h2><span class="subtitle">Estrutura</span></h2></div>
+            Você pode ficar a vontade para usar a estrutura que desejar em módulos ou em packages, ao passar do tempo estaremos 
+            criando exenplos e criando os mesmos das duas maneiras. O exemplo inicial lhe oferecerá as mesmas abas para que você 
+            possa acompanhar a construção do projeto de ambas as formas com o mesmo código, então vamos começar <i class="fas fa-play mark"></i> ! 
+            <br><br>
           <div>
-            <img src="images/strc.png" alt="The Structure for GetX developers xD" width="500" height="600" class="center"><br>
+            <div class="tab">
+              <div class="w3-bar w3-black">
+                <button class="w3-bar-item w3-button" onclick="openCity('strc-package')">Estrurua em Packages</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('strc-modular')">Estrutura em Módulos</button>
+              </div>
+              
+              <div id="strc-package" class="w3-container w3-display-container city">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+
+                <img src="images/strc.png" alt="The Structure for GetX developers xD" width="500" height="600" class="center">                
+
+              </div>
+              
+              <div id="strc-modular" class="w3-container w3-display-container city" style="display:none">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+
+                <img src="images/strc_module.png" alt="The Structure for GetX developers xD" width="700" height="600" class="center">                
+
+              </div>  
+            </div>
+            
+            
+            <br>
             Agora que você conhece a <span class="mark">proposta</span> e deu uma boa analisada na apresentação da estrutura, vamos parar um pouco para falar rapidamente sobre ela, 
             antes de introduzir você na seção do <span class="mark">GetX</span>, para que você possa seguir nossos exemplos sem dificuldade 
             ou dúvidas sobre nossos padrões de nomenclatura ou fluxo, pois bem, vamos falar <span class="mark">rapidamente de um por um</span> agora, <span class="mark">não se preocupe</span> se você está 
@@ -243,9 +273,14 @@
             <div><h2><span class="subtitle">Data</span></h2></div>
           <div>Aqui não teremos muitos o que discutir, é apenas um repositório onde você irá abstrair/empacotar <span class="mark">TUDO</span> 
             relacionado aos seus dados, seus <span class="mark"> modelos</span>, seus <span class="mark">repositories</span> e 
-            <span class="mark">provedores</span> de dados. Isso foi pensado para que você possa manter sua estrutura de diretórios o 
-            <span class="mark">menor possível</span> ao trabalhar com flutter e ao mesmo tempo, ser algo <span class="mark">intuitivo</span> e 
-            <span class="mark">didático</span>.</div>
+            <span class="mark">provedores</span> de dados. Caso você opte por usar a versão em <span class="mark">módulos</span> , 
+            <span class="mark">Data</span> terá o mesmo papel, deixando seus dados disponivéis para <span class="mark">todos</span> 
+            os seus <span class="mark">módulos</span>, deixando só o que é <span class="mark">vital</span> para seu 
+            <span class="mark">módulo</span> nele!!
+            <br>
+            Isso foi pensado para que você possa manter sua estrutura de diretórios o 
+            <span class="mark">menor possível</span> ao trabalhar com flutter, e ao mesmo tempo, ser algo <span class="mark">intuitivo</span> e 
+            <span class="mark">didático</span> para acelerar sua curva de aprendizado.</div>
             <div class="obs">
               Vamos começar o uso do <span class="mark">pattern</span> aqui, ao avançar das seções você vamos utilizar o <span class="mark">JSONPlaceHolder</span> para exemplificar 
               o consumo de uma <span class="mark">API</span> com essa estrutura.
@@ -643,7 +678,11 @@
                         |-- lib
                           |-- app
                             |-- modules
+                              <span class="green">|-- widgets</span>
+                                <span class="green">my_reusable_global_widget.dart</span>
                               |-- home
+                                <span class="green">|-- widgets</span>
+                                  <span class="green">my_reusable_local_widget.dart</span>
                                 home_controller.dart
                                 <span class="green">home_page.dart</span>
                             |-- data
@@ -652,7 +691,7 @@
                               |-- model
                                 model.dart
                               |-- repository
-                                    posts_repository.dart
+                                posts_repository.dart
                             <span class="green">|-- theme</span>
                               <span class="green">my_theme.dart</span>
                             <span class="green">app_controller.dart</span>

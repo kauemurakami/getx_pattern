@@ -104,18 +104,22 @@ body{
 }
 
 
-
+.ttpage{
+  background: -webkit-linear-gradient(#eee, #A901DB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /*scroll */
  /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 7px;
   height: 40px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #A901DB;
+  box-shadow: inset 0 0 3px #A901DB;
   border-radius: 10px;
 }
 
