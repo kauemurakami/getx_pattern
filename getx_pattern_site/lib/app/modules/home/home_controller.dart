@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:getx_pattern_site/app/modules/apresentacao/apresentacao_page.dart';
 import 'package:getx_pattern_site/app/modules/controller/controller_page.dart';
 import 'package:getx_pattern_site/app/modules/data/data_page.dart';
@@ -12,21 +13,20 @@ import 'package:getx_pattern_site/app/modules/tutorials/tutorials_page.dart';
 import 'package:getx_pattern_site/app/modules/ui/ui_page.dart';
 
 class HomeController extends GetxController {
-
   static HomeController get to => Get.find();
 
-   List<Widget> screens = [
-     ApresentacaoPage(),
-     GetXPage(),
-     DataPage(),
-     ProviderPage(),
-     ModelPage(),
-     RepositoryPage(),
-     ControllerPage(),
-     UiPage(),
-     RoutesPage(),
-     TutorialsPage(),
-    ];
+  List<Widget> screens = [
+    ApresentacaoPage(),
+    GetXPage(),
+    DataPage(),
+    ProviderPage(),
+    ModelPage(),
+    RepositoryPage(),
+    ControllerPage(),
+    UiPage(),
+    RoutesPage(),
+    TutorialsPage(),
+  ];
 
   List<String> topics = [
     'Home'.tr,
@@ -41,18 +41,25 @@ class HomeController extends GetxController {
     'Rotas'.tr,
     'Tutoriais'.tr,
   ];
+  final box = GetStorage();
 
-  final _themeIsDark = false.obs;
+  @override
+  onInit() {
+    this.themeIsDark = box.read('key') ?? 0.obs;
+    box.listen(() => update());
+  }
+
+  final _themeIsDark = 0.obs;
   get themeIsDark => this._themeIsDark.value;
   set themeIsDark(value) => this._themeIsDark.value = value;
-  
+
   final _screen = 0.obs;
   get screen => this._screen.value;
   set screen(value) => this._screen.value = value;
 
-  changeTheme(b){
-    b == false ? this.themeIsDark = true : this.themeIsDark = false;
-    Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+  changeTheme() {
+    this.themeIsDark == 0 ? box.write('key', 1) : box.write('key', 0) ;
+    this.themeIsDark = box.read('key');
+    Get.changeTheme(box.read('key') == 0 ? ThemeData.light() : ThemeData.dark());
   }
-
 }

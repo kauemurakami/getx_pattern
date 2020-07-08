@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   get: ^3.2.2
+  get_storage:
   responsive_widgets: ^2.0.1
 
 dev_dependencies:

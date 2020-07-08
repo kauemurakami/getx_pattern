@@ -5,7 +5,7 @@ import 'package:getx_pattern_site/app/theme/app_colors.dart';
 
 class CustomSwitchWidget extends StatelessWidget {
 
-  final HomeController controller = Get.find<HomeController>();
+  final HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,8 @@ class CustomSwitchWidget extends StatelessWidget {
       inactiveThumbColor: spotlightColor,
       activeTrackColor: spotlightColor,
       inactiveTrackColor: softBlue,
-      value: controller.themeIsDark, 
-      onChanged: controller.changeTheme));
+      value: controller.themeIsDark == 0 ? false : true, 
+      onChanged: (b) => controller.changeTheme(),
+      ));
   }
 }
