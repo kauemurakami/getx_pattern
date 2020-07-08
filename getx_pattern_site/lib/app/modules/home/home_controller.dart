@@ -12,6 +12,9 @@ import 'package:getx_pattern_site/app/modules/tutorials/tutorials_page.dart';
 import 'package:getx_pattern_site/app/modules/ui/ui_page.dart';
 
 class HomeController extends GetxController {
+
+  static HomeController get to => Get.find();
+
    List<Widget> screens = [
      ApresentacaoPage(),
      GetXPage(),
@@ -36,7 +39,7 @@ class HomeController extends GetxController {
     'Controller'.tr,
     'UI',
     'Rotas'.tr,
-    'Tutorials'.tr,
+    'Tutoriais'.tr,
   ];
 
   final _themeIsDark = false.obs;
@@ -47,6 +50,9 @@ class HomeController extends GetxController {
   get screen => this._screen.value;
   set screen(value) => this._screen.value = value;
 
-  changeTheme(b) => this.themeIsDark = b;
+  changeTheme(b){
+    b == false ? this.themeIsDark = true : this.themeIsDark = false;
+    Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+  }
 
 }
