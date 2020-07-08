@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
           Container(
               color: Colors.red,
               padding: EdgeInsets.all(0),
-              child: controller.telas[controller.screen]),
+              child: controller.screens[controller.screen]),
           Positioned(
             left: 5,
             child: SafeArea(

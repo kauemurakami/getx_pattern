@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:getx_pattern_site/app/theme/app_colors.dart';
 final ThemeData appThemeData = ThemeData(
-  primaryColor: Colors.blueAccent,
-  accentColor: Colors.blue,
-  textTheme: TextTheme(
-    headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-  ),
+  primaryColor: spotlightColor,
+  accentColor: softBlue,
 );

@@ -8,7 +8,9 @@ class CustomItemDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ContainerResponsive(
+      padding: EdgeInsets.all(16),
+      color: Colors.red,
       child: TextResponsive(this.text, style: TextStyle(fontSize:16),)
     );
   }
