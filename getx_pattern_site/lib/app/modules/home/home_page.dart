@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getx_pattern_site/app/modules/home/home_controller.dart';
 import 'package:getx_pattern_site/app/modules/home/widgets/custom_drawer_widget.dart';
-import 'package:getx_pattern_site/app/theme/app_color_theme.dart';
+import 'package:getx_pattern_site/app/theme/app_colors.dart';
 
 class HomePage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
