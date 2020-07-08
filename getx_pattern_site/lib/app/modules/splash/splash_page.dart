@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_pattern_site/app/routes/app_pages.dart';
+import 'package:getx_pattern_site/app/theme/app_text_theme.dart';
 
 class SplashPage extends StatefulWidget {
 //repository injection
@@ -36,7 +37,7 @@ class _SplashPageState extends State<SplashPage> {
         Text(
           "GETX_PATTERN",
           style: TextStyle(
-              color: Colors.greenAccent,
+              color: spotlightColor,
               fontSize: 20,
               decoration: TextDecoration.none),
         ),

@@ -5,6 +5,7 @@ import 'package:getx_pattern_site/app/routes/app_pages.dart';
 
 void main() {
   runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
     initialRoute: Routes.INITIAL,
     home: HomePage(),
     getPages: AppPages.pages,
