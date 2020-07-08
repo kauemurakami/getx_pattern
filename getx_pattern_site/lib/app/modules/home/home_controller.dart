@@ -6,6 +6,15 @@ class HomeController extends GetxController {
   
    List<Widget> telas = [
      ApresentacaoPage(),
+     GetXPage(),
+     DataPage(),
+     ProviderPage(),
+     ModelPage(),
+     RepositoryPage(),
+     ControllerPage(),
+     UiPage(),
+     RoutesPage(),
+     TutotialsPage(),
     ];
 
   final _screen = 0.obs;

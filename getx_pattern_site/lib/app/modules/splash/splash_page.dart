@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_pattern_site/app/routes/app_pages.dart';
-import 'package:getx_pattern_site/app/theme/app_text_theme.dart';
+import 'package:getx_pattern_site/app/theme/app_color_theme.dart';
 
 class SplashPage extends StatefulWidget {
 //repository injection
