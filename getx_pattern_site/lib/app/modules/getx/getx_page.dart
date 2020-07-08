@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ControllerPage extends StatelessWidget {
+class GetXPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class ControllerPage extends StatelessWidget {
     appBar: AppBar(title: Text('ControllerPage')),
 
     body: Container(
-      child: Text('aaa')
+      child: Text('getx')
       ),
     );
   }
