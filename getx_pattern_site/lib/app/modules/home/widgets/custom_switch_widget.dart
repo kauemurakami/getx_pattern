@@ -3,13 +3,11 @@ import 'package:get/get.dart';
 import 'package:getx_pattern_site/app/modules/home/home_controller.dart';
 
 class CustomSwitchWidget extends GetView {
-
   final HomeController controller = Get.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {
-    return 
-     Switch(value: controller.themeIsDark , onChanged: controller.changeTheme );
-    
+    return Obx(() => Switch(
+        value: controller.themeIsDark, onChanged: controller.changeTheme));
   }
 }

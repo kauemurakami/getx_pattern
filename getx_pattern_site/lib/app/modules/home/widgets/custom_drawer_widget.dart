@@ -6,7 +6,7 @@ import 'package:getx_pattern_site/app/modules/home/widgets/custom_switch_widget.
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CustomDrawer extends GetView {
-  final HomeController controller = HomeController();
+  final HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
