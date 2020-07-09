@@ -16,7 +16,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage>
     with SingleTickerProviderStateMixin {
 
-  static const double _iconSize = 80;
+  static const double _iconSize = 50;
 
   AnimationController _animationController;
   Animation _animation;
@@ -26,7 +26,7 @@ class _SplashPageState extends State<SplashPage>
     super.initState();
     _animationController = AnimationController(
       vsync: this, 
-      duration: Duration(seconds: 3),
+      duration: Duration(milliseconds: 2300),
     );
     _animation = CurvedAnimation(
       parent: _animationController.view,
@@ -34,7 +34,7 @@ class _SplashPageState extends State<SplashPage>
     );
 
     _animationController.forward()
-      .whenComplete(() => Get.toNamed(Routes.HOME));
+      .whenComplete(() => Get.offNamed(Routes.HOME));
   }
 
   @override

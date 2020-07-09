@@ -15,19 +15,6 @@ import 'package:getx_pattern_site/app/modules/ui/ui_page.dart';
 class HomeController extends GetxController {
   static HomeController get to => Get.find();
 
-  List<Widget> screens = [
-    ApresentacaoPage(),
-    GetXPage(),
-    DataPage(),
-    ProviderPage(),
-    ModelPage(),
-    RepositoryPage(),
-    ControllerPage(),
-    UiPage(),
-    RoutesPage(),
-    TutorialsPage(),
-  ];
-
   List<String> topics = [
     'Home'.tr,
     'Estrutura'.tr,
