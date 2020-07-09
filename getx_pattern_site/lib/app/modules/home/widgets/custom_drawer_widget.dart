@@ -29,13 +29,14 @@ class CustomDrawer extends GetView {
                     height: 2,
                     color: spotlightColor,
                     indent: 2,
-                    endIndent: 24,
+                    endIndent: 80,
                   ) : Container(),
                   itemBuilder: (c, i) {
                     return i == 0
                         ? CustomDrawerHeaderWidget()
                         : CustomItemDrawer(
                             text: controller.topics[i - 1],
+                            index: i - 1,
                           );
                   },
                 )),

@@ -7,7 +7,6 @@ class ModelPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-    appBar: AppBar(title: Text('ModelPage')),
 
     body: Container(
       child: Text('Model')

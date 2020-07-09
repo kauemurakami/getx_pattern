@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_pattern_site/app/modules/home/widgets/custom_theme_button_widget.dart';
+import 'package:getx_pattern_site/app/theme/app_colors.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CustomDrawerHeaderWidget extends StatelessWidget {
@@ -23,13 +24,13 @@ class CustomDrawerHeaderWidget extends StatelessWidget {
               ),
               TextResponsive(
                 'GetX Pattern',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 24, color: spotlightColor),
               ),
               ContainerResponsive(child: CustomSwitchWidget()),
             ]),
             TextResponsive(
               'Faça seus projetos com GetX decolarem !!!'.tr,
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16, color: softBlue),
             ),
           ],
         ),
