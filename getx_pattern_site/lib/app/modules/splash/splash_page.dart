@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_pattern_site/app/routes/app_pages.dart';
-import 'package:getx_pattern_site/app/theme/app_colors.dart';
-import 'package:getx_pattern_site/app/theme/app_text_theme.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
+
+import '../../routes/app_pages.dart';
 
 class SplashPage extends StatefulWidget {
 //repository injection
@@ -15,17 +15,26 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage>
     with SingleTickerProviderStateMixin {
+
+  static const double _iconSize = 80;
+
   AnimationController _animationController;
-  Animation<Offset> _animation;
+  Animation _animation;
+
   @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 4500));
-    _animation = Tween<Offset>(begin: Offset(0, 0), end: Offset(1, 3)).animate(
-        CurvedAnimation(
-            parent: _animationController, curve: Curves.linear));
-    _animationController.forward().whenComplete(() => Get.toNamed(Routes.HOME));
+      vsync: this, 
+      duration: Duration(seconds: 3),
+    );
+    _animation = CurvedAnimation(
+      parent: _animationController.view,
+      curve: Curves.easeInCubic
+    );
+
+    _animationController.forward()
+      .whenComplete(() => Get.toNamed(Routes.HOME));
   }
 
   @override
@@ -42,27 +51,24 @@ class _SplashPageState extends State<SplashPage>
       width: Get.width, // Optional
       allowFontScaling: true, // Optional
     );
-
-    return ResponsiveWidgets.builder(
-      height: Get.height, // Optional
-      width: Get.width, // Optional
-      allowFontScaling: true, // Optional
-      child: Scaffold(
-        body: ContainerResponsive(
-          height: Get.height / 2,
-          width: Get.width / 2,
-          child: SlideTransition(
-            position: _animation,
-            child: ContainerResponsive(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/rocket_minimal.png')),
-                )),
-          ),
+    return Scaffold(
+      body: AnimatedBuilder(
+        animation: _animation,
+        builder: (BuildContext context, Widget child) {
+          return FractionalTranslation(
+            translation: Offset(
+              ((Get.width / _iconSize - 1) * _animationController.value),
+              (Get.height / _iconSize - 1) - ((Get.height / _iconSize - 1) * _animationController.value)
+            ),
+            child: child,
+          );
+        },
+        child: Image.asset(
+          'assets/images/rocket_minimal_new.png',
+          width: _iconSize,
+          height: _iconSize,
         ),
-      ),
+      )
     );
   }
 }
