@@ -51,6 +51,7 @@ class HomeController extends GetxController {
   onInit() {
     this.themeIsDark = box.read('key') ?? 0;
     box.listen(() => update());
+
   }
 
   final _screen = 0.obs;
