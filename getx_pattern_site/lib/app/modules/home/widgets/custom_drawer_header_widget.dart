@@ -28,7 +28,7 @@ class CustomDrawerHeaderWidget extends StatelessWidget {
               ContainerResponsive(child: CustomSwitchWidget()),
             ]),
             TextResponsive(
-              'Faça seus projetos com GetX decolarem !!!',
+              'Faça seus projetos com GetX decolarem !!!'.tr,
               style: TextStyle(fontSize: 16),
             ),
           ],
