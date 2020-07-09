@@ -19,13 +19,13 @@ class _SplashPageState extends State<SplashPage>
   Animation<Offset> _animation;
   @override
   void initState() {
+    super.initState();
     _animationController = AnimationController(
         vsync: this, duration: Duration(milliseconds: 4500));
-    _animation = Tween<Offset>(begin: Offset.zero, end: Offset.fromDirection(1.1, 40))
-        .animate(CurvedAnimation(
-            parent: _animationController, curve: Curves.slowMiddle));
+    _animation = Tween<Offset>(begin: Offset(0, 0), end: Offset(1, 3)).animate(
+        CurvedAnimation(
+            parent: _animationController, curve: Curves.linear));
     _animationController.forward().whenComplete(() => Get.toNamed(Routes.HOME));
-    super.initState();
   }
 
   @override
@@ -48,15 +48,19 @@ class _SplashPageState extends State<SplashPage>
       width: Get.width, // Optional
       allowFontScaling: true, // Optional
       child: Scaffold(
-        body: SlideTransition(
-          position: _animation,
-          child: ContainerResponsive(
-              height: 60,
-              width: 60,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/rocket_minimal.png')),
-              )),
+        body: ContainerResponsive(
+          height: Get.height / 2,
+          width: Get.width / 2,
+          child: SlideTransition(
+            position: _animation,
+            child: ContainerResponsive(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/rocket_minimal.png')),
+                )),
+          ),
         ),
       ),
     );
