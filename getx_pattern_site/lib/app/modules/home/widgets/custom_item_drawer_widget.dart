@@ -12,11 +12,11 @@ class CustomItemDrawer extends GetView {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      hoverColor: Get.isDarkMode ? softBlue : spotlightColor,
       highlightColor: Get.isDarkMode ? softBlue : spotlightColor,
       splashColor: Get.isDarkMode ? spotlightColor : softBlue,
       onTap: () {
         controller.screen = index ;
-        print(Get.find<HomeController>().screen);
         Scaffold.of(context).openEndDrawer();
       },
       child: ContainerResponsive(

@@ -30,25 +30,30 @@ class HomeController extends GetxController {
   ];
   final box = GetStorage();
 
-  final _themeIsDark = 0.obs;
+  final _themeIsDark = false.obs;
   get themeIsDark => this._themeIsDark.value;
   set themeIsDark(value) => this._themeIsDark.value = value;
 
   @override
   onInit() {
-    this.themeIsDark = box.read('key') ?? 0;
-    box.listen(() => update());
+    box.writeIfNull('key', false);
+    this.themeIsDark = box.read('key');
+  }
 
+  @override
+  void onReady() {
+       changeTheme();
+    super.onReady();
   }
 
   final _screen = 0.obs;
   get screen => this._screen.value;
   set screen(value) => this._screen.value = value;
 
-  changeTheme() {
-    this.themeIsDark == 0 ? box.write('key', 1) : box.write('key', 0);
-    this.themeIsDark = box.read('key');
+  changeTheme() async{
     Get.changeTheme(
-        box.read('key') == 0 ? ThemeData.light() : ThemeData.dark());
+        this.themeIsDark == false ? ThemeData.light() : ThemeData.dark());
+        box.write('key', this.themeIsDark );
+        this.themeIsDark = !this.themeIsDark;
   }
 }

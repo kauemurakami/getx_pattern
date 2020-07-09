@@ -15,7 +15,7 @@ class CustomSwitchWidget extends StatelessWidget {
           inactiveThumbColor: spotlightColor,
           activeTrackColor: spotlightColor,
           inactiveTrackColor: softBlue,
-          value: controller.themeIsDark == 0 ? false : true,
+          value: controller.themeIsDark,
           onChanged: (b) => controller.changeTheme(),
         ));
   }
