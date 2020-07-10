@@ -1,11 +1,7 @@
-import 'package:get/get.dart';
-import 'package:getx_pattern/app/ui/android/details/details_page.dart';
-import 'package:getx_pattern/app/ui/android/home/home_page.dart';
+part of './app_pages.dart';
 
-class MyRoutes {
-  
-  static final routes = [
-    GetPage(name: '/', page:()=> HomePage(),),
-    GetPage(name: '/details', page:()=> DetailsPage()),
-  ];
+abstract class Routes{
+
+  static const INITIAL = '/';
+  static const DETAILS = '/details';
 }

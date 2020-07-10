@@ -27,7 +27,6 @@ dependencies:
   meta: ^1.1.8
   http: ^0.12.1
   slimy_card: ^1.0.4
-  validators: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_pattern/app/routes/app_pages.dart';
+import 'package:getx_pattern/app/translations/app_translations.dart';
 
-import 'app/routes/app_routes.dart';
 import 'app/ui/android/home/home_page.dart';
 import 'app/ui/theme/app_theme.dart';
 
@@ -12,8 +13,10 @@ void main() {
         initialRoute: '/',
         theme: appThemeData,
         defaultTransition: Transition.fade,
-        getPages: MyRoutes.routes,
+        getPages: AppPages.pages,
         home: HomePage(),
+        locale: Locale('pt', 'BR'),
+        translationsKeys: AppTranslation.translations,
     )
   );
 }
