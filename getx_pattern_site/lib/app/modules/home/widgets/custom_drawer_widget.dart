@@ -17,7 +17,7 @@ class CustomDrawer extends GetView {
       children: [
         ContainerResponsive(
           key: Key('container-drawer'),
-          height: Get.height - 60,
+          height: Get.height -70,
           heightResponsive: false,
           widthResponsive: true,
           width: 300,

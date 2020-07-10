@@ -16,17 +16,17 @@ class HomeController extends GetxController {
   static HomeController get to => Get.find();
 
   List<String> topics = [
-    'Home'.tr,
-    'Estrutura'.tr,
-    'GetX'.tr,
-    'Data'.tr,
-    'Provider'.tr,
-    'Model'.tr,
-    'Repository'.tr,
-    'Controller'.tr,
+    'Home',
+    'Estrutura',
+    'GetX',
+    'Data',
+    'Provider',
+    'Model',
+    'Repository',
+    'Controller',
     'UI',
-    'Rotas'.tr,
-    'Tutoriais'.tr,
+    'Rotas',
+    'Tutoriais',
   ];
   final box = GetStorage();
 

@@ -16,7 +16,7 @@ class CustomTitleWidget extends Container {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextResponsive(
-            this.title.tr,
+            this.title,
             style: titulo,
           )
         ],

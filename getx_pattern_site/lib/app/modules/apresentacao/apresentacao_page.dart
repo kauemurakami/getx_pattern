@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:getx_pattern_site/app/theme/app_text_theme.dart';
 import 'package:getx_pattern_site/app/widgets/custom_title_widget.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
