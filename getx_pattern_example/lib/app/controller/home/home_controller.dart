@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:getx_pattern/app/data/model/model.dart';
 import 'package:getx_pattern/app/data/repository/posts_repository.dart';
+import 'package:getx_pattern/app/routes/app_pages.dart';
 import 'package:meta/meta.dart';
 
 class HomeController extends GetxController {
@@ -35,6 +36,6 @@ class HomeController extends GetxController {
   }
   details(post){
     this.post = post;
-    Get.toNamed('/details');
+    Get.toNamed(Routes.DETAILS);
   }
 }
