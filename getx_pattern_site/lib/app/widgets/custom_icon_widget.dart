@@ -14,6 +14,7 @@ class CustomIconWidget extends ContainerResponsive {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           GestureDetector(
+            
             //abrir navegadores links
             onTap: () => print('clico'),
             child: ContainerResponsive(

@@ -14,6 +14,7 @@ import 'package:getx_pattern_site/app/modules/repository/repository_page.dart';
 import 'package:getx_pattern_site/app/modules/routes/routes_pages.dart';
 import 'package:getx_pattern_site/app/modules/tutorials/tutorials_page.dart';
 import 'package:getx_pattern_site/app/modules/ui/ui_page.dart';
+import 'package:getx_pattern_site/app/widgets/custom_button_language_widget.dart';
 
 class HomePage extends GetView {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -54,6 +55,13 @@ class HomePage extends GetView {
             child: SafeArea(
               child: CustomDrawerButtonWidget(
                   callback: () => _scaffoldKey.currentState.openDrawer()),
+            ),
+          ),
+          Positioned(
+            top: 8,
+            right: 5,
+            child: SafeArea(
+              child: CustomSelectLanguageWidget()
             ),
           ),
         ],

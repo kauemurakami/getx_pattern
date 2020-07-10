@@ -29,7 +29,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   get: ^3.2.2
-  flag: ^3.0.1
   get_storage:
   responsive_widgets: ^2.0.1
 
@@ -56,6 +55,9 @@ flutter:
     - assets/images/telegram.png
     - assets/images/rocket_minimal.png
     - assets/images/rocket_minimal_new.png
+    - assets/images/en-flag.png
+    - assets/images/es-flag.jpg
+    - assets/images/br-flag.jpg
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
