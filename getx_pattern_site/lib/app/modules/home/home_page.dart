@@ -31,7 +31,7 @@ class HomePage extends GetView {
     RepositoryPage(),
     ControllerPage(),
     UiPage(),
-    RoutesPage(),
+    RoutesPage(),//add translations
     TutorialsPage(),
   ];
   @override

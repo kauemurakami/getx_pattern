@@ -41,7 +41,7 @@
             <li><a href="#controller"><i class="fas fa-gamepad"></i>Controller</a></li>
             <li><a href="#ui"><i class="fas fa-mobile-alt"></i>UI</a></li>
             <li><a href="#routes"><i class="fas fa-road"></i>Routes</a></li>
-            <li><a href="#translations"><i class="fas fa-road"></i>Translations</a></li>
+            <li><a href="#translations"><i class="fas fa-globe-americas"></i>Translations</a></li>
             <li><a href="#tutorials"><i class="fab fa-leanpub"></i></i> Tutorials</a></li>
             <li>
               <a href="#posts">
@@ -743,12 +743,18 @@
 
                   <section id="routes">
                     <div><h2><span class="subtitle">Rotas</span></h2></div>
-                 <div class="obs">
-                  A ideia é que você possa gerenciar suas rotas de forma fácil e limpa.<br>
-                  Chega de ficar procurando um widget que linka uma determinada rota a outra page, agrupe todas suas rotas e saiba exatamente onde procurar.<br>
-                  Além do seu código da <span class="mark">UI</span> ficar menor usando as rotas do <span class="mark">GetX</span>, ficam muito bem apresentados quando nomeados, e 
-                  agrupados de forma separada.<br>
-                </div>
+                  A ideia é que você possa gerenciar suas rotas de forma fácil, limpa e <span class="mark">segura</span>.<br>
+                  Mudamos nossa maneira de manipular suas rotas, a proposta é que você separe suas <span class="mark">rotas</span> 
+                  de sua navegação de <span class="mark">pages</span>.<br><br>
+                  <span class="mark">Porque?</span><br>
+                  Para que suas rotas sejam sempre CONSTANTES, dessa maneira você pode navegar dessa maneira com GetX 
+                  <span class="mark">Get.toNamed(Routes.ROTA_CONSTANTE)</span>.<br><br>
+                  Tanto <span class="mark">Routes quanto AppPAges</span>, serão classes <span class="mark">abstratas</span>, para que você não cometa nenhum engano 
+                  instânciado-as por engano, viu nós cuidamos de você.<br>
+                  <br>
+                  Então agora chega de procurar as rotas nas pages, e chega de alterar uma por uma quando necessário alteração, basta alterar 
+                  <span class="mark">em um único lugar</span> e seu app continuará funcionando normalmente !!<br>
+                  Crie os diretórios dessa forma
                 Crie o diretório <span class="mark">routes</span> e o arquivo <span class="mark">my_routes.dart</span> que conterá nossas rotas.
                 <div class="tab">
                   <div class="w3-bar w3-black">
@@ -785,6 +791,7 @@
                               app_theme.dart
                           <span class="green">|-- routes</span>
                             <span class="green">app_routes.dart</span>
+                            <span class="green">app_pages.dart</span>
                         main.dart
                     </pre>
                   </div>
@@ -810,22 +817,140 @@
                             app_theme.dart
                           <span class="green">|-- routes</span>
                             <span class="green">app_routes.dart</span>
+                            <span class="green">app_pages.dart</span>
                           app_controller.dart
                           app_widget.dart
                         main.dart
                     </pre>
                   </div>  
                 </div>
-                Vamos a um exemplo, onde definimos apenas nossa rota principal.<br>
+                Vamos a um exemplo, onde definimos apenas nossa rota principal e rota de detalhes.<br>
                 Copie e cole o código abaixo, ou se estiver usando nossa 
                 <a href="https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets" target="_blank">extensão</a> 
-                comece escrevendo <span class="mark">getpageroutes</span>, Isso lhe trará uma 
-                <span class="mark">classe completa</span> com um <span class="mark">array</span> de <span class="mark">rotas</span>.
+                comece escrevendo <span class="mark">getroutes</span>, Isso lhe trará uma 
+                <span class="mark">classe completa</span> com algumas constantes como exemplo </span> de <span class="mark">rotas</span>.
                 <script src="https://gist.github.com/kauemurakami/75e857ef363d3a52dc320dc21696e81e.js"></script>
                 Procure saber tudo que você pode fazer com as rotas, como middleware, parâmetros e mais na documentação oficial do 
                 <a href="https://pub.dev/packages/get#navigation-without-named-routes">GetX</a>.
                 <br>
+                Agora nosso arquivo de navegação, <span class="mark">Apppages</span>, essa classe conterá um array do tipo 
+                <span class="mark">GetPage</span>, e dentro dela, iremos declarar todas as nossas navegações, usando nossa 
+                <span class="mark"> classe Routes</span> para recuperar os nomes das nossas rotas.<br>
+                <script src="https://gist.github.com/kauemurakami/b9aae348d67744fede76075c93d8e836.js"></script>
                 <br>
+                <section id="translations">
+                  <div><h2><span class="subtitle">Internacionalização</span></h2></div>
+                  Se você deseja fazer aplicativos que irão romper nossas fronteiras, isso não é um problema quando se trabalha com GetX!<br>
+                  Você pode criar chaves para palavras, frases e até mesmo parâmetros dinâmicos são permitidos !<br>
+                  E para usar é fávil e rápido, basta adicionar <span class="mark">.tr</span> em seus textos !<br>
+                  <span class="mark">Text('bem vindo'.tr),</span>
+                  <br><br>
+                  Vamos ver como ela se encaixa em nossas estruturas.<br>
+            
+              Crie o diretório <span class="mark">translations</span> e o arquivo <span class="mark">app_translations.dart</span> 
+              que conterá todas as traduções de maneira organizada, permitindo uma ou mais linguas. Crie Também os respectivos 
+              diretórios para cada lingua, iremos falar sobre eles depois.<br>
+              <div class="tab">
+                <div class="w3-bar w3-black">
+                  <button class="w3-bar-item w3-button" onclick="openCity('translation-package')">Em Packages</button>
+                  <button class="w3-bar-item w3-button" onclick="openCity('translation-modular')">Em Módulos</button>
+                </div>
+                
+                <div id="translation-package" class="w3-container w3-display-container city">
+                  <span onclick="this.parentElement.style.display='none'"
+                  class="w3-button w3-large w3-display-topright">&times;</span>
+                  <pre>
+                    |-- lib
+                      |-- app
+                        |-- data
+                          |-- provider
+                            api.dart
+                          |-- model
+                            model.dart
+                          |-- repository
+                            posts_repository.dart
+                        |-- controller
+                          |-- home_controller
+                            home_controller.dart
+                        |-- ui
+                          |-- android
+                            |-- widgets
+                              my_reusable_global_widget.dart
+                            |-- home
+                              |-- widgets
+                                my_reusable_home_widget.dart
+                              home_page.dart
+                          |-- ios
+                          |-- theme
+                            app_theme.dart
+                        |-- routes
+                          app_routes.dart
+                        <span class="green">|-- translations</span>
+                          <span class="green">app_translations.dart</span>
+                          <span class="green">|-- en_US</span>
+                            <span class="green">en_us_translation.dart</span>
+                          <span class="green">|-- pt_BR</span>
+                            <span class="green">pt_br_translation.dart</span>
+                          <span class="green">|-- es_MX</span>
+                            <span class="green">es_mx_translation.dart</span>
+                      main.dart
+                  </pre>
+                </div>
+                
+                <div id="translation-modular" class="w3-container w3-display-container city" style="display:none">
+                  <span onclick="this.parentElement.style.display='none'"
+                  class="w3-button w3-large w3-display-topright">&times;</span>
+                  <pre>
+                    |-- lib
+                      |-- app
+                        |-- modules
+                          |-- home
+                            home_controller.dart
+                            home_page.dart
+                        |-- data
+                          |-- provider
+                            api.dart
+                          |-- model
+                            model.dart
+                          |-- repository
+                            posts_repository.dart
+                        |-- theme
+                          app_theme.dart
+                        |-- routes
+                          app_routes.dart
+                        <span class="green">|-- translations</span>
+                          <span class="green">app_translations.dart</span>
+                          <span class="green">|-- en_US</span>
+                            <span class="green">en_us_translation.dart</span>
+                          <span class="green">|-- pt_BR</span>
+                            <span class="green">pt_br_translation.dart</span>
+                          <span class="green">|-- es_MX</span>
+                            <span class="green">es_mx_translation.dart</span>
+                        app_controller.dart
+                        app_widget.dart
+                      main.dart
+                  </pre>
+                </div>  
+              </div>
+            Vamos ver o que temos no nosso arquivo app_translations.<br>
+              Copie e cole o código abaixo e depois iremos falar sobre.
+              <br>
+              <script src="https://gist.github.com/kauemurakami/042a4bbb1832cbe38082654e2bfd08cb.js"></script>
+              Nossa classe é responsavel por manter todas as linguas que serão disponibilizadas.<br>
+              Repare no nosso tipo, estamos declarando esta primeira parte do <span class="mark">Map< String, </span> 
+              o 'próximo map' será recebido de acordo com nossas tradução específicas que passarmos, as mesmas serão 
+              criadas separadamente agora, buscando sempre manter uma arquitetura clean e organizada.
+              <br>
+              <script src="https://gist.github.com/kauemurakami/a6bf2a3a7757d5451af4b672fcd37d16.js"></script>
+              <script src="https://gist.github.com/kauemurakami/9e0cd211029cac2c3b18127ffbf29019.js"></script>
+              Criamos a pt_br apenas para mostrar que podemos usar mais de uma lingua.<br>
+              Agora sempre que o aplicativo reconhecer o idioma do celular do usuário, ou que ele seja trocado 
+              dinâmicamente, através de um botão por exemplo, <span class="mark">isso pode ser feito com GetX em apenas uma linha<br>
+              Get.updateLocale(Locale('en', 'US')); </span>
+              Procure saber mais sobre internacionalização na documentação oficial do 
+              <a href="https://pub.dev/packages/get#navigation-without-named-routes">GetX</a>.
+              <br>
+              <br>
             <div><h2><span class="subtitle">A classe main</span></h2></div>
             <script src="https://gist.github.com/kauemurakami/b677c62cc5fd4ac05fafb8baaae041ea.js"></script>
             <br>
