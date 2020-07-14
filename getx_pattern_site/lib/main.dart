@@ -13,12 +13,12 @@ void main() async {
     debugShowCheckedModeBanner: false,
     initialRoute: Routes.INITIAL,
     home: SplashPage(),
-    getPages: AppPages.pages,
-    theme: appThemeData,
 
-    locale: Locale('pt', 'BR'),
     translationsKeys: AppTranslation.translations,
 
+    getPages: AppPages.pages,
+    theme: appThemeData,
+    
     defaultTransition: Transition.rightToLeftWithFade,
   ));
 }

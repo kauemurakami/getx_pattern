@@ -56,4 +56,21 @@ class HomeController extends GetxController {
         box.write('key', this.themeIsDark );
         this.themeIsDark = !this.themeIsDark;
   }
+
+  
+  final _lang = 'en-US'.obs;
+  String get lang => this._lang.value;
+  set lang(value) => this._lang.value = value;
+  
+  changeLanguage(lang){
+      this.lang = lang;
+    if(lang == 'pt-BR'){
+      Get.updateLocale(Locale('pt'));
+    }else if( lang == 'en-US'){
+      Get.updateLocale(Locale('en'));
+    }else if(lang == 'es-MX'){
+      Get.updateLocale(Locale('es'));
+    }
+    print(Get.locale);
+  }
 }
