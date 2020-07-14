@@ -58,6 +58,8 @@ flutter:
     - assets/images/en-flag.png
     - assets/images/es-flag.jpg
     - assets/images/br-flag.jpg
+    - assets/images/strc_module.png
+    - assets/images/strc.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

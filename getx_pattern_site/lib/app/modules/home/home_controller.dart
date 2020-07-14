@@ -73,4 +73,7 @@ class HomeController extends GetxController {
     }
     print(Get.locale);
   }
+
+  nextPage() => this.screen < topics.length ? this.screen++ : null;
+  previousPage() => this.screen > 0 ? this.screen-- : null ;
 }

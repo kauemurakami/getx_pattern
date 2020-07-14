@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:getx_pattern_site/app/modules/apresentacao/widgets/item_list_widget.dart';
 import 'package:getx_pattern_site/app/theme/app_colors.dart';
 import 'package:getx_pattern_site/app/theme/app_text_theme.dart';
 import 'package:getx_pattern_site/app/widgets/custom_title_widget.dart';
+import 'package:getx_pattern_site/app/widgets/previous_next_widget.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +18,10 @@ class ApresentacaoPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomTitleWidget(
-                  title: 'Apresentação',
+                  title: 'getx_pattern',
                 ),
-                Container(
+                ContainerResponsive(
+                  width: Get.width,
                   margin: EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +40,7 @@ class ApresentacaoPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      CustomTitleWidget(title: 'Objetivos'),
+                      CustomTitleWidget(title: 'Objective'),
                       RichText(
                         textAlign: TextAlign.justify,
                         text: TextSpan(
@@ -71,135 +74,38 @@ class ApresentacaoPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      ContainerResponsive(
-                        margin: EdgeInsetsResponsive.only(bottom: 8, top: 8),
-                        width: Get.width,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Icon(
-                                  Icons.fiber_manual_record,
-                                  color: spotlightColor,
-                                )),
-                            Expanded(
-                              flex: 7,
-                              child: TextResponsive(
-                                'Because that way, we can communicate "universally" with people who also follow these same standards and package.',
-                                style: textContent,
-                              ),
-                            )
-                          ],
-                        ),
+                      ItemListWidget(
+                        text:
+                            'Because that way, we can communicate "universally" with people who also follow these same standards and package.',
+                        color: spotlightColor,
                       ),
-                      ContainerResponsive(
-                        margin: EdgeInsetsResponsive.only(bottom: 8),
-                        width: Get.width,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Icon(
-                                  Icons.fiber_manual_record,
-                                  color: softBlue,
-                                )),
-                            Expanded(
-                              flex: 7,
-                              child: TextResponsive(
-                                'There are infinite ways to solve the same problem, so patterns have a very important role in that, the same problems, can still be solved in several ways, but with a certain flow to be followed, with this we managed to direct the programmer in a shorter and more concise path.',
-                                style: textContent,
-                              ),
-                            )
-                          ],
-                        ),
+                      ItemListWidget(
+                          text:
+                              'There are infinite ways to solve the same problem, so patterns have a very important role in that, the same problems, can still be solved in several ways, but with a certain flow to be followed, with this we managed to direct the programmer in a shorter and more concise path.',
+                          color: softBlue),
+                      ItemListWidget(
+                        text:
+                            'This makes it much easier to resolve your doubts and share knowledge when using the same standard.',
+                        color: spotlightColor,
                       ),
-                      ContainerResponsive(
-                        margin: EdgeInsetsResponsive.only(bottom: 8),
-                        width: Get.width,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Icon(
-                                  Icons.fiber_manual_record,
-                                  color: spotlightColor,
-                                )),
-                            Expanded(
-                              flex: 7,
-                              child: TextResponsive(
-                                'This makes it much easier to resolve your doubts and share knowledge when using the same standard.',
-                                style: textContent,
-                              ),
-                            )
-                          ],
-                        ),
+                      ItemListWidget(
+                        text:
+                            'Your project will not be dependent on who built it, as other programmers will be able to read and change the code without difficulty.',
+                        color: softBlue,
                       ),
-                      ContainerResponsive(
-                        margin: EdgeInsetsResponsive.only(bottom: 8),
-                        width: Get.width,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Icon(
-                                  Icons.fiber_manual_record,
-                                  color: softBlue,
-                                )),
-                            Expanded(
-                              flex: 7,
-                              child: TextResponsive(
-                                'Your project will not be dependent on who built it, as other programmers will be able to read and change the code without difficulty.',
-                                style: textContent,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      ContainerResponsive(
-                        margin: EdgeInsetsResponsive.only(bottom: 8),
-                        width: Get.width,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Icon(
-                                  Icons.fiber_manual_record,
-                                  color: spotlightColor,
-                                )),
-                            Expanded(
-                              flex: 7,
-                              child: TextResponsive(
-                                'You will have a better use in the reuse of your code, being able to reuse several widgets from other projects for example, that it will fit perfectly in your project.',
-                                style: textContent,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      ContainerResponsive(
-                        margin: EdgeInsetsResponsive.only(bottom: 8),
-                        width: Get.width,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Icon(
-                                  Icons.fiber_manual_record,
-                                  color: softBlue,
-                                )),
-                            Expanded(
-                              flex: 7,
-                              child: TextResponsive(
-                                'That you can apply the use of GetX in professional projects, having documentation in hand, with that, more security for those who program, whether you are a company or a student in search of knowledge.',
-                                style: textContent,
-                              ),
-                            )
-                          ],
-                        ),
+                      ItemListWidget(
+                          text:
+                              'You will have a better use in the reuse of your code, being able to reuse several widgets from other projects for example, that it will fit perfectly in your project.',
+                          color: spotlightColor),
+                      ItemListWidget(
+                        text:
+                            'That you can apply the use of GetX in professional projects, having documentation in hand, with that, more security for those who program, whether you are a company or a student in search of knowledge.',
+                        color: softBlue,
                       ),
                     ],
                   ),
-                )
+                ),
+                CustomNextPrevious()
               ],
             )),
       ),
