@@ -7,8 +7,6 @@ class GetXPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-    appBar: AppBar(title: Text('ControllerPage')),
-
     body: Container(
       child: Text('getx')
       ),

@@ -14,8 +14,10 @@ class HomeController extends GetxController {
     'Model',
     'Repository',
     'Controller',
+    'Bindings',
     'UI',
     'Rotas',
+    'Translations',
     'Tutoriais',
   ];
   final box = GetStorage();
