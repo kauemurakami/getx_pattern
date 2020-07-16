@@ -18,7 +18,7 @@ class CustomNextPrevious extends GetView {
               IconButton(
                   icon: Icon(Icons.arrow_back_ios),
                   onPressed: () => controller.previousPage()),
-              TextResponsive(controller.topics[controller.screen])
+              TextResponsive(controller.screen > 0 ? controller.topics[controller.screen-1] : '' )
             ],
           ),
           Row(

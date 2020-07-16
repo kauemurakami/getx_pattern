@@ -273,7 +273,29 @@
                   temos a variável num, que é declarado no controller e a mesma, é usada no Getx widget, e nossas funções/eventos, responsáveis por 
                   alterar o estado dessa nossa variável. Portanto, carregar <span class="mark">_.num.value</span> vai contra as boas práticas, preferimos 
                   que o controllador seja responsável até por isso, criando um <span class="mark">get</span> e um <span class="mark">set</span> para que 
-                  possamos abstrair o <span class="mark">.value</span> do código da sua vizualização, deixando seu código mais legível e sem boilerplate.<br><br>             
+                  possamos abstrair o <span class="mark">.value</span> do código da sua vizualização, deixando seu código mais legível e sem <span class="mark">boilerplate</span>.<br><br>             
+                  <br>Além do widget observável <span class="mark">GetX< Controller >()</span>, o GetX Também possui o <span class="mark">Obx(() => Widget())</span>, 
+                  sendo este, responsável por reconstruir nossos widgets <span class="mark">considerados pesados</span>.<br>
+                  E o que o <span class="mark">GetX</span> entende por widget leve e pesado ?<br>
+                  Vamos falar um pouco sobre isso.<br>
+                  O widget <span class="mark">Text(_.count)</span> do nosso exemplo é um widget 'leve', pois estamos o alterando <span class="mark">DIRETAMENTE</span> 
+                  Isso quer dizer: <br><br>
+                  <div class="obs">
+                    GetX< MyController>(builder: (_) => Text(_.var))<br>
+                    Uma observação importante neste ponto é que <span class="mark">Containers</span> não são considerados 
+                    <span class="mark"> filhos diretos.</span><br>
+                    Dessa forma o exemplo a seguir também é valido para o uso do <span class="mark">GetX</span>
+                    <br>GetX< MyController>(builder: (_) => Container(child: Text(_.var)))<br><br>
+                    Widgets são considerados pesados quando possui uma grande hierarquia de filhos, como uma <span class="mark">lista</span> 
+                    ou um <span class="mark">card complexo</span>. Nesses casos, ao tentar usar o <span class="mark">GetX widget</span> para reconstruir esse 
+                    list ou card, você receberá um erro de uso indevido.<br>
+                    Para esses casos, você pode fazer o uso do <span class="mark">Obx(() => WidgetPesado())</span>.<br>
+                    Onde <span class="mark">WidgetPesado</span> se subentende uma Lista, que pode possuir Widgets <span class="mark">Getx</span> 
+                    para a alteração de cada elemento e o <span class="mark">Obx</span> para atualização da lista completa.<br>
+                    Seu uso se mostra muito eficiente ao ser combinado com <span class="mark">GetView</span>, estendendo sua Page, 
+                    juntamente com bindings para ela, você verá isso no exemplo mais sólido desta documentação seções adiante.<br>
+                    Mas basicamente você ira ter uma insttancia do seu <span class="mark">controller</span> ao invés do <span class="mark">_ </span>.<br>
+                  </div>
                   Isso foi uma breve introdução sobre o uso do<span class="mark">GetX</span>, vamos aplicar isso também em outros instantes, se você não entendeu tudo até
                   aqui, não se preocupe.<br>
                   Se quer saber mais sobre o <span class="mark">GetX</span>, visite seu <span class="mark"><a href="https://pub.dev/packages/get" target="_blank">

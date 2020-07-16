@@ -68,58 +68,76 @@ class EstruturaPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      TextResponsive(
+                      TextResponsive( 
                         'Now that you know the proposal and have given a good analysis in the presentation of the structure, let \'s take a moment to talk briefly about it, before introducing you to the GetX section, so you can follow our examples without difficulty or questions about our naming or flow standards, well, let \'s talk quickly one by one now, do not worry if you are adventuring and do not know some of the concepts that will be covered here, this is just a formal presentation with the structure, we’ll talk in more detail about each one, with examples in their respective sections.',
                         style: textContent,
                       ),
                       CustomTitleWidget(
                         title: 'Model',
                       ),
-                      TextResponsive(
-                          'It is the directory that will group all of our model classes for our objects.',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'It is the directory that will group all of our model classes for our objects.',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'Provider',
                       ),
-                      TextResponsive(
-                          'It is the directory responsible for grouping our data providers, it can be either a database or an api.',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'It is the directory responsible for grouping our data providers, it can be either a database or an api.',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'Repository',
                       ),
-                      TextResponsive(
-                          'It is a single point of access to data, it will abstract our entities.',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'It is a single point of access to data, it will abstract our entities.',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'Data',
                       ),
-                      TextResponsive(
-                          'It is the directory that will group all of our model classes for our objects.',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'It is the directory that will group all of our model classes for our objects.',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'Controller',
                       ),
-                      TextResponsive(
-                          'Our controllers are nothing more than those responsible for our business rules, state changes, it is also where we will create our observables with their respective initial states and the events that will be responsible for changing those states.',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'Our controllers are nothing more than those responsible for our business rules, state changes, it is also where we will create our observables with their respective initial states and the events that will be responsible for changing those states.',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'UI',
                       ),
-                      TextResponsive(
-                          'É tudo que o usuário vê, seus widgets, animações, textos, temas.',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'É tudo que o usuário vê, seus widgets, animações, textos, temas.',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'Routes',
                       ),
-                      TextResponsive(
-                          'It is the directory responsible for containing our files which are responsible for managing our routes.',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'It is the directory responsible for containing our files which are responsible for managing our routes.',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'Translations',
                       ),
-                      TextResponsive(
-                          'Here, if you need to, you can create files that contain translations and use them with GetX internationalization',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'Here, if you need to, you can create files that contain translations and use them with GetX internationalization',style: textContent,),
+                      ),
                       CustomTitleWidget(
                         title: 'Bindings',
                       ),
-                      TextResponsive(
-                          'These are dependencies that we will use in our application, loaded with  \'Lazy \' , guarantee that our controllers are on our pages without you even having to declare them',style: textContent,),
+                      Center(
+                        child: TextResponsive(
+                            'These are dependencies that we will use in our application, loaded with  \'Lazy \' , guarantee that our controllers are on our pages without you even having to declare them',style: textContent,),
+                      ),
                       Padding(
                           padding: EdgeInsetsResponsive.only(top: 8.0),
-                          child: Text(
+                          child: TextResponsive(
                               'Now that you know a little more about our structure, let\'s go over one by one with their respective details from now on!',style: textContent,)),
                       CustomNextPrevious()
                     ]))));
