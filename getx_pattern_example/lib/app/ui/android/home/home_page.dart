@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_pattern/app/controller/home/home_controller.dart';
-import 'package:getx_pattern/app/data/provider/api.dart';
-import 'package:getx_pattern/app/data/repository/posts_repository.dart';
 import 'package:getx_pattern/app/ui/android/widgets/loading_widget.dart';
-import 'package:http/http.dart' as http;
 
 class HomePage extends StatelessWidget {
-//repository injection
-  final MyRepository repository =
-      MyRepository(apiClient: MyApiClient(httpClient: http.Client()));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         child: GetX<HomeController>(
-            init: HomeController(repository: this.repository),
             initState: (state) { Get.find<HomeController>().getAll() ;},
             builder: (_) {
               return 
