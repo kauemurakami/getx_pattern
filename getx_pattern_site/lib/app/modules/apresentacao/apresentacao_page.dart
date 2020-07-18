@@ -11,104 +11,68 @@ class ApresentacaoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: ContainerResponsive(
-            padding: EdgeInsets.only(top: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomTitleWidget(
-                  title: 'getx_pattern',
-                ),
-                ContainerResponsive(
-                  width: Get.width,
-                  margin: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          text: 'A proposal for you that uses ',
-                          style: textContent,
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: 'GetX',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: softBlue)),
-                            TextSpan(text: ' as your state manager!'),
-                          ],
-                        ),
-                      ),
-                      CustomTitleWidget(title: 'Objective'),
-                      RichText(
-                        textAlign: TextAlign.justify,
-                        text: TextSpan(
-                          text:
-                              'The main objective, is to make your programming with ',
-                          style: textContent,
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: 'Flutter ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: softBlue)),
-                            TextSpan(
-                                text: '+',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: spotlightColor)),
-                            TextSpan(
-                                text: ' GetX ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: softBlue)),
-                            TextSpan(
-                                text:
-                                    'more pleasant and intuitive than it already is! When there is a development pattern to be followed, everything is easier for those who use it.'),
-                            TextSpan(
-                                text: ' But why?',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: spotlightColor))
-                          ],
-                        ),
-                      ),
-                      ItemListWidget(
-                        text:
-                            'Because that way, we can communicate "universally" with people who also follow these same standards and package.',
-                        color: spotlightColor,
-                      ),
-                      ItemListWidget(
-                          text:
-                              'There are infinite ways to solve the same problem, so patterns have a very important role in that, the same problems, can still be solved in several ways, but with a certain flow to be followed, with this we managed to direct the programmer in a shorter and more concise path.',
-                          color: softBlue),
-                      ItemListWidget(
-                        text:
-                            'This makes it much easier to resolve your doubts and share knowledge when using the same standard.',
-                        color: spotlightColor,
-                      ),
-                      ItemListWidget(
-                        text:
-                            'Your project will not be dependent on who built it, as other programmers will be able to read and change the code without difficulty.',
-                        color: softBlue,
-                      ),
-                      ItemListWidget(
-                          text:
-                              'You will have a better use in the reuse of your code, being able to reuse several widgets from other projects for example, that it will fit perfectly in your project.',
-                          color: spotlightColor),
-                      ItemListWidget(
-                        text:
-                            'That you can apply the use of GetX in professional projects, having documentation in hand, with that, more security for those who program, whether you are a company or a student in search of knowledge.',
-                        color: softBlue,
-                      ),
-                    ],
+        body: SingleChildScrollView(
+      child: ContainerResponsive(
+        padding: EdgeInsets.only(top: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomTitleWidget(
+              title: 'getx_pattern',
+            ),
+            ContainerResponsive(
+              width: Get.width,
+              margin: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  TextResponsive(
+                    'A proposal for you that uses GetX as your state manager!',
+                    style: textContent,
                   ),
-                ),
-                CustomNextPrevious()
-              ],
-            )),
+                  CustomTitleWidget(title: 'Objective'),
+                  TextResponsive(
+                    'The main objective, is to make your programming with Flutter + GetX more pleasant and intuitive than it already is! When there is a development pattern to be followed, everything is easier for those who use it.',
+                    style: textContent,
+                  ),
+                  TextResponsive(' But why?',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: spotlightColor, fontSize: 20))
+                ],
+              ),
+            ),
+            ItemListWidget(
+              text:
+                  'Because that way, we can communicate "universally" with people who also follow these same standards and package.',
+              color: spotlightColor,
+            ),
+            ItemListWidget(
+                text:
+                    'There are infinite ways to solve the same problem, so patterns have a very important role in that, the same problems, can still be solved in several ways, but with a certain flow to be followed, with this we managed to direct the programmer in a shorter and more concise path.',
+                color: softBlue),
+            ItemListWidget(
+              text:
+                  'This makes it much easier to resolve your doubts and share knowledge when using the same standard.',
+              color: spotlightColor,
+            ),
+            ItemListWidget(
+              text:
+                  'Your project will not be dependent on who built it, as other programmers will be able to read and change the code without difficulty.',
+              color: softBlue,
+            ),
+            ItemListWidget(
+                text:
+                    'You will have a better use in the reuse of your code, being able to reuse several widgets from other projects for example, that it will fit perfectly in your project.',
+                color: spotlightColor),
+            ItemListWidget(
+              text:
+                  'That you can apply the use of GetX in professional projects, having documentation in hand, with that, more security for those who program, whether you are a company or a student in search of knowledge.',
+              color: softBlue,
+            ),
+            CustomNextPrevious()
+          ],
+        ),
       ),
-    );
+    ));
   }
 }

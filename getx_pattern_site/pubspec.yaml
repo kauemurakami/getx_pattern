@@ -61,6 +61,10 @@ flutter:
     - assets/images/br-flag.jpg
     - assets/images/strc_module.png
     - assets/images/strc.png
+    - assets/images/benchmark.png
+    - assets/images/main_count.png
+    - assets/images/controller_counter.png
+    - assets/images/page_counter.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
