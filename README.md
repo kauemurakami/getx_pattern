@@ -4,9 +4,11 @@
 ![](images/rocket.png)
 >O que vou propor neste documento é uma estrutura sólida e fácil de ser montada com o GetX.  
 >**Objetivos**  
-> - Ter uma estrutura padrão para o desenvolvimento de aplicações com GetX.  
-> - Facilitar o uso do GetX de forma organizada e simples.  
+> - Facilitar o aprendizado do package.  
+> - Ter uma estrutura sólida, padrão para o desenvolvimento de aplicações com GetX.  
+> - Facilitar o uso do GetX de forma organizada, simples e escalável.  
 > - Facilitar na busca de informações e disseminação do conhecimento.  
+  
 
 ### [Documentação em português no GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
 #### Experimente também nossa extensão para vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) pensanda 100% sobre o **getx_pattern**, ela irá agilizar muito seu processo de desenvolvimento com [GetX](https://pub.dev/packages/get).
