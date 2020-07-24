@@ -8,6 +8,7 @@
 > - Ter uma estrutura sólida, padrão para o desenvolvimento de aplicações com GetX.  
 > - Facilitar o uso do GetX de forma organizada, simples e escalável.  
 > - Facilitar na busca de informações e disseminação do conhecimento.  
+> - Working in the English version and new site multi-language.  
   
 
 ### [Documentação em português no GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
