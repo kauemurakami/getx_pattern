@@ -8,5 +8,5 @@
 > - Facilitar o uso do GetX de forma organizada e simples.  
 > - Facilitar na busca de informações e disseminação do conhecimento.  
 
-### [Documentação oficial no GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
-Experimente também nossa extensão para vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) pensanda 100% sobre o **getx_pattern**, ela irá agilizar muito seu processo de desenvolvimento com [Get](https://pub.dev/packages/get).
+### [Documentação em português no GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
+#### Experimente também nossa extensão para vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) pensanda 100% sobre o **getx_pattern**, ela irá agilizar muito seu processo de desenvolvimento com [GetX](https://pub.dev/packages/get).
