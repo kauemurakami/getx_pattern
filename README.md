@@ -53,6 +53,8 @@
 - main.dart  
 # main file
 # proposed by william Silva 
+# We also have a version in packages to vocvê that is used to the good old MVC
+
 examples available in this repository: getx_pattern_site and getx_example
 ```
 
