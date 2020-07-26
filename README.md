@@ -19,7 +19,6 @@
 ```yaml
 - /app  
 # This is where all the application's directories will be contained  
-
     - /modules
     # Each module consists of a page and its respective GetXController.  
     # We treat each screen as an independent module, as it has its only controller.  
@@ -28,10 +27,8 @@
             - my_page.dart
             - my_controller.dart
             - /local_widgets
-
     - /global_widgets 
     # Widgets that can be reused by multiple **modules**.  
-
     - /routes
     # In this repository we will deposit our routes and pages.  
     # We chose to separate into two files, and two classes, one being routes.dart, containing its constant routes and the other for routing.  
@@ -39,24 +36,23 @@
         # class Routes {
         # This file will contain your constants ex:  
         # class Routes { const HOME = '/ home'; }  
-
         - my_pages.dart
         # Class Page {
         # This file will contain your array routing ex :  
         # class AppPages { static final pages = [  GetPage(name: Routes.HOME, page:()=> HomePage()) ];  
-
     - /bindings
         - home_binding.dart
     # The Binding class is a class that disables dependency injection, while "binding" routes to the state manager and the dependency manager. 
     # This lets you know which screen is being displayed when a specific controller is used and knows where and how to dispose of it. 
     # In addition, the Binding class allows you to have SmartManager configuration control. You can configure how dependencies to be organized and remove a route from the stack, or when the widget that is used for disposition, or none of them.  
-    
     - /theme
     #Here we can create themes for our widgets, texts and colors
-        - text_theme.dart inside ex: final textTitle = TextStyle(fontSize: 30)  
-        - color_theme.dart inside ex: final colorCard = Color(0xffEDEDEE)  
-        - app_theme.dart inside ex: final textTheme = TextTheme(headline1: TextStyle(color: colorCard))  
-
+        - text_theme.dart  
+        # inside ex: final textTitle = TextStyle(fontSize: 30)  
+        - color_theme.dart  
+        # inside ex: final colorCard = Color(0xffEDEDEE)  
+        - app_theme.dart  
+        # inside ex: final textTheme = TextTheme(headline1: TextStyle(color: colorCard))  
 - main.dart  
 # main file
 
