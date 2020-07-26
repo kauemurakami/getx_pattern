@@ -13,7 +13,6 @@
 #### Experimente também nossa extensão para vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) pensanda 100% sobre o **getx_pattern**, ela irá agilizar muito seu processo de desenvolvimento com [GetX](https://pub.dev/packages/get).
 
 ### Structure in modules
-
 ```yaml
 - /app  
 # This is where all the application's directories will be contained  
@@ -53,7 +52,7 @@
         # inside ex: final textTheme = TextTheme(headline1: TextStyle(color: colorCard))  
 - main.dart  
 # main file
-
+# proposed by william Silva 
 examples available in this repository: getx_pattern_site and getx_example
 ```
 
