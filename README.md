@@ -54,7 +54,7 @@
 - main.dart  
 # main file
 
-
+examples available in this repository: getx_pattern_site and getx_example
 ```
 
 ![](images/rocket.png)
