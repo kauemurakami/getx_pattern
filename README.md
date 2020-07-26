@@ -16,7 +16,7 @@
 
 ### Structure in modules
 
-```
+```yaml
 - /app  
 # This is where all the application's directories will be contained  
 
