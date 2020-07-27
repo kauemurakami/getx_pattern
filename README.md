@@ -17,13 +17,19 @@
 - /app  
 # This is where all the application's directories will be contained  
     - /modules
-    # Each module consists of a page and its respective GetXController.  
-    # We treat each screen as an independent module, as it has its only controller.  
-    # If you use reusable widgets in this, and only in this module, you can choose to add a folder for them.  
+    
+    # Each module consists of a page, its respective GetXController and its dependencies or Bindings.
+    # We treat each screen as an independent module, as it has its only controller, and can also contain its dependencies.
+    # If you use reusable widgets in this, and only in this module, you can choose to add a folder for them.
         - /my_module
             - my_page.dart
             - my_controller.dart
+            - my_bindings.dart
             - /local_widgets
+    # The Binding class is a class that decouples dependency injection, while "binding" routes to the state manager and the dependency manager.
+    # This lets you know which screen is being displayed when a specific controller is used and knows where and how to dispose of it.
+    # In addition, the Binding class allows you to have SmartManager configuration control.
+    # You can configure how dependencies are to be organized and remove a route from the stack, or when the widget used for disposition, or none of them.
     - /global_widgets 
     # Widgets that can be reused by multiple **modules**.  
     - /routes
@@ -36,12 +42,7 @@
         - my_pages.dart
         # Class Page {
         # This file will contain your array routing ex :  
-        # class AppPages { static final pages = [  GetPage(name: Routes.HOME, page:()=> HomePage()) ];  
-    - /bindings
-        - home_binding.dart
-    # The Binding class is a class that disables dependency injection, while "binding" routes to the state manager and the dependency manager. 
-    # This lets you know which screen is being displayed when a specific controller is used and knows where and how to dispose of it. 
-    # In addition, the Binding class allows you to have SmartManager configuration control. You can configure how dependencies to be organized and remove a route from the stack, or when the widget that is used for disposition, or none of them.  
+        # class AppPages { static final pages = [  GetPage(name: Routes.HOME, page:()=> HomePage()) ]};  
     - /theme
     #Here we can create themes for our widgets, texts and colors
         - text_theme.dart  
