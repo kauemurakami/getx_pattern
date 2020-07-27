@@ -24,7 +24,7 @@
         - /my_module
             - my_page.dart
             - my_controller.dart
-            - my_bindings.dart
+            - my_binding.dart
             - /local_widgets
     # The Binding class is a class that decouples dependency injection, while "binding" routes to the state manager and the dependency manager.
     # This lets you know which screen is being displayed when a specific controller is used and knows where and how to dispose of it.
