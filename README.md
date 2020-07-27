@@ -40,9 +40,10 @@
         # This file will contain your constants ex:  
         # class Routes { const HOME = '/ home'; }  
         - my_pages.dart
-        # Class Page {
         # This file will contain your array routing ex :  
-        # class AppPages { static final pages = [  GetPage(name: Routes.HOME, page:()=> HomePage()) ]};  
+        # class AppPages { static final pages = [  
+        #  GetPage(name: Routes.HOME, page:()=> HomePage()) 
+        # ]};  
     - /theme
     #Here we can create themes for our widgets, texts and colors
         - text_theme.dart  
