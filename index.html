@@ -193,6 +193,23 @@
 
             <i class="fas fa-road alpha"></i> <span class="mark topics">Routes</span>: É o diretório responsável por conter o/os nossos arquivos que são resposáveis por gerênciar nossas rotas.
             <br>
+            
+            <i class="fas fa-road alpha"></i> <span class="mark topics">Bindings</span>:  A classe Binding é uma classe que desacopla a injeção 
+            de dependência, enquanto a "ligação" roteia para o gerente de estado e o gerente de dependência. Isso permite conhecer qual 
+            tela está sendo exibida quando um controlador específico é usado e saber onde e como descartá-lo. Além disso, a classe 
+            Binding permitirá que você tenha o controle de configuração do SmartManager. Você pode configurar as dependências a serem 
+            organizadas ao remover uma rota da pilha, ou quando o widget que a utilizou for disposto, ou nenhuma delas. <br>
+            <br>
+
+            <div class="obs">
+              CASO VOCÊ OPTE PELA OPÇÃO DE ESTRUTURAÇÃO EM MÓDULOS, NOSSA PAGE, CONTROLLER DEVEM SER CONTIDOS DENTRO DE 
+              SEUS RESPECTIVOS MÓDULOS.<br>
+              CASO VOCÊ ESTEJA USANDO BINDINGS PARA INJETAR DEPÊNDENCIAS, OS MESMOS PERTECEM APENAS A SEU MÓDULO.<BR>
+              <BR>
+              A ESTRUTURA EM MÓDULOS É RECOMENDADA PARA PROJETOS MUITO GRANDES, DEIXANDO TUDO RELACIONADO AQUELA VIEW, DISPONÍVEL 
+              DE FORMA FÁCIL.
+            </div>
+            
             <br>
               Agora vamos conhecer um pouco mais o <span class="mark">Get</span>, o gerenciador de estados 
               mais <span class="mark">rápido</span> e <span class="mark">leve</span> !
