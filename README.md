@@ -10,7 +10,7 @@
 > - Working in the English version and new site multi-language.  
   
 #### [Documentation in Portuguese at GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
-#### Also try our extension for vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) thinking 100% about ** getx_pattern **, it will greatly speed up your development process with [GetX](https://pub.dev/packages/get).
+#### Also try our extension for vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) thinking 100% about **getx_pattern**, it will greatly speed up your development process with [GetX](https://pub.dev/packages/get).
 
 ### Structure in modules
 ```yaml
@@ -54,7 +54,7 @@
         # inside ex: final colorCard = Color(0xffEDEDEE)  
         - app_theme.dart  
         # inside ex: final textTheme = TextTheme(headline1: TextStyle(color: colorCard))  
-        
+
 - main.dart  
 # main file
 # proposed by william Silva 
