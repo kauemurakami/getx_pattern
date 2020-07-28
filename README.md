@@ -1,6 +1,6 @@
 # getx_pattern
 [![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/getx_pattern.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/kauemurakami/getx_pattern)  
-## Uma proposta para padronizar seu desenvolvimento com GetX.  
+## A proposal to standardize your development with GetX.  
 
 >**Objective**  
 > - Facilitate the learning of the package.  
