@@ -2,15 +2,15 @@
 [![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/getx_pattern.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/kauemurakami/getx_pattern)  
 ## Uma proposta para padronizar seu desenvolvimento com GetX.  
 
->**Objetivos**  
-> - Facilitar o aprendizado do package.  
-> - Ter uma estrutura sólida, padrão para o desenvolvimento de aplicações com GetX.  
-> - Facilitar o uso do GetX de forma organizada, simples e escalável.  
-> - Facilitar na busca de informações e disseminação do conhecimento.  
+>**Objective**  
+> - Facilitate the learning of the package.  
+> - Have a solid, standard structure for developing applications with GetX.  
+> - Facilitate the use of GetX in an organized, simple and scalable way.  
+> - Facilitate the search for information and dissemination of knowledge.  
 > - Working in the English version and new site multi-language.  
   
-#### [Documentação em português no GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
-#### Experimente também nossa extensão para vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) pensanda 100% sobre o **getx_pattern**, ela irá agilizar muito seu processo de desenvolvimento com [GetX](https://pub.dev/packages/get).
+#### [Documentation in Portuguese at GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
+#### Also try our extension for vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) thinking 100% about ** getx_pattern **, it will greatly speed up your development process with [GetX](https://pub.dev/packages/get).
 
 ### Structure in modules
 ```yaml
