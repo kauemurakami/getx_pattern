@@ -28,7 +28,7 @@
         # Our classes, or data models responsible for abstracting our objects.
             - my_model.dart
         - /repository
-            my_repository.dart
+            - my_repository.dart
         # Here our repositories are just classes that will mediate the communication between our controller and our data.
         # Our controllers won't need to know where the data comes from, and you can use more than one repository on a controller if you need to.
         # The repositories must be separated by entities, and can almost always be based on their database tables.
