@@ -18,6 +18,10 @@
 ```yaml
 - /app  
 # This is where all the application's directories will be contained  
+    - /data
+        - /provider
+        - /model
+        - /repository
     - /modules
     # Each module consists of a page, its respective GetXController and its dependencies or Bindings.
     # We treat each screen as an independent module, as it has its only controller, and can also contain its dependencies.
