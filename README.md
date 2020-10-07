@@ -76,6 +76,14 @@
         # inside ex: final colorCard = Color(0xffEDEDEE)  
         - app_theme.dart  
         # inside ex: final textTheme = TextTheme(headline1: TextStyle(color: colorCard))  
+     - /utils
+    #Here you can insert utilities for your application, such as masks, form keys or widgets
+        - keys.dart  
+        # inside ex: static final GlobalKey formKey = GlobalKey<FormState>();
+        - masks.dart  
+        # inside ex: static final maskCPF = MaskTextInputFormatter(mask: "###.###.###-##", filter: {"#": RegExp(r'[0-9]')});  
+        - helpers.dart  
+    # Use classes to make your variables easier to use, eg Keys.myKey, Masks.maskCPF
 
 - main.dart  
 # main file
