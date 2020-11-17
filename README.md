@@ -43,9 +43,8 @@
     # We treat each screen as an independent module, as it has its only controller, and can also contain its dependencies.
     # If you use reusable widgets in this, and only in this module, you can choose to add a folder for them.
         - /my_module
-            - my_service.dart
             - my_page.dart
-            - my_controller.dart
+            - my_controller.dart or my_service.dart, or both.
             - my_binding.dart
             - /local_widgets
     # The Binding class is a class that decouples dependency injection, while "binding" routes to the state manager and the dependency manager.
