@@ -20,6 +20,9 @@
 # This is where all the application's directories will be contained  
     - /data
     # Directory responsible for containing everything related to our data
+        - /service
+            # This is where we store our Services
+                - my_service.dart
         - /provider
         # Our data provider, can be an api, local database or firebase for example.
             - my_api_provider.dart
