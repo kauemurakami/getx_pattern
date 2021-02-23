@@ -20,6 +20,9 @@
 # This is where all the application's directories will be contained  
     - /data
     # Directory responsible for containing everything related to our data
+        - /service
+            # This is where we store our Services
+            - my_service.dart
         - /provider
         # Our data provider, can be an api, local database or firebase for example.
             - my_api_provider.dart
@@ -116,8 +119,7 @@ We can easily identify our entities by asking us a question.
 Will I receive and / or send data from that entity? If the answer is yes, then it needs a repository.  
 In our example we would have three repositories, UserRepository, ProductRepository, EstablishmentRepository.  
 Sometimes, we can remove these entities based on our classes, but often there are auxiliary classes that are not necessarily in your database or api, so we prefer to base ourselves on what really interacts with your database.  
-Dessa forma, tiramos muita responsabilidade do nosso controller, ele não precisa saber de onde vem os dados, apenas consumi-los, outra vantagem é que o repository faz a nossa ligação Controller <-> Dados.
-Tendo assim, uma melhor organização, deixando o código compreensivo e é extremamente fácil a manutenção, de forma intuitiva.
+That way, we take out a lot of responsibility from our controller, it doesn't need to know where the data comes from, just consume it, another advantage is that the repository makes our Controller <-> Data connection. Thus, having a better organization, leaving the code comprehensive and easy to maintain, intuitively.
 ### Module
 The modules will contain our respective Binding, Page, Controller.  
 This makes the project shorter and easier to maintain.
