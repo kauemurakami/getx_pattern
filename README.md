@@ -36,8 +36,13 @@
         # That is, if we have a user table that we will persist as, edit, add, update and delete, all these functions are requested 
         # from an api, we will have a repository with this object of the api where we will call all the respective 
         # functions to the user. So the controller does not need to know where it comes from, the repository being a 
-        # mandatory attribute for the controllers in this model, you should always initialize the controller with at 
-        # least one repository, see the example repos.
+        # mandatory attribute for the controllers in this model, you should always initialize the controller with at - /repository
+        - /service.dart
+            - auth_example_service.dart
+        # This class is like a GetxController, it shares the same lifecycle ( onInit(), onReady(), onClose()). But has no "logic" inside of it.
+        # It just notifies GetX Dependency Injection system, that this subclass can not be removed from memory.
+        # So is super useful to keep your "Services" always reachable and active with Get.find().
+        # Like ApiService, StorageService, CacheService.
     - /modules
     # Each module consists of a page, its respective GetXController and its dependencies or Bindings.
     # We treat each screen as an independent module, as it has its only controller, and can also contain its dependencies.
