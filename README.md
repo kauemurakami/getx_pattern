@@ -105,7 +105,7 @@
 # proposed by william Silva and Kauê Murakami
 # We also have a version in packages to vocvê that is used to the good old MVC
 
-actual example available in this repository: examples/valorant-brasil-module-example
+actual example available in this repository: [examples/valorant-brasil-module-example](https://github.com/kauemurakami/valorant-brasil)
 ```
 
 ### Explaining
