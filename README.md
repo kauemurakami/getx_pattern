@@ -78,7 +78,7 @@
         - /values
             - strings.dart
             - colors.dart
-            - /trasnlations
+            - /translations
                 - /langs
                     - pt-br.dart
                     - en-au.dart
@@ -104,7 +104,7 @@
 # proposed by william Silva and Kauê Murakami
 # We also have a version in packages to vocvê that is used to the good old MVC
 
-examples available in this repository: getx_pattern_site and getx_example
+actual example available in this repository: examples/valorant-brasil-module-example
 ```
 
 ### Explaining
@@ -118,14 +118,8 @@ If there are many requests, in a single file, you can choose to separate by enti
 In our model class we will have our attributes and two methods, toJson and fromJson responsible for converting our object to json or a json to our object.  
 Generally when we work with API's, we use these methods to create objects from our api's response, or create a json to send to our api.
 #### Repository 
-It is responsible for separating its entities, basically, entities are all "tables" of your database that will interact with your provider.  
-The repository aims to abstract and separate its data source from its controllers, thus having a single point of failure, that is, if you ever change your project's api or database, just change your providers files, with no need to change the repository, as it is only responsible for calling the provider function, there is no logic there.  
-ex Imagine that you have a product selling app that only has customers and products from an establishment.  
-We can easily identify our entities by asking us a question.  
-Will I receive and / or send data from that entity? If the answer is yes, then it needs a repository.  
-In our example we would have three repositories, UserRepository, ProductRepository, EstablishmentRepository.  
-Sometimes, we can remove these entities based on our classes, but often there are auxiliary classes that are not necessarily in your database or api, so we prefer to base ourselves on what really interacts with your database.  
-That way, we take out a lot of responsibility from our controller, it doesn't need to know where the data comes from, just consume it, another advantage is that the repository makes our Controller <-> Data connection. Thus, having a better organization, leaving the code comprehensive and easy to maintain, intuitively.
+A repository is responsible for storing all the functionality that will be consumed by the provider by the module's controller, that is, every module that consumes a provider, be it a database or an api, must keep the calls in its repository, which was previously located in date, but I found complications in large projects, many imports from different repositories increased our dependencies, so it is better to repeat a function in different local repositories, which are just notes, than to separate them by entities and to call more than one repository.
+
 ### Module
 The modules will contain our respective Binding, Page, Controller.  
 This makes the project shorter and easier to maintain.
