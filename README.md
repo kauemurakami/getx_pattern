@@ -119,7 +119,7 @@ If there are many requests, in a single file, you can choose to separate by enti
 In our model class we will have our attributes and two methods, toJson and fromJson responsible for converting our object to json or a json to our object.  
 Generally when we work with API's, we use these methods to create objects from our api's response, or create a json to send to our api.
 #### Repository 
-A repository is responsible for storing all the functionality that will be consumed by the provider by the module's controller, that is, every module that consumes a provider, be it a database or an api, must keep the calls in its repository, which was previously located in date, but I found complications in large projects, many imports from different repositories increased our dependencies, so it is better to repeat a function in different local repositories, which are just notes, than to separate them by entities and to call more than one repository.
+The repository is now responsible only for grouping the functionalities of the providers consumed by the controller of that module, in order to map the use of the providers and to group their calls.
 
 ### Module
 The modules will contain our respective Binding, Page, Controller.  
