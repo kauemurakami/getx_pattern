@@ -110,7 +110,7 @@ actual example available in this repository: [examples/valorant-brasil-module-ex
 
 ### Explaining
 #### Data
-Here we won't have much to discuss, it is just a repository where you will abstract / package EVERYTHING related to your data, your models, your repositories and data providers. If you choose to use the module version, Data will have the same role, leaving your data available for all your modules, leaving only what is vital for your module in it !!  
+Here we won't have much to discuss, it is just a repository where you will abstract / package EVERYTHING related to your data, your models, your services  and data providers. If you choose to use the module version, Data will have the same role, leaving your data available for all your modules, leaving only what is vital for your module in it !!  
 This was designed so that you can keep your directory structure as small as possible when working with flutter, and at the same time, be intuitive and didactic to speed up your learning curve.
 #### Provider
 obs: In some other structures, the term 'provider' can be approached in various ways, but here, it exists only and exclusively, to make http requests or persistence in a database. If you use both, create the respective directories and / or files within it.  
