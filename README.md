@@ -106,6 +106,7 @@
 # We also have a version in packages to vocvê that is used to the good old MVC
 
 actual example available in this repository: [examples/valorant-brasil-module-example](https://github.com/kauemurakami/valorant-brasil)
+new example avaible in this repository: [Blogging](https://github.com/kauemurakami/blogging)
 ```
 
 ### Explaining
