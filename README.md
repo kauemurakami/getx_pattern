@@ -79,8 +79,8 @@
         - /values
             - strings.dart
             - colors.dart
-            - /translations
-                - /langs
+            - /languages
+                - /from
                     - pt-br.dart
                     - en-au.dart
         - /theme
