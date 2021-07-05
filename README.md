@@ -21,6 +21,7 @@
 # This is where all the application's directories will be contained  
     - /data
     # Directory responsible for containing everything related to our data
+        - /enums 
         - /services
              # This is where we store our Services
              # Here our repositories are just classes that will mediate the communication between our controller and our data.
@@ -98,6 +99,7 @@
             - masks.dart  
             # inside ex: static final maskCPF = MaskTextInputFormatter(mask: "###.###.###-##", filter: {"#": RegExp(r'[0-9]')});  
             - helpers.dart  
+            - extension_x.dart  
         # Use classes to make your variables easier to use, eg Keys.myKey, Masks.maskCPF
 
 - main.dart  
