@@ -11,7 +11,7 @@
 > - Facilitate the search for information and dissemination of knowledge.  
 > - Working in the English version and new site multi-language.  
 > - **This readme is more updated than the site and its examples, start here while I update the rest xD**
-  
+#### Artigo em pt-BR [Um pouco mais sobreo getX Pattern ](https://kauetmurakami.medium.com/um-pouco-sobre-o-getx-pattern-efb191187d7)
 #### [Documentation in Portuguese at GitHub Pages](https://kauemurakami.github.io/getx_pattern/)  
 #### Also try our extension for vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) thinking 100% about **getx_pattern**, it will greatly speed up your development process with [GetX](https://pub.dev/packages/get).
 
