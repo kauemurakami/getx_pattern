@@ -10,7 +10,6 @@ import 'app/ui/theme/app_theme.dart';
 void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    initialBinding: HomeBinding(),
     initialRoute: Routes.INITIAL,
     theme: appThemeData,
     defaultTransition: Transition.fade,
