@@ -16,6 +16,7 @@
 #### Also try our extension for vscode [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets) thinking 100% about **getx_pattern**, it will greatly speed up your development process with [GetX](https://pub.dev/packages/get).
 
 ### Structure in modules
+![GetX_Structure](images/GetX_Structure.png)
 ```yaml
 - /app  
 # This is where all the application's directories will be contained  
