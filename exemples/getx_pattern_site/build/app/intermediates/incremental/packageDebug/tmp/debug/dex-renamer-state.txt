@@ -1,0 +1,4 @@
+#Mon Nov 09 16:22:35 BRT 2020
+base.0=C\:\\projetos\\getx_pattern\\exemples\\getx_pattern_site\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

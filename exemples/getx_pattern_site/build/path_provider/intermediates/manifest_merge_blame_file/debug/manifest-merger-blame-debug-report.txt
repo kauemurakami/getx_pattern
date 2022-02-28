@@ -1,0 +1,8 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.flutter.plugins.pathprovider" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+5-->C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml
+6
+7</manifest>

@@ -1,0 +1,19 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml:1:1-3:12
+	package
+		ADDED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml:2:3-44
+		INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml
+INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml
+		ADDED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\kauet\AppData\Local\Pub\Cache\hosted\pub.dartlang.org\path_provider-1.6.11\android\src\main\AndroidManifest.xml

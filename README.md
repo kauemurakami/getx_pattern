@@ -23,7 +23,7 @@ Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstu
 ## How does it work?
 
 ### Structure in modules
-![GetX_Structure](images/GetX_Structure.png)
+![GetX_Structure](images/GetX_Structure.jpg)
 ```yaml
 - /app  
 # This is where all the application's directories will be contained  
