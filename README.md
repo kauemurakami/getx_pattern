@@ -20,6 +20,8 @@ Article in pt-BR: [_Um pouco sobre o GetX Pattern! 🚀_](https://kauetmurakami.
 
 Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstudio.com/items?itemName=get-snippets.get-snippets)! Made to work with **getx_pattern** and to greatly speed up your development process with [GetX](https://pub.dev/packages/get).
 
+[New website under construction to improve everyone's learning and follow-up!](https://kauemurakami.github.io/getx-pattern-site/dash)
+
 ## How does it work?
 
 ### Structure in modules
