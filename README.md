@@ -116,7 +116,7 @@ Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstu
 # main file
 # proposed by william Silva and Kauê Murakami
 # We also have a version in packages to vocvê that is used to the good old MVC
-
+New example implementation [dev app](https://github.com/kauemurakami/example)
 New GetRouterOutlet implementation: [Meditation app](https://github.com/kauemurakami/meditation-app-rewrite-getx)
 todo-list with Get Storage with state manager and services: [todo-list](https://github.com/kauemurakami/todo-list-get-storage)
 valorant example state manager with state mixin: [examples/valorant-brasil-module-example](https://github.com/kauemurakami/valorant-brasil)
