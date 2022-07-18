@@ -4,7 +4,6 @@ import 'package:getx_pattern_site/app/modules/home/home_controller.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CustomSelectLanguageWidget extends StatelessWidget {
-
   final HomeController controller = Get.put(HomeController());
 
   @override

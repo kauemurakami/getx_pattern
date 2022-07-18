@@ -18,7 +18,7 @@ class ApresentacaoPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTitleWidget(
-              title: 'getx_pattern',
+              title: 'getx_pattern'.tr,
             ),
             ContainerResponsive(
               width: Get.width,
@@ -27,46 +27,46 @@ class ApresentacaoPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextResponsive(
-                    'A proposal for you that uses GetX as your state manager!',
+                    'getx_a_proposal_for_you'.tr,
                     style: textContent,
                   ),
-                  CustomTitleWidget(title: 'Objective'),
+                  CustomTitleWidget(title: 'objective'.tr),
                   TextResponsive(
-                    'The main objective, is to make your programming with Flutter + GetX more pleasant and intuitive than it already is! When there is a development pattern to be followed, everything is easier for those who use it.',
+                    'getx_the_main_objective'.tr,
                     style: textContent,
                   ),
-                  TextResponsive(' But why?',
+                  // Text(
+                  //   'The main objective, is to make your programming with Flutter + GetX more pleasant and intuitive than it already is! When there is a development pattern to be followed, everything is easier for those who use it.',
+                  //   style: textContent,
+                  // ),
+
+                  TextResponsive('but_why'.tr,
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: spotlightColor, fontSize: 20))
+                          fontWeight: FontWeight.bold,
+                          color: spotlightColor,
+                          fontSize: 20))
                 ],
               ),
             ),
             ItemListWidget(
-              text:
-                  'Because that way, we can communicate "universally" with people who also follow these same standards and package.',
+              text: 'getx_because_that_way'.tr,
               color: spotlightColor,
             ),
             ItemListWidget(
-                text:
-                    'There are infinite ways to solve the same problem, so patterns have a very important role in that, the same problems, can still be solved in several ways, but with a certain flow to be followed, with this we managed to direct the programmer in a shorter and more concise path.',
-                color: softBlue),
+                text: 'getx_there_are_infinite_ways'.tr, color: softBlue),
             ItemListWidget(
-              text:
-                  'This makes it much easier to resolve your doubts and share knowledge when using the same standard.',
+              text: 'getx_this_makes_it_much_easier'.tr,
               color: spotlightColor,
             ),
             ItemListWidget(
-              text:
-                  'Your project will not be dependent on who built it, as other programmers will be able to read and change the code without difficulty.',
+              text: 'getx_your_project_will_not_be_dependent'.tr,
               color: softBlue,
             ),
             ItemListWidget(
-                text:
-                    'You will have a better use in the reuse of your code, being able to reuse several widgets from other projects for example, that it will fit perfectly in your project.',
+                text: 'getx_you_will_have_a_better_use'.tr,
                 color: spotlightColor),
             ItemListWidget(
-              text:
-                  'That you can apply the use of GetX in professional projects, having documentation in hand, with that, more security for those who program, whether you are a company or a student in search of knowledge.',
+              text: 'getx_that_you_can_apply_the_use',
               color: softBlue,
             ),
             CustomNextPrevious()

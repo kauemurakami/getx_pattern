@@ -26,13 +26,13 @@ class EstruturaPage extends StatelessWidget {
                         margin: EdgeInsetsResponsive.all(16.0),
                       ),
                       TextResponsive(
-                        'You can feel free to use the structure you want in modules or packages, over time we will be creating exenplos and creating them in both ways. \nThe initial example will offer you the same tabs so you can follow the construction of the project in both ways with the same code, so lets get started!',
+                        'structure_you_can_feel_free_to_use'.tr,
                         style: textContent,
                       ),
                       Padding(
                         padding: EdgeInsetsResponsive.only(top: 8.0),
                         child: TextResponsive(
-                          'First let\'s take a look at our structures and choose the one that best suits or pleases you.',
+                          'structure_first_lets_take_a_look'.tr,
                           style: textContent,
                         ),
                       ),
@@ -60,16 +60,17 @@ class EstruturaPage extends StatelessWidget {
                                 height: 300,
                                 width: Get.width,
                                 decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(controller
-                                            .strc[controller.structure]))),
+                                  image: DecorationImage(
+                                      image: AssetImage(controller
+                                          .strc[controller.structure])),
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
                       TextResponsive(
-                        'Now that you know the proposal and have given a good analysis in the presentation of the structure, let \'s take a moment to talk briefly about it, before introducing you to the GetX section, so you can follow our examples without difficulty or questions about our naming or flow standards, well, let \'s talk quickly one by one now, do not worry if you are adventuring and do not know some of the concepts that will be covered here, this is just a formal presentation with the structure, we’ll talk in more detail about each one, with examples in their respective sections.',
+                        'structure_Now_that_you_know_the'.tr,
                         style: textContent,
                       ),
                       CustomTitleWidget(
@@ -77,7 +78,7 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'It is the directory that will group all of our model classes for our objects.',
+                          'structure_It_is_the_directory_that_will'.tr,
                           style: textContent,
                         ),
                       ),
@@ -86,7 +87,7 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'It is the directory responsible for grouping our data providers, it can be either a database or an api.',
+                          'structure_It_is_the_directory_responsible_for'.tr,
                           style: textContent,
                         ),
                       ),
@@ -95,7 +96,7 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'It is a single point of access to data, it will abstract our entities.',
+                          'structure_It_is_a_single_point_of_access'.tr,
                           style: textContent,
                         ),
                       ),
@@ -104,7 +105,8 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'It is the directory that will group all of our model classes for our objects.',
+                          'structure_It_is_the_directory_that_will_group_all'
+                              .tr,
                           style: textContent,
                         ),
                       ),
@@ -115,7 +117,8 @@ class EstruturaPage extends StatelessWidget {
                         child: ContainerResponsive(
                           width: Get.width / 1.2,
                           child: TextResponsive(
-                            'Our controllers are nothing more than those responsible for our business rules, state changes, it is also where we will create our observables with their respective initial states and the events that will be responsible for changing those states.',
+                            'structure_Our_controllers_are_nothing_more_than'
+                                .tr,
                             style: textContent,
                           ),
                         ),
@@ -125,7 +128,8 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'É tudo que o usuário vê, seus widgets, animações, textos, temas.',
+                          'É tudo que o usuário vê, seus widgets, animações, textos, temas.'
+                              .tr,
                           style: textContent,
                         ),
                       ),
@@ -134,7 +138,8 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'It is the directory responsible for containing our files which are responsible for managing our routes.',
+                          'structure_It_is_the_directory_responsible_for_containing_our_files_which'
+                              .tr,
                           style: textContent,
                         ),
                       ),
@@ -143,7 +148,7 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'Here, if you need to, you can create files that contain translations and use them with GetX internationalization',
+                          'structure_translation_info'.tr,
                           style: textContent,
                         ),
                       ),
@@ -152,14 +157,15 @@ class EstruturaPage extends StatelessWidget {
                       ),
                       Center(
                         child: TextResponsive(
-                          'These are dependencies that we will use in our application, loaded with  \'Lazy \' , guarantee that our controllers are on our pages without you even having to declare them',
+                          'structure_bindings_info'.tr,
                           style: textContent,
                         ),
                       ),
                       Padding(
                           padding: EdgeInsetsResponsive.only(top: 8.0),
                           child: TextResponsive(
-                            'Now that you know a little more about our structure, let\'s go over one by one with their respective details from now on!',
+                            'structure_Now_that_you_know_a_little_more_about_our_structure'
+                                .tr,
                             style: textContent,
                           )),
                       CustomNextPrevious()

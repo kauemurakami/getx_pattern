@@ -21,7 +21,7 @@ class HomePage extends GetView {
 
   final HomeController controller = Get.put(HomeController());
 
-    final List<Widget> screens = [
+  final List<Widget> screens = [
     ApresentacaoPage(),
     EstruturaPage(),
     GetXPage(),
@@ -31,24 +31,31 @@ class HomePage extends GetView {
     RepositoryPage(),
     ControllerPage(),
     UiPage(),
-    RoutesPage(),//add translations
+    RoutesPage(), //add translations
     TutorialsPage(),
   ];
   @override
   Widget build(BuildContext context) {
-     
+    print('> home - build() : GetX , oi = ' + 'GetX'.tr + ' , ' + 'oi'.tr);
     return Scaffold(
       key: _scaffoldKey,
       drawer: CustomDrawer(),
       body: Stack(
         children: <Widget>[
           SafeArea(
-            child: 
-            Obx( () => Container(
+              child: Obx(
+            () => Container(
                 color: Colors.red,
                 padding: EdgeInsets.all(0),
                 child: this.screens[controller.screen]),
           )),
+          // SafeArea(
+          //     child: Obx(() => Container(
+          //           color: Colors.red,
+          //           padding: EdgeInsets.all(0),
+          //           child: this.screens[controller.screen],
+          //         )),
+          //         ),
           Positioned(
             top: 8,
             left: 5,
@@ -60,9 +67,7 @@ class HomePage extends GetView {
           Positioned(
             top: 8,
             right: 5,
-            child: SafeArea(
-              child: CustomSelectLanguageWidget()
-            ),
+            child: SafeArea(child: CustomSelectLanguageWidget()),
           ),
         ],
       ),

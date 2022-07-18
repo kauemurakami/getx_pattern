@@ -1,12 +1,13 @@
 part of './en_US_translation.dart';
 
-const INICIO = "Home";
-const STRUCT = "Struct";
+const HOME = "Home";
+const STRUCTURE = "Structure";
 const GETX = 'GetX';
 const DATA = 'Data';
 const PROVEDOR = 'Provider';
 const REPOSITORIO = 'Repository';
-const CONTROLLADOR = 'Controller';
+const CONTROLLER = 'Controller';
+const BINDINGS = 'Bindings';
 const ROTAS = 'Routes';
 const TRANSLATIONS = 'Translations';
 const TUTORIAIS = 'Tutorials';
