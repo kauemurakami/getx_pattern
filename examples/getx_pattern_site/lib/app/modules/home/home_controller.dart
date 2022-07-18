@@ -6,25 +6,43 @@ class HomeController extends GetxController {
   static HomeController get to => Get.find();
 
   List<String> topics = [
-    'Home',
-    'Estrutura',
-    'GetX',
-    'Data',
-    'Provider',
-    'Model',
-    'Repository',
-    'Controller',
-    'Bindings',
-    'UI',
-    'Rotas',
-    'Translations',
-    'Tutoriais',
+    'Home'.tr,
+    'Structure'.tr,
+    'GetX'.tr,
+    'Data'.tr,
+    'Provider'.tr,
+    'Model'.tr,
+    'Repository'.tr,
+    'Controller'.tr,
+    'Bindings'.tr,
+    'UI'.tr,
+    'Rotas'.tr,
+    'Translations'.tr,
+    'Tutoriais'.tr,
   ];
   final box = GetStorage();
 
   final _themeIsDark = false.obs;
   get themeIsDark => this._themeIsDark.value;
   set themeIsDark(value) => this._themeIsDark.value = value;
+
+  void refreshTopics() {
+    topics = [
+      'Home'.tr,
+      'Structure'.tr,
+      'GetX'.tr,
+      'Data'.tr,
+      'Provider'.tr,
+      'Model'.tr,
+      'Repository'.tr,
+      'Controller'.tr,
+      'Bindings'.tr,
+      'UI'.tr,
+      'Rotas'.tr,
+      'Translations'.tr,
+      'Tutoriais'.tr,
+    ];
+  }
 
   @override
   onInit() {
@@ -34,7 +52,7 @@ class HomeController extends GetxController {
 
   @override
   void onReady() {
-       changeTheme();
+    changeTheme();
     super.onReady();
   }
 
@@ -42,30 +60,31 @@ class HomeController extends GetxController {
   get screen => this._screen.value;
   set screen(value) => this._screen.value = value;
 
-  changeTheme() async{
+  changeTheme() async {
     Get.changeTheme(
         this.themeIsDark == false ? ThemeData.light() : ThemeData.dark());
-        box.write('key', this.themeIsDark );
-        this.themeIsDark = !this.themeIsDark;
+    box.write('key', this.themeIsDark);
+    this.themeIsDark = !this.themeIsDark;
   }
 
-  
   final _lang = 'en-US'.obs;
   String get lang => this._lang.value;
   set lang(value) => this._lang.value = value;
-  
-  changeLanguage(lang){
-      this.lang = lang;
-    if(lang == 'pt-BR'){
-      Get.updateLocale(Locale('pt'));
-    }else if( lang == 'en-US'){
-      Get.updateLocale(Locale('en'));
-    }else if(lang == 'es-MX'){
-      Get.updateLocale(Locale('es'));
+
+  changeLanguage(lang) {
+    this.lang = lang;
+    if (lang == 'pt-BR') {
+      Get.updateLocale(Locale('pt', 'BR'));
+    } else if (lang == 'en-US') {
+      Get.updateLocale(Locale('en', 'US'));
+    } else if (lang == 'es-MX') {
+      Get.updateLocale(Locale('es', 'MX'));
     }
-    print(Get.locale);
+    refreshTopics();
+    print('> local , lang = ${Get.locale} , $lang');
+    print('>> GetX , oi = ' + 'GetX'.tr + ' , ' + 'oi'.tr);
   }
 
   nextPage() => this.screen < topics.length ? this.screen++ : null;
-  previousPage() => this.screen > 0 ? this.screen-- : null ;
+  previousPage() => this.screen > 0 ? this.screen-- : null;
 }

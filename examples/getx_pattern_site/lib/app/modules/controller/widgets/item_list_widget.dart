@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:getx_pattern_site/app/theme/app_colors.dart';
 import 'package:getx_pattern_site/app/theme/app_text_theme.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 

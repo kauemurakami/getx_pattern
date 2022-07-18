@@ -11,14 +11,14 @@ class CustomTitleWidget extends Container {
   @override
   Widget build(BuildContext context) {
     return ContainerResponsive(
-      padding: EdgeInsets.only(top:8, bottom: 8.0),
+      padding: EdgeInsets.only(top: 8, bottom: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextResponsive(
             this.title.tr,
             style: titulo,
-          )
+          ),
         ],
       ),
     );

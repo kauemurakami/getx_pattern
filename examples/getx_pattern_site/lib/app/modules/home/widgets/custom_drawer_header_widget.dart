@@ -23,13 +23,13 @@ class CustomDrawerHeaderWidget extends StatelessWidget {
                         image: AssetImage('assets/images/rocket_minimal.png'))),
               ),
               TextResponsive(
-                'GetX Pattern',
+                'GetX_Pattern'.tr,
                 style: TextStyle(fontSize: 24, color: spotlightColor),
               ),
               ContainerResponsive(child: CustomSwitchWidget()),
             ]),
             TextResponsive(
-              'Faça seus projetos com GetX decolarem !!!',
+              'Project_using_GetX_Library'.tr,
               style: TextStyle(fontSize: 16, color: softBlue),
             ),
           ],

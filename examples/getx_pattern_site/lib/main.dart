@@ -15,10 +15,15 @@ void main() async {
     home: SplashPage(),
 
     translationsKeys: AppTranslation.translations,
+    // translations: AppTranslation(),
+    // translationsKeys: AppTranslation().keys,
 
     getPages: AppPages.pages,
     theme: appThemeData,
-    
+    // locale: Locale('es', 'MX'),
+    locale: Locale('en', 'US'),
+    fallbackLocale: Locale('en', 'US'),
+
     defaultTransition: Transition.rightToLeftWithFade,
   ));
 }
