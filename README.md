@@ -87,10 +87,16 @@ Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstu
         #  GetPage(name: Routes.HOME, page:()=> HomePage()) 
         # ]};  
     - /core
+        - /errors
+        # error handling and classes
         - /values
             - strings.dart
+            # globally reusable strings
+            # example : enter > "Enter" on several buttons
             - colors.dart
+            # colors that can be reused throughout the application
             - /languages
+            # for applications that use internationalization, they can deposit their translation files here
                 - /from
                     - pt-br.dart
                     - en-au.dart
@@ -104,13 +110,22 @@ Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstu
             # inside ex: final textTheme = TextTheme(headline1: TextStyle(color: colorCard))  
         - /utils
         #Here you can insert utilities for your application, such as masks, form keys or widgets
-            - keys.dart  
-            # inside ex: static final GlobalKey formKey = GlobalKey<FormState>();
+        - /extensions
+            # are a way to add functionality to existing libraries
+            - example_remove_underlines.dart
+            # https://dart.dev/guides/language/extension-methods
+            
+        - /functions
+        # functions that can be reused globally in the app
+            - get_percent_size.dart
+            # example: a function that returns the percentage of a parent widget
+            
+        - /helpers
+         # abstract classes or helper classes like key masks etc
             - masks.dart  
             # inside ex: static final maskCPF = MaskTextInputFormatter(mask: "###.###.###-##", filter: {"#": RegExp(r'[0-9]')});  
-            - helpers.dart  
-            - extension_x.dart  
-        # Use classes to make your variables easier to use, eg Keys.myKey, Masks.maskCPF
+            - keys.dart  
+            # inside ex: static final GlobalKey formKey = GlobalKey<FormState>();
 
 - main.dart  
 # main file
