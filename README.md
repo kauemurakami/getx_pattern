@@ -27,7 +27,7 @@ Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstu
 ### Structure in modules
 ![GetX_Structure](images/GetX_Structure.jpg)
 ```yaml
-- /app  
+- /lib/app  
 # This is where all the application's directories will be contained  
     - /data
     # Directory responsible for containing everything related to our data
@@ -126,7 +126,7 @@ Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstu
                 # inside ex: static final maskCPF = MaskTextInputFormatter(mask: "###.###.###-##", filter: {"#": RegExp(r'[0-9]')});  
                 - keys.dart  
                 # inside ex: static final GlobalKey formKey = GlobalKey<FormState>();
-    - /repos # Use for Micro Front-End multirepo example:
+    - repos # Use for Micro Front-End multirepo example:
         - /dependencies
         - /core
 - main.dart  
