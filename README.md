@@ -22,7 +22,7 @@ Also try our extension for VSCode: [GetX Snippets](https://marketplace.visualstu
 
 [New website under construction to improve everyone's learning and follow-up!](https://github.com/kauemurakami/getx-pattern-site)
 
-## How does it work?
+## How does it work? 
 
 ### Structure in modules
 ![GetX_Structure](images/GetX_Structure.jpg)
